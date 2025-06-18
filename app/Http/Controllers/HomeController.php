@@ -44,15 +44,18 @@ class HomeController extends Controller
       "email"=> "required|email",
       "password"=> "required",
     ]);
-    if(Auth::attempt($data)){
-      if(Auth::user()->status){
-        return redirect()->route("dashboard")->with("msg","Login successfully");
-      }
-       return redirect()->route("index")->with("msg","Login successfully");
-    }
-    else{
-      return redirect()->back()->with("msg","Invalide credential");
-    }
+    $auth=Auth::attempt($data);
+
+   if($auth){
+     $user = Auth::user();
+     if($user->status == 1){
+       return redirect()->route("dashboard");
+     }else{
+       Auth::logout();
+       return redirect()->route("index");
+     }
+
+   }
   }
   return  view("login");
 }

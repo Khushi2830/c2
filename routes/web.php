@@ -17,6 +17,9 @@ Route::match(['get', 'post'], '/login', [HomeController::class, 'login'])->name(
 Route::get("/histroy",[HomeController::class, "histroy"])->name("histroy");
 Route::get("/blog1",[HomeController::class, "blog1"])->name("blog1");
 
+ Route::prefix("index")->group(function(){
+        Route::get("/page",[HomeController::class, "index"])->name("index");
+   });
 
 Route::middleware("admin:auth")->group(function(){
 
@@ -28,9 +31,6 @@ Route::middleware("admin:auth")->group(function(){
        Route::resource("/product",ProductController::class, );
        Route::resource("/category", CategoryController::class, );
        Route::resource("/blog", BlogController::class, );
-   });
-   Route::prefix("index")->group(function(){
-        Route::get("/page",[HomeController::class, "index"])->name("index");
    });
       
 });
