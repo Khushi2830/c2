@@ -18,7 +18,7 @@ Route::get("/histroy",[HomeController::class, "histroy"])->name("histroy");
 Route::get("/blog1",[HomeController::class, "blog1"])->name("blog1");
 
 
-Route::middleware("auth")->group(function(){
+Route::middleware("admin:auth")->group(function(){
 
    Route::prefix("admin")->group(function(){
    
