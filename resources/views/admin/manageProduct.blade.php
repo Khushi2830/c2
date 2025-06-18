@@ -16,12 +16,8 @@
                 <div class="d-flex gap-3">
                     <a href="{{ route('product.create') }}" class="btn  shadow-sm rounded-pill px-4" style="background-color: #6f42c1; color: white;" >Add Product</a>
                 </div>
-<<<<<<< HEAD
-                @session('msg')
-=======
             </div>
             @session('msg')
->>>>>>> 9d423b7579bd80f1ce1532c466c8c2ed09307881
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         <strong>Success!</strong> {{ session('msg') }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
