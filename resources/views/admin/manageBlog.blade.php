@@ -17,9 +17,9 @@
                     <a href="{{ route('blog.create') }}" class="btn  shadow-sm rounded-pill px-4" style="background-color: #6f42c1; color: white;" >Add Content</a>
                 </div>
             </div>
-            @session('success')
+            @session('msg')
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong>Success!</strong> {{ session('success') }}
+                        <strong>Success!</strong> {{ session('msg') }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endsession

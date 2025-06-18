@@ -13,7 +13,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::paginate(6);
+        $products = Product::paginate(5);
         return view("admin.manageProduct", compact('products'));
     }
 
@@ -46,7 +46,7 @@ class ProductController extends Controller
         $data["image"] = $request->file("image")->store("product_images","public");
 
         $product = Product::create($data);
-        return redirect()->route('product.index')->with ('success', 'product inserted successfully.');
+        return redirect()->route('product.index')->with ('msg', 'product inserted successfully.');
 
     }
 
@@ -81,7 +81,7 @@ class ProductController extends Controller
     {
         {
         $product->delete();
-        return redirect()->back();
+        return redirect()->back()->with('msg', 'product Delete successfully.');
     }
     }
 }

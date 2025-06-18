@@ -12,7 +12,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-         $categories = Category::paginate(10);
+         $categories = Category::paginate(5);
        return view("admin.manageCategory", compact("categories"));
     }
 
@@ -39,15 +39,17 @@ class CategoryController extends Controller
         $category->cat_title = $request->cat_title;
         $category->cat_description = $request->cat_description;
 
-        if ($request->hasFile('cover_image')) {
-            $imageName = time().'.'.$request->cover_image->extension();
-            $request->cover_image->move(public_path('images'), $imageName);
-            $category->cover_image = $imageName;
-        }
+       
+    if ($request->hasFile('cover_image')) {
+        $imageName = time().'.'.$request->cover_image->extension();
+        // Save with custom name
+        $request->file("cover_image")->storeAs("category_images", $imageName, "public");
+        $category->cover_image = 'category_images/' . $imageName;
+    }
 
         $category->save();
 
-        return redirect()->route('category.index')->with('success', 'Category created successfully.');
+        return redirect()->route('category.index')->with('msg', 'Category created successfully.');
     }
 
     /**
@@ -80,6 +82,6 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-        return redirect()->back();
+        return redirect()->back()->with('msg', 'category Delete successfully.');
     }
 }

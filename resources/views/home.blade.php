@@ -6,7 +6,7 @@
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-md-12">
-        <img src="{{ asset("banner4.png") }}" width="2500px" alt="Happy Father's Day Family" class="img-fluid mx-auto d-block" />
+        <img src="https://d1f3aa6ifduais.cloudfront.net/assets/images/top-banners/banner2.jpg" width="2000px"   alt="Happy Father's Day Family" class="img-fluid mx-auto d-block" />
       </div>
     </div>
   </div>

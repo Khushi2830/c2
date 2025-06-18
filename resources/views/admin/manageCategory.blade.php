@@ -18,9 +18,9 @@
                     <a href="{{ Route('category.create') }}" class="btn  shadow-sm rounded-pill px-4" style="background-color: #6f42c1; color: white;" >Add Category</a>
                 </div>
             </div>
-              @session('success')
+              @session('msg')
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong>Success!</strong> {{ session('success') }}
+                        <strong>Success!</strong> {{ session('msg') }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endsession
@@ -54,7 +54,7 @@
                             </td>
                             <td>{{$category->cat_description}}</td>
                             <td>
-                                <img src="{{ asset('storage/' . $category->cover_image) }}" alt="{{ $category->cat_title }}" class="category-cover_image" width="100px">
+                                <img src="{{ asset("storage/" . $category->cover_image) }}" alt="{{ $category->cat_title }}" class="category-cover_image" width="100px">
                             </td>
                             <td class="">
                                 <div class="action-buttons d-flex gap-2 ">
