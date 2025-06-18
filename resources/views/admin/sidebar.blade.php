@@ -15,5 +15,5 @@
     <a href="{{ route("blog.index") }}" class="menu-item"> <i class="fas fa-cog"></i>Manage Blog </a>
     
     </div>
-    <a href="#" class="menu-item active m-2 "><i class="fas fa-sign-out-alt"></i> Logout </a>
+    <a href="{{ route("admin.logout") }}" class="menu-item active m-2 "><i class="fas fa-sign-out-alt"></i> Logout </a>
   </div>

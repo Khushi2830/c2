@@ -85,6 +85,6 @@ class BlogController extends Controller
     public function destroy(blog $blog)
     {
         $blog->delete();
-        return redirect()->back()->with('msg', 'blog Delete successfully.');
+        return redirect()->back()->with('maseg', 'blog Deleted successfully.');
     }
 }

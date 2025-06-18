@@ -81,7 +81,7 @@ class ProductController extends Controller
     {
         {
         $product->delete();
-        return redirect()->back()->with('msg', 'product Delete successfully.');
+        return redirect()->back()->with('maseg', 'product Deleted successfully.');
     }
     }
 }

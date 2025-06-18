@@ -24,6 +24,12 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endsession
+              @session('maseg')
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Delete!</strong> {{ session('msg') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endsession
                 
             <div class="table-responsive shadow rounded-4 bg-white p-3">
                 <table class="table table-striped align-middle table-hover mb-0">

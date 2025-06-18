@@ -18,9 +18,15 @@
                             style="background-color: #6f42c1; color: white;">Add Product</a>
                     </div>
                 </div>
-                @session (session('msg'))
+                @session('msg')
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         <strong>Success!</strong> {{ session('msg') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endsession
+              @session('maseg')
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Delete!</strong> {{ session('msg') }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endsession

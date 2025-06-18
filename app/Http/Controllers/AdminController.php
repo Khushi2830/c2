@@ -20,5 +20,9 @@ class AdminController extends Controller
        $users = User::paginate(10);
         return view("admin.manageUser", compact("users"));
     }
+    public function Adminlogout(Request $request){
+        auth()->logout();
+        return redirect()->route("login")->with("success", "You have been logged out successfully.");
+    }
 
 }

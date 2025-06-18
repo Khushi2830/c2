@@ -34,4 +34,4 @@ Route::middleware("admin:auth")->group(function(){
    });
       
 });
-  
+  route::get("/admin/logout", [AdminController::class, "Adminlogout"])->name("admin.logout");
