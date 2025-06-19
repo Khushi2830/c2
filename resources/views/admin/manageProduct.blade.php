@@ -16,7 +16,7 @@
                 <div class="d-flex gap-3">
                     <a href="{{ route('product.create') }}" class="btn  shadow-sm rounded-pill px-4" style="background-color: #6f42c1; color: white;" >Add Product</a>
                 </div>
-               
+            
             </div>
             @session('msg')
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
