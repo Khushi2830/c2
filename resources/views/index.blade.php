@@ -1,5 +1,7 @@
-@extends('homeparent')
+@extends('indexparent')
 @section('title', 'index Page')
 
-@section('content1')
+@section('content2')
+
+
 @endsection
