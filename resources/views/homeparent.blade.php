@@ -653,7 +653,7 @@ footer .border-top {
 
 </head>
 <body class="m-0 p-0" >
-    <nav class="navbar navbar-expand-lg shadow-sm  " style="background-color: #e4e0f4;">
+    <nav class="navbar navbar-expand-lg shadow-sm  ">
   <div class="container ">
 
 
@@ -682,8 +682,8 @@ footer .border-top {
             Become a Franchise
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Apply Now</a></li>
-            <li><a class="dropdown-item" href="#">FAQ</a></li>
+            <li><a class="dropdown-item" href="#">Manufacturing Franchise</a></li>
+            <li><a class="dropdown-item" href="#">Cake Shop Franchise</a></li>
           </ul>
         </li>
         <li class="nav-item">

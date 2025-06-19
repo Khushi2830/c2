@@ -16,7 +16,7 @@
     <div class="row mt-4 g-0">
      <div class="row">
          <div class="col-md-6 ">
-        <img src="{{ asset("banner1.jpg") }}" width="600px"alt="Order Online" class="img-fluid rounded">
+        <img src="{{ asset("banner1.png") }}" width="600px"alt="Order Online" class="img-fluid rounded">
         <button class="btn btn-monginis mt-3" style=" background-color: #5f3dc4;" >Visit Our Nearest Store</button>
       </div>
       <div class="col-md-6">
