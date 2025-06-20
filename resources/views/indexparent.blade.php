@@ -131,6 +131,55 @@
       }
     }
   </style>
+  <style>
+        body {
+            background: #fdf4ff url('https://www.transparenttextures.com/patterns/cup-cakes.png') repeat;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        /* .header {
+            background-color: #792dc4;
+            color: white;
+            padding: 5px 0;
+            text-align: center;
+        } */
+        .form-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            margin-top: 30px;
+            margin-bottom: 60px;
+            padding: 40px;
+        }
+        .form-label {
+            font-weight: bold;
+            color: #792dc4;
+        }
+        .form-control,
+        .form-select {
+            border: 2px solid #e4c8f4;
+            border-radius: 8px;
+        }
+        .btn-submit {
+            background-color: #792dc4;
+            color: white;
+            border-radius: 8px;
+            padding: 10px 30px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .btn-submit:hover {
+            background-color: #5e21a3;
+        }
+        .terms {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        .terms a {
+            color: #792dc4;
+            text-decoration: underline;
+        }
+    </style>
+
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
