@@ -85,3 +85,4 @@ class CategoryController extends Controller
         return redirect()->back()->with('maseg', 'category Deleted successfully.');
     }
 }
+

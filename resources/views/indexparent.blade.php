@@ -160,7 +160,7 @@
 
 @section('content2')
 @show
-     <div class="row g-0">
+     <div class="row g-0 mt-5">
     <div class="col-md-6 top-section d-flex flex-column justify-content-center">
       <h2>Visit & Experience Our Service In Your City</h2>
       <button class="btn btn-dark find-stores-btn">
