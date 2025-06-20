@@ -39,4 +39,7 @@ Route::middleware("admin:auth")->group(function(){
 Route::resource("/provider", ProviderController::class,);
 Route::get("/shopFranchise", [ProviderController::class, "index"])->name("shopFranchise");
 Route::get("/admin/manageFranchise", [AdminController::class, "index1"])->name("manageFranchise");
+Route::get("/admin/manageEmploye", [AdminController::class, "manageEmploye"])->name("manageEmploye");
  
+Route::get('/admin/manage-employee', [AdminController::class, 'manageEmploye'])->name('manageEmployee');
+Route::post('/admin/approve-franchise/{provider}', [AdminController::class, 'approveFranchise'])->name('approveFranchise');
