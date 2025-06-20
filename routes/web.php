@@ -38,4 +38,5 @@ Route::middleware("admin:auth")->group(function(){
   route::get("/admin/logout", [AdminController::class, "Adminlogout"])->name("admin.logout");
 Route::resource("/provider", ProviderController::class,);
 Route::get("/shopFranchise", [ProviderController::class, "index"])->name("shopFranchise");
+Route::get("/admin/manageFranchise", [AdminController::class, "index1"])->name("manageFranchise");
  

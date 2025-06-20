@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\provider;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -25,4 +26,9 @@ class AdminController extends Controller
         return redirect()->route("login")->with("success", "You have been logged out successfully.");
     }
 
+    public function index1()
+    {
+         $providers = provider::all();
+        return view('admin.manageFranchise',compact('providers'));
+    }
 }

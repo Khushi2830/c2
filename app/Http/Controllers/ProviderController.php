@@ -15,6 +15,7 @@ class ProviderController extends Controller
         $providers = provider::all();
         return view('shopFranchise',compact('providers'));
     }
+    
 
     /**
      * Show the form for creating a new resource.
