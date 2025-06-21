@@ -26,15 +26,21 @@ class AdminController extends Controller
         return redirect()->route("login")->with("success", "You have been logged out successfully.");
     }
 
-    public function index1()
-    {
-         $providers = provider::all();
-        return view('admin.manageFranchise',compact('providers'));
-    }
-    public function manageFranchise(){
-        $providers = provider::where("status", false)->get();
-        return view("admin.manageFranchise", compact("providers"));
-    }
+    
+   public function manageFranchise(){
+    $providers = provider::where("status", false)->get();
+    return view("admin.manageFranchise", compact("providers"));
+}
+
+public function manageEmploye(){
+    $providers = provider::where("status", true)->get();
+    return view('admin.manageEmploye', compact("providers"));
+}
+public function approveFranchise($id){
+    Provider::find($id)->update(["status" => 1]);
+    return redirect()->route('manageEmploye')->with("msg", "Provider approved successfully");
+}
+
     // public function approveFranchise($id)
     // {
     //     $provider = provider::findOrFail($id);
@@ -55,24 +61,24 @@ class AdminController extends Controller
     //     $providers = provider::where("status", true)->get();
     //     return view("admin.manageEmploye", compact("providers"));
     // }
-    public function approveFranchise(provider $provider)
-{
-    if ($provider->status) {
-        return redirect()->route("manageEmploye")
-            ->with("msg", "This provider is already approved.");
-    }
+//     public function approveFranchise(provider $provider)
+// {
+//     if ($provider->status) {
+//         return redirect()->route("manageEmploye")
+//             ->with("msg", "This provider is already approved.");
+//     }
 
-    $provider->update(["status" => true]);
+//     $provider->update(["status" => true]);
 
-    return redirect()->route("manageEmploye")
-        ->with("msg", "Provider approved successfully.");
-}
+//     return redirect()->route("manageEmploye")
+//         ->with("msg", "Provider approved successfully.");
+// }
 
-public function manageEmploye()
-{
-    $providers = provider::where("status", true)->get();
+// public function manageEmploye()
+// {
+//     $providers = provider::where("status", true)->get();
 
-    return view("admin.manageEmploye", compact("providers"));
-}
+//     return view("admin.manageEmploye", compact("providers"));
+// }
 
 }
