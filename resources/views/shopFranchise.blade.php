@@ -113,7 +113,7 @@
                         </div>
                         <div class="mb-3">
                             <p class="terms">
-                                By clicking I Accept & Submit, you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.
+                                By clicking I Accept & Submit, you agree to our  and <a href="{{ route("signup") }}">Sin-up Provider</a>.
                             </p>
                         </div>
                         <div class="text-center">

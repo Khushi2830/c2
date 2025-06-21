@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\EnployController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 
@@ -35,6 +36,8 @@ Route::middleware("admin:auth")->group(function(){
        
    });
 });
+   Route::get("/signup",[EnployController::class, "signup"])->name("signup");
+  
   route::get("/admin/logout", [AdminController::class, "Adminlogout"])->name("admin.logout");
 Route::resource("/provider", ProviderController::class,);
 Route::get("/shopFranchise", [ProviderController::class, "index"])->name("shopFranchise");

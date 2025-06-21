@@ -40,28 +40,25 @@
                     </thead>
                     
                     <tbody class="text-center">
-                      @foreach ($providers as $provider)
+                      @foreach ($franchises as $fr)
                       
 
                         <tr>
-                            <td>{{$provider->id}}</td>
-                            <td>{{$provider->name}}</td>
-                            <td>{{$provider->email}}</td>
-                            <td>{{$provider->phone}}</td>
-                            <td class="">
+                            <td>{{$fr->id}}</td>
+                            <td>{{$fr->name}}</td>
+                            <td>{{$fr->email}}</td>
+                            <td>{{$fr->phone}}</td>
+                            <td class="text-center">
                                 <div class="action-buttons d-flex gap-2 ">
-                                        <form method="post" action="{{ route('provider.destroy', $provider) }}" class="delete-form">
-                                            @csrf
-                                            @method("delete")
-                                            <button type="submit" class="btn btn-sm" style="background-color: blueviolet; color: white;" title="Delete provider">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
-                                                <span>Delete</span>
-                                            </button>
-                                            <a href="{{ route('approveFranchise', $provider->id) }}" class=" btn btn-approve" style="background-color: blueviolet; color: white;" title="Approve admission">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                                                <span>Approve</span>
-                                            </a>
-                                        </form>
+                                       
+                                
+                                        <a href="#" class="btn btn-danger btn-sm" style=" background-color: #8a2be2;" >
+                                            <i class="bi bi-x-circle"></i>  Cancel
+                                        </a>
+                                        <a href="{{ route('approveFranchise', $fr->id) }}" style=" background-color: #8a2be2;"class="btn btn-success btn-sm">
+                                            <i class="bi bi-check-circle"></i> Approve
+                                        </a>
+                                    
                                         
                                     </div>
                              </td>

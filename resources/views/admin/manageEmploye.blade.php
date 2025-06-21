@@ -40,17 +40,17 @@
                     </thead>
                     
                     <tbody class="text-center">
-                      @foreach ($providers as $provider)
+                      @foreach ($employes as $em)
                       
 
                         <tr>
-                            <td>{{$provider->id}}</td>
-                            <td>{{$provider->name}}</td>
-                            <td>{{$provider->email}}</td>
-                            <td>{{$provider->phone}}</td>
+                            <td>{{$em->id}}</td>
+                            <td>{{$em->name}}</td>
+                            <td>{{$em->email}}</td>
+                            <td>{{$em->phone}}</td>
                             <td class="">
                                 <div class="action-buttons d-flex gap-2 ">
-                                        <form method="post" action="{{ route('provider.destroy', $provider) }}" class="delete-form">
+                                        <form method="post" action="{{ route('provider.destroy', $em) }}" class="delete-form">
                                             @csrf
                                             @method("delete")
                                             <button type="submit" class="btn btn-sm" style="background-color: blueviolet; color: white;" title="Delete provider">

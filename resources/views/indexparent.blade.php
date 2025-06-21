@@ -132,6 +132,124 @@
     }
   </style>
   <style>
+    body {
+      background-color: #fdf8f4;
+    }
+    .category-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      height: 200px;
+    }
+    .category-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .category-card:hover img {
+      transform: scale(1.05);
+    }
+    .category-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .section-title {
+      color: #e91e63;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  </style>
+  <style>
+    body {
+      background-color: #fdf8f4;
+    }
+
+    .product-card {
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover {
+      transform: scale(1.01);
+    }
+
+    .product-img {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .price-tag {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background-color: #e91e63;
+      color: #fff;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .veg-icon {
+      height: 18px;
+      margin-right: 6px;
+    }
+
+    .add-cart-btn {
+      background-color: #e91e63;
+      border-radius: 50%;
+      color: white;
+      padding: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-details {
+      padding: 12px;
+    }
+
+    .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .weight-box {
+      border: 1px solid #ddd;
+      padding: 4px 8px;
+      border-radius: 6px;
+    }
+
+    h2.section-title {
+      color: #e91e63;
+      font-weight: 700;
+      text-align: center;
+      margin: 30px 0 20px;
+    }
+  </style>
+  <style>
         body {
             background: #fdf4ff url('https://www.transparenttextures.com/patterns/cup-cakes.png') repeat;
             font-family: 'Segoe UI', sans-serif;

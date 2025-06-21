@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+   
     public function index(){
         $countCategory = Category::where("status", true)->count();
         $countProduct = Product::where("status", false)->count();
@@ -28,16 +29,17 @@ class AdminController extends Controller
 
     
    public function manageFranchise(){
-    $providers = provider::where("status", false)->get();
-    return view("admin.manageFranchise", compact("providers"));
+    $franchises = provider::where("status", false)->get();
+    return view("admin.manageFranchise", compact("franchises"));
 }
 
 public function manageEmploye(){
-    $providers = provider::where("status", true)->get();
-    return view('admin.manageEmploye', compact("providers"));
+    $employes = provider::where("status", true)->get();
+    return view('admin.manageEmploye', compact("employes"));
 }
 public function approveFranchise($id){
-    Provider::find($id)->update(["status" => 1]);
+   Provider::find($id)->update(["status"=>1]);
+
     return redirect()->route('manageEmploye')->with("msg", "Provider approved successfully");
 }
 
