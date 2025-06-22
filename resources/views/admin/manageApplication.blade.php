@@ -40,29 +40,7 @@
                     </thead>
                     
                     <tbody class="text-center">
-                      @foreach ($franchises as $fr)
-                      
-
-                        <tr>
-                            <td>{{$fr->id}}</td>
-                            <td>{{$fr->name}}</td>
-                            <td>{{$fr->email}}</td>
-                            <td>{{$fr->phone}}</td>
-                            <td class="text-center">
-                                <div class="action-buttons d-flex gap-2 ">
-                                       
-                                
-                                        <a href="#" class="btn btn-danger btn-sm" style=" background-color: #8a2be2;" >
-                                            <i class="bi bi-x-circle"></i>  Cancel
-                                        </a>
-                                        <a href="{{ route('approveFranchise', $fr->id) }}" style=" background-color: #8a2be2;"class="btn btn-success btn-sm">
-                                            <i class="bi bi-check-circle"></i> Approve
-                                        </a>
-                                    
-                                        
-                                    </div>
-                             </td>
-                      @endforeach
+            
                         
                     </tbody>
                 </table>

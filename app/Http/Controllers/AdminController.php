@@ -28,59 +28,7 @@ class AdminController extends Controller
     }
 
     
-   public function manageFranchise(){
-    $franchises = provider::where("status", false)->get();
-    return view("admin.manageFranchise", compact("franchises"));
-}
+   
 
-public function manageEmploye(){
-    $employes = provider::where("status", true)->get();
-    return view('admin.manageEmploye', compact("employes"));
-}
-public function approveFranchise($id){
-   Provider::find($id)->update(["status"=>1]);
-
-    return redirect()->route('manageEmploye')->with("msg", "Provider approved successfully");
-}
-
-    // public function approveFranchise($id)
-    // {
-    //     $provider = provider::findOrFail($id);
-    //     $provider->status = true;
-    //     $provider->save();
-    //     return redirect()->back()->with("success", "Franchise approved successfully.");
-    // }
-    //  public function approveFranchise(provider $provider){
-    //     if($provider->status){
-    //         return redirect()->route("manageEmploye")->with("msg","this student already approved");
-    //     }
-    //     $provider->update(["status" =>true]);
-    //     return redirect()->route("manageEmploye")->with("msg","student Approved successfully");
-    //  }
-
-    // public function manageEmploye()
-    // {
-    //     $providers = provider::where("status", true)->get();
-    //     return view("admin.manageEmploye", compact("providers"));
-    // }
-//     public function approveFranchise(provider $provider)
-// {
-//     if ($provider->status) {
-//         return redirect()->route("manageEmploye")
-//             ->with("msg", "This provider is already approved.");
-//     }
-
-//     $provider->update(["status" => true]);
-
-//     return redirect()->route("manageEmploye")
-//         ->with("msg", "Provider approved successfully.");
-// }
-
-// public function manageEmploye()
-// {
-//     $providers = provider::where("status", true)->get();
-
-//     return view("admin.manageEmploye", compact("providers"));
-// }
-
+    
 }

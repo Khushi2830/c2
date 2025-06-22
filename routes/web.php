@@ -36,11 +36,5 @@ Route::middleware("admin:auth")->group(function(){
        
    });
 });
-   Route::get("/signup",[EnployController::class, "signup"])->name("signup");
-  
+   
   route::get("/admin/logout", [AdminController::class, "Adminlogout"])->name("admin.logout");
-Route::resource("/provider", ProviderController::class,);
-Route::get("/shopFranchise", [ProviderController::class, "index"])->name("shopFranchise");
-Route::get("/admin/manageFranchise", [AdminController::class, "manageFranchise"])->name("manageFranchise");
-Route::get("/admin/manageEmploye", [AdminController::class, "manageEmploye"])->name("manageEmploye");
-Route::get('/admin/approveFranchise/{provider}', [AdminController::class, 'approveFranchise'])->name('approveFranchise');

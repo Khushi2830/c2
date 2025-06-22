@@ -39,7 +39,7 @@ class HomeController extends Controller
     return view("register");
 } 
     public function login(Request $req){
-  if($req->isMethod("POST")){
+   if($req->isMethod("POST")){
     $data = $req->validate([
       "email"=> "required|email",
       "password"=> "required",
