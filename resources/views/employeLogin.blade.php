@@ -5,9 +5,15 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5">
+               
                 <div class="form-container">
+                     @session("error")
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endsession
                     <h4 class="mb-4">Signup here<span style="color:#792dc4;"> Creamer Franchise</span></h4>
-                    <form action="{{ route("provider.store") }}" method="POST">
+                    <form action="" method="POST">
                         @csrf
                         <div class="row mb-3">
                             <div class="col-md-6 w-100">
@@ -34,7 +40,7 @@
                         
                         <div class="mb-3">
                             <p class="terms text-center ">
-                                 <a href="{{ route("shopFranchise") }}">Sin-up Provider</a>.
+                                 <a href="{{ route("registerForm") }}">Sin-up Provider</a>.
                             </p>
                         </div>
                     </form>

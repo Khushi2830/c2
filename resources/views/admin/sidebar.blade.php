@@ -12,7 +12,7 @@
     <a href="#" class="menu-item"><i class="fas fa-users"></i> Manage Address </a>
     <a href="#" class="menu-item"> <i class="fas fa-credit-card"></i> Manage Payment </a>
     <a href="{{ route("manageEmploye") }}" class="menu-item"><i class="fas fa-chart-bar"></i>Manage Employe</a>
-    <a href="{{ route("manageFranchise") }}" class="menu-item"><i class="fas fa-chart-bar"></i> Manage Franchise</a>
+    <a href="{{ route("manageApplication") }}" class="menu-item"><i class="fas fa-chart-bar"></i> Employee Application</a>
     <a href="{{ route("blog.index") }}" class="menu-item"> <i class="fas fa-cog"></i>Manage Blog </a>
     
     </div>

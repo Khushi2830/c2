@@ -3,8 +3,10 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EnployController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PosController;
 use App\Http\Controllers\ProductController;
 
 use App\Http\Controllers\ProviderController;
@@ -38,3 +40,28 @@ Route::middleware("admin:auth")->group(function(){
 });
    
   route::get("/admin/logout", [AdminController::class, "Adminlogout"])->name("admin.logout");
+
+  // EMPLOYEE ROUTES
+  Route::prefix("/employee")->group(function(){
+       Route::get('/register', [EmployeeController::class, 'showRegisterForm'])->name('registerForm');
+       Route::post('/register', [EmployeeController::class, 'register'])->name('employeregister');
+       Route::get('/login', [EmployeeController::class, 'showLoginForm'])->name('loginForm');
+       Route::post('/login', [EmployeeController::class, 'login'])->name('.login');
+       Route::post('/logout', [EmployeeController::class, 'logout'])->name('logout');
+
+        
+  });
+
+  Route::get('/pos', [PosController::class, 'index'])->name('pos');
+
+
+
+// View pending applications
+Route::get('/admin/applications', [AdminController::class, 'manageApplication'])->name('manageApplication');
+
+// View approved employees
+Route::get('/admin/employees', [AdminController::class, 'manageEmploye'])->name('manageEmploye');
+
+// Approve a single employee
+Route::post('/admin/employee/approve/{employee}', [AdminController::class, 'approveEmployee'])->name('admin.approveEmployee');
+

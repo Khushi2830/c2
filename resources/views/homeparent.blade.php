@@ -682,7 +682,7 @@ footer .border-top {
             Become a Franchise
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{{ route("shopFranchise") }}">Manufacturing Franchise</a></li>
+            <li><a class="dropdown-item" href="{{ route("registerForm") }}">Manufacturing Franchise</a></li>
             <li><a class="dropdown-item" href="">Cake Shop Franchise</a></li>
           </ul>
         </li>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Employee;
 use App\Models\Product;
 use App\Models\provider;
 use App\Models\User;
@@ -26,9 +27,23 @@ class AdminController extends Controller
         auth()->logout();
         return redirect()->route("login")->with("success", "You have been logged out successfully.");
     }
+    public function manageApplication() {
+    $applications = Employee::where("status", false)->get();
+    return view("admin.manageApplication", compact("applications"));
+}
 
-    
+public function manageEmploye() {
+    $employes = Employee::where("status", true)->get();
+    return view('admin.manageEmploye', compact("employes"));
+}
+
+
+   public function approveEmployee(Employee $employee) {
+    if (!$employee->status) {
+        $employee->update(['status' => true]);
+        return back()->with('msg', 'Employee approved.');
+    }
+    return back()->with('msg', 'Already approved.');
+}
    
-
-    
 }

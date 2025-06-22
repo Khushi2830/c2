@@ -40,7 +40,26 @@
                     </thead>
                     
                     <tbody class="text-center">
-            
+                        @foreach($applications as $employee)
+                            <tr>
+                                <td>{{ $employee->id }}</td>
+                                <td>{{ $employee->name }}</td>
+                                <td>{{ $employee->email }}</td>
+                                <td>{{ $employee->phone }}</td>
+                                <td>
+                                    <form action="{{ route('admin.approveEmployee', $employee->id) }}" method="POST" class="d-inline">
+                                        @csrf
+                                       
+                                        <button type="submit" class="btn btn-success btn-sm">Approve</button>
+                                    </form>
+                                    <form action="" method="POST" class="d-inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
                         
                     </tbody>
                 </table>

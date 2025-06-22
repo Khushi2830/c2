@@ -5,9 +5,15 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10">
+              
                 <div class="form-container">
+                       @session('mis')
+                                <div class="alert alert-warning">
+                                    {{ session('mis') }}
+                                </div>
+                            @endsession
                     <h4 class="mb-4">Fill up below form to register for <span style="color:#792dc4;">Creamer Franchise</span></h4>
-                    <form action="{{ route("provider.store") }}" method="POST">
+                    <form action="{{ route("registerForm") }}" method="POST">
                         @csrf
                         <div class="row mb-3">
                             <div class="col-md-6">
@@ -18,9 +24,9 @@
                                  @enderror
                            </div>
                             <div class="col-md-6">
-                                <label for="lastname" class="form-label">Last Name</label>
-                                <input type="text" id="lastname" name="lastname" class="form-control" value="{{ old('lastname') }}" placeholder="Enter your last name">
-                                 @error('name')
+                                <label for="last_name" class="form-label">Last Name</label>
+                                <input type="text" id="last_name" name="last_name" class="form-control" value="{{ old('last_name') }}" placeholder="Enter your last name">
+                                 @error('last_name')
                                    <p class="text-danger small mt-1">{{ $message }}</p>
                                  @enderror
                             </div>
@@ -62,7 +68,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" id="password" name="password" class="form-control" vlaue="{{ old('password') }}" placeholder="Enter your pincode">
+                                <input type="password" id="password" name="password" class="form-control" vlaue="{{ old('password') }}" placeholder="Enter your password">
                                 @error('password')
                                     <p class="text-danger small mt-1">{{ $message }}</p>
                                 @enderror
@@ -105,7 +111,7 @@
                             </div>
                             <div  class="col-md-6">
                                 <label for="description" class="form-label">What Is Your Current Business?</label>
-                                <textarea id="description" name="description" class="form-control" rows="2" vlaue="{{ old('description') }}" placeholder="Enter your current business"></textarea>
+                                <textarea id="description" name="description" class="form-control" rows="2"  placeholder="Enter your current business">{{ old('description') }}</textarea>
                                 @error('description')
                                     <p class="text-danger small mt-1">{{ $message }}</p>
                                 @enderror
@@ -113,12 +119,13 @@
                         </div>
                         <div class="mb-3">
                             <p class="terms">
-                                By clicking I Accept & Submit, you agree to our  and <a href="{{ route("signup") }}">Sin-up Provider</a>.
+                                By clicking I Accept & Submit, you agree to our  and <a href="{{ route("loginForm") }}">Sin-up Provider</a>.
                             </p>
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-submit">I Accept & Submit</button>
-                        </div>
+                            </div>
+                           
                     </form>
                 </div>
             </div>
