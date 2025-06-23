@@ -40,7 +40,7 @@ Route::middleware("admin:auth")->group(function(){
 });
    
   route::get("/admin/logout", [AdminController::class, "Adminlogout"])->name("admin.logout");
-  route::get("/index/logout", [HomeController::class, "Indexlogout"])->name("page.logout");
+  route::get("/index/logout", [HomeController::class, "Indexlogout"])->name("index.logout");
 
   // EMPLOYEE ROUTES
   Route::prefix("/employee")->group(function(){
