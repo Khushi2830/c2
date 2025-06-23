@@ -21,7 +21,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-    return view("admin.insertCategory");
+         $categories = Category::paginate(5); 
+    return view("admin.insertCategory" , compact("categories"));
     }
 
     /**
@@ -33,11 +34,13 @@ class CategoryController extends Controller
             'cat_title' => 'required|unique:categories,cat_title',
             'cat_description' => 'nullable',
             'cover_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'category_id' => 'nullable|exists:categories,id',
         ]);
 
         $category = new Category();
         $category->cat_title = $request->cat_title;
         $category->cat_description = $request->cat_description;
+        $category->category_id = $request->category_id;
 
        
     if ($request->hasFile('cover_image')) {

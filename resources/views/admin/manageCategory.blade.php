@@ -52,11 +52,7 @@
                             <td>{{$category->id}}</td>
                             <td>{{$category->cat_title}}</td>
                             <td>
-                                @if ($category->category_id)
-                                    {{$category->parentCategory->cat_title}}
-                                @else
-                                    <span class="text-muted">No Parent Category</span>
-                                @endif
+                                {{ $category->subcategories ? $category->subcategories->cat_title :NULL}}
                             </td>
                             <td>{{$category->cat_description}}</td>
                             <td>
