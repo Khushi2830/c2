@@ -22,7 +22,7 @@ class CategoryController extends Controller
     public function create()
     {
          $categories = Category::paginate(5); 
-    return view("admin.insertCategory" , compact("categories"));
+    return view("admin.insertCategory" , );
     }
 
     /**
