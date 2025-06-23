@@ -66,4 +66,9 @@ public function index(){
   return view("index", compact("categories"));
 }
 
+public function Indexlogout(Request $request){
+        auth()->logout();
+        return redirect()->route("home")->with("success", "you have been logged out successfully.");
+    }
+
 }

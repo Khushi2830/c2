@@ -47,6 +47,8 @@ Route::middleware("admin:auth")->group(function(){
    
   route::get("/admin/logout", [AdminController::class, "Adminlogout"])->name("admin.logout");
 
+  
+
   // EMPLOYEE ROUTES
   Route::prefix("/employee")->group(function(){
        Route::get('/register', [EmployeeController::class, 'showRegisterForm'])->name('registerForm');
@@ -72,3 +74,4 @@ Route::get('/admin/employees', [AdminController::class, 'manageEmploye'])->name(
 // Approve a single employee
 Route::post('/admin/employee/approve/{employee}', [AdminController::class, 'approveEmployee'])->name('admin.approveEmployee');
 
+  route::get("/index/logout", [HomeController::class, "Indexlogout"])->name("index.logout");
