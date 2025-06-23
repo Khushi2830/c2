@@ -21,9 +21,14 @@ Route::match(['get', 'post'], '/login', [HomeController::class, 'login'])->name(
 Route::get("/histroy",[HomeController::class, "histroy"])->name("histroy");
 Route::get("/blog1",[HomeController::class, "blog1"])->name("blog1");
 
- Route::prefix("index")->group(function(){
+Route::middleware("index:auth")->group(function(){
+
+    Route::prefix("index")->group(function(){
         Route::get("/page",[HomeController::class, "index"])->name("index");
    });
+});
+
+
 
 Route::middleware("admin:auth")->group(function(){
 
@@ -38,6 +43,7 @@ Route::middleware("admin:auth")->group(function(){
        
    });
 });
+
    
   route::get("/admin/logout", [AdminController::class, "Adminlogout"])->name("admin.logout");
 
@@ -51,6 +57,7 @@ Route::middleware("admin:auth")->group(function(){
 
         
   });
+  
 
   Route::get('/pos', [PosController::class, 'index'])->name('pos');
 

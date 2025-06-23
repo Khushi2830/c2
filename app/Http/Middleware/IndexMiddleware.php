@@ -4,9 +4,10 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class IndexMiddleware
+class indexMiddleware
 {
     /**
      * Handle an incoming request.
@@ -15,6 +16,12 @@ class IndexMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
+        // ✅ Check if user is logged in and status == 0
+        if (Auth::check() && Auth::user()->status == 0) {
+            return redirect('/index/page')->with('message', 'You are redirected to user page.');
+        }
+
+       
         return $next($request);
     }
 }
