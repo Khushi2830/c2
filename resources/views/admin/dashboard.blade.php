@@ -48,8 +48,8 @@
                         <div class="col-md-4">
                             <div class="stat-card">
                                 <div class="icon-box"><i class="bi bi-person-badge"></i></div>
-                                <small>Total Provider</small>
-                                <h5>59</h5>
+                                <small>Total Employe</small>
+                                <h5>{{$countEmployee}}</h5>
                                 <div class="chart-bg"></div>
                             </div>
                         </div>

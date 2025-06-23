@@ -16,7 +16,8 @@ class AdminController extends Controller
         $countCategory = Category::where("status", true)->count();
         $countProduct = Product::where("status", false)->count();
         $countUser = User::where("status", false)->count();
-        return view("admin.dashboard", compact("countCategory", "countProduct", "countUser"));  
+        $countEmployee = Employee::where("status", true)->count();
+        return view("admin.dashboard", compact("countCategory", "countProduct", "countUser","countEmployee"));  
     }
 
     public function manageUser(){
@@ -25,7 +26,7 @@ class AdminController extends Controller
     }
     public function Adminlogout(Request $request){
         auth()->logout();
-        return redirect()->route("login")->with("success", "You have been logged out successfully.");
+        return redirect()->route("home")->with("success", "You have been logged out successfully.");
     }
     public function manageApplication() {
     $applications = Employee::where("status", false)->get();
