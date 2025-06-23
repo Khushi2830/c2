@@ -52,6 +52,8 @@
                             <td>{{$category->id}}</td>
                             <td>{{$category->cat_title}}</td>
                             <td>
+
+                            
                                 {{ $category->subcategories ? $category->subcategories->cat_title :NULL}}
                             </td>
                             <td>{{$category->cat_description}}</td>

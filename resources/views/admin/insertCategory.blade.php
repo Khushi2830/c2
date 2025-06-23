@@ -50,12 +50,14 @@
                                 <label for="">Parent Category</label>
                                 <select name="category_id" class="form-select">
                                     <option value="">Parent Category</option>
-                                    @foreach ($categories as $category)
+                            
+                                
+                                 @foreach ($categories as $category)
                                         <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
                                             {{ $category->cat_title }}
                                         </option>
                                     @endforeach
-                                </select>
+                                    </select>
                                 @error('category_id')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
