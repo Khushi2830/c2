@@ -15,47 +15,15 @@
   <h2 class="section-title" style="color: #7b2dc3;">Our Categories</h2>
   <div class="row g-4">
     <!-- Cakes -->
+    @foreach ($categories as $category )
+      
     <div class="col-md-6 col-lg-4">
       <div class="category-card">
-        <img src="https://d1f3aa6ifduais.cloudfront.net/assets/images/products/LTPe6PEn4d5YYV8xIVApwtjsdQa1zoaIlC6O1CCI.jpg" alt="Cakes">
-        <div class="category-overlay">Cakes</div>
+        <img src="{{ asset('storage/' . $category->cover_image) }}" alt="{{ $category->cat_title }}">
+        <div class="category-overlay">{{ $category->cat_title }}</div>
       </div>
     </div>
-    <!-- Pastries -->
-    <div class="col-md-6 col-lg-4">
-      <div class="category-card">
-        <img src="https://d1f3aa6ifduais.cloudfront.net/assets/images/products/1622273640616_44.jpg" alt="Pastries">
-        <div class="category-overlay">Pastries</div>
-      </div>
-    </div>
-    <!-- Bakesware -->
-    <div class="col-md-6 col-lg-4">
-      <div class="category-card">
-        <img src="https://d1f3aa6ifduais.cloudfront.net/assets/images/products/1622099160880_54.jpg" alt="Bakesware">
-        <div class="category-overlay">Bakesware</div>
-      </div>
-    </div>
-    <!-- Savouries -->
-    <div class="col-md-6 col-lg-4">
-      <div class="category-card">
-        <img src="https://d1f3aa6ifduais.cloudfront.net/assets/images/products/1622187602664_0.jpeg" alt="Savouries">
-        <div class="category-overlay">Savouries</div>
-      </div>
-    </div>
-    <!-- Chocolates -->
-    <div class="col-md-6 col-lg-4">
-      <div class="category-card">
-        <img src="https://assets.winni.in/product/primary/2022/2/57895.jpeg?dpr=1&w=400" alt="Chocolates">
-        <div class="category-overlay">Chocolates</div>
-      </div>
-    </div>
-    <!-- Donuts -->
-    <div class="col-md-6 col-lg-4">
-      <div class="category-card">
-        <img src="https://www.fnp.com/images/pr/l/v300/donut-shaped-cushion-pillow_1.jpg" alt="Donuts">
-        <div class="category-overlay">Donuts</div>
-      </div>
-    </div>
+    @endforeach
   </div>
 </div>
 

@@ -56,7 +56,7 @@
                             
                                 {{ $category->subcategories ? $category->subcategories->cat_title :NULL}}
                             </td>
-                            <td>{{$category->cat_description}}</td>
+                            <td>{{ Str::limit($category->cat_description, 50) }}</td> 
                             <td>
                                 <img src="{{ asset("storage/" . $category->cover_image) }}" alt="{{ $category->cat_title }}" class="category-cover_image" width="100px">
                             </td>
