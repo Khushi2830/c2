@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\blog;
+use App\Models\category;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -61,7 +62,8 @@ class HomeController extends Controller
 }
  
 public function index(){
-  return view("index");
+  $categories = category::all();
+  return view("index", compact("categories"));
 }
 
 }
