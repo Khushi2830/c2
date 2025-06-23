@@ -21,7 +21,8 @@
       </div>
       <div class="col-md-6">
         <img src="{{ asset("banner2.jpg") }}" width="600px" alt="Visit Store" class="img-fluid rounded">
-        <button class="btn btn-monginis mt-3" style=" background-color: #5f3dc4;" >Order Online</button>
+        
+        <a class="btn btn-monginis mt-3" style=" background-color: #5f3dc4;" href="{{ route("index") }}">Order Online</a>
       </div>
     </div>
      </div>
@@ -42,7 +43,7 @@
             style="max-width: 200px; object-fit: cover;">
           <div class="ms-4 text-start flex-grow-1">
             <h5 class="fw-bold mb-2">Birthday Surprises</h5>
-            <button class="btn btn-monginis" style=" background-color: #5f3dc4;">View all</button>
+            <a  class="btn btn-monginis" style=" background-color: #5f3dc4;" href="{{ route("index") }}">View all</a>
           </div>
         </div>
       </div>
@@ -56,7 +57,7 @@
             style="max-width: 200px; object-fit: cover;">
           <div class="ms-4 text-start flex-grow-1">
             <h5 class="fw-bold mb-2">Anniversary Surprises</h5>
-            <button class="btn btn-monginis" style=" background-color: #5f3dc4;">View all</button>
+            <a  class="btn btn-monginis" style=" background-color: #5f3dc4;" href="{{ route("index") }}">View all</a>
           </div>
         </div>
       </div>
@@ -69,7 +70,7 @@
   <div class="container py-4">
   <div class="d-flex justify-content-between align-items-center mb-4">
     <h2 class="fw-bold">Shop By <span  style=" color: #5f3dc4;">Cake</span></h2>
-    <a href="#" class="btn " style="background-color:#5f3dc4; color: white;">View all</a>
+    <a  class="btn btn-monginis" style=" background-color: #5f3dc4;" href="{{ route("index") }}">View all</a>
   </div>
 
   <div class="row text-center">
@@ -98,7 +99,7 @@
   <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-4">
       <h2 class="fw-bold">Shop By <span class="text-pink" style=" color: #5f3dc4;">3D Cakes</span></h2>
-      <a href="#" class="btn" style="background-color:#5f3dc4; color: white;" >View all</a>
+      <a  class="btn btn-monginis" style=" background-color: #5f3dc4;" href="{{ route("index") }}">View all</a>
     </div>
 
     <div class="row text-center">
@@ -127,7 +128,7 @@
   <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
       <h2 class="fw-bold mb-3 mb-md-0">Shop By <span style=" color: #5f3dc4;">Pastry</span></h2>
-      <a href="#" class="btn" style="background-color:#5f3dc4; color: white;">View all</a>
+     <a  class="btn btn-monginis" style=" background-color: #5f3dc4;" href="{{ route("index") }}">View all</a>
     </div>
 
     <div class="row text-center">
@@ -156,7 +157,7 @@
   <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
       <h2 class="fw-bold mb-3 mb-md-0">Shop By <span style=" color: #5f3dc4;" >Savories</span></h2>
-      <a href="#" class="btn" style="background-color:#5f3dc4; color: white;">View all</a>
+     <a  class="btn btn-monginis" style=" background-color: #5f3dc4;" href="{{ route("index") }}">View all</a>
     </div>
 
     <div class="row text-center">
@@ -185,7 +186,7 @@
   <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
       <h2 class="fw-bold mb-3 mb-md-0">Shop By <span style=" color: #5f3dc4;" >Chocolates</span></h2>
-      <a href="#" class="btn" style="background-color:#5f3dc4; color: white;" >View all</a>
+    <a  class="btn btn-monginis" style=" background-color: #5f3dc4;" href="{{ route("index") }}">View all</a>
     </div>
 
     <div class="row text-center">

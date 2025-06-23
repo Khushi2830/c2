@@ -304,8 +304,9 @@
     <div class="header d-flex align-items-center justify-content-between">
     <!-- Left Section -->
     <div class="d-flex align-items-center gap-3">
-      <div class="logo"><img src="{{ asset("logo.png") }}" width="200px" alt=""></div>
-      <button class="partner-btn dropdown-toggle">Partner With Us</button>
+      <a href="{{ route("index") }}"> <div class="logo"><img src="{{ asset("logo.png") }}" width="200px" alt=""></div></a>
+     
+      
     </div>
 
     <!-- Center Section -->
