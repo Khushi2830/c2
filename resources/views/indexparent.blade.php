@@ -323,7 +323,7 @@
       <div class="location text-dark "><i class="fas fa-map-marker-alt"></i> Delhi, India <i class="fas fa-chevron-down"></i></div>
       <i class="fas fa-shopping-cart"></i>
       <div class="">
-        <a href="{{ route("index.logout") }}" class="btn btn-dark" ><i class="fas fa-sign-out-alt"></i> Logout </a>
+        <a href="{{ route("page.logout") }}" class="btn btn-danger" ><i class="fas fa-sign-out-alt"></i> Logout </a>
       </div>
     </div>
   </div>

@@ -68,7 +68,7 @@ public function index(){
 
 public function Indexlogout(Request $request){
         auth()->logout();
-        return redirect()->route("home")->with("success", "You have been logged out successfully.");
+        return redirect()->route("home")->with("success", "u have been logged out successfully.");
     }
 
 }
