@@ -51,7 +51,11 @@ class HomeController extends Controller
      $user = Auth::user();
      if($user->status == 1){
        return redirect()->route("dashboard");
-     }else{
+     }
+      elseif($user->status == 0){
+        return redirect()->route("index");
+      }
+     else{
        Auth::logout();
        return redirect()->route("index");
      }
