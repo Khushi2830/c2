@@ -360,7 +360,7 @@
       </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="">{{ Auth::user() ->name ??'student'}}</a></li>
-            <li><a href="{{ route("index.logout") }}" class="btn btn-danger"><i class="fas fa-sign-out-alt"></i> Logout </a></li>
+            <li><a href="{{ route("index.logout") }}" ><i class="fas fa-sign-out-alt"></i> Logout </a></li>
           </ul>
         </li>
       
