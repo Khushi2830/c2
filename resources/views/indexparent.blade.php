@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creamer Index</title>
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <style>
-         body {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creamer Index</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
       margin: 0;
       font-family: Arial, sans-serif;
     }
+
     .header {
-      background-color:  #e4e0f4;
+      background-color: #e4e0f4;
       padding: 10px 20px;
     }
+
     .logo {
       color: white;
       font-size: 32px;
       font-weight: bold;
       text-transform: uppercase;
     }
+
     .partner-btn {
       background-color: #f8d5f8;
       border: none;
@@ -28,29 +33,35 @@
       padding: 6px 12px;
       font-weight: 500;
     }
+
     .search-bar {
       border: 1px solid #782ec3;
       border-radius: 6px;
     }
+
     .search-input {
       border: none;
       outline: none;
       width: 100%;
       padding: 6px 10px;
     }
+
     .search-icon {
       color: gray;
       padding-right: 10px;
     }
+
     .icon-group i {
       color: white;
       font-size: 20px;
       margin: 0 10px;
     }
+
     .location {
       color: white;
       font-weight: 500;
     }
+
     .profile-circle {
       background-color: #1a1249;
       color: white;
@@ -62,15 +73,16 @@
       justify-content: center;
       font-weight: bold;
     }
-    </style>
-     <style>
+  </style>
+  <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
     }
 
     .top-section {
-      background-color: #792dc4; /* Pink */
+      background-color: #792dc4;
+      /* Pink */
       color: white;
       padding: 60px 30px;
     }
@@ -85,7 +97,8 @@
     }
 
     .footer {
-      background-color: #ad83b3; /* Dark Blue */
+      background-color: #ad83b3;
+      /* Dark Blue */
       color: white;
       padding: 40px 30px;
     }
@@ -124,6 +137,7 @@
     }
 
     @media (min-width: 768px) {
+
       .top-section,
       .footer {
         padding-left: 80px;
@@ -135,21 +149,25 @@
     body {
       background-color: #fdf8f4;
     }
+
     .category-card {
       position: relative;
       overflow: hidden;
       border-radius: 10px;
       height: 200px;
     }
+
     .category-card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.3s ease;
     }
+
     .category-card:hover img {
       transform: scale(1.05);
     }
+
     .category-overlay {
       position: absolute;
       bottom: 0;
@@ -162,6 +180,7 @@
       font-weight: bold;
       font-size: 1.2rem;
     }
+
     .section-title {
       color: #e91e63;
       font-weight: 700;
@@ -250,69 +269,79 @@
     }
   </style>
   <style>
-        body {
-            background: #fdf4ff url('https://www.transparenttextures.com/patterns/cup-cakes.png') repeat;
-            font-family: 'Segoe UI', sans-serif;
-        }
-        /* .header {
+    body {
+      background: #fdf4ff url('https://www.transparenttextures.com/patterns/cup-cakes.png') repeat;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* .header {
             background-color: #792dc4;
             color: white;
             padding: 5px 0;
             text-align: center;
         } */
-        .form-container {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            margin-top: 30px;
-            margin-bottom: 60px;
-            padding: 40px;
-        }
-        .form-label {
-            font-weight: bold;
-            color: #792dc4;
-        }
-        .form-control,
-        .form-select {
-            border: 2px solid #e4c8f4;
-            border-radius: 8px;
-        }
-        .btn-submit {
-            background-color: #792dc4;
-            color: white;
-            border-radius: 8px;
-            padding: 10px 30px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        .btn-submit:hover {
-            background-color: #5e21a3;
-        }
-        .terms {
-            font-size: 0.9rem;
-            color: #6c757d;
-        }
-        .terms a {
-            color: #792dc4;
-            text-decoration: underline;
-        }
-    </style>
+    .form-container {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+      margin-bottom: 60px;
+      padding: 40px;
+    }
+
+    .form-label {
+      font-weight: bold;
+      color: #792dc4;
+    }
+
+    .form-control,
+    .form-select {
+      border: 2px solid #e4c8f4;
+      border-radius: 8px;
+    }
+
+    .btn-submit {
+      background-color: #792dc4;
+      color: white;
+      border-radius: 8px;
+      padding: 10px 30px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      background-color: #5e21a3;
+    }
+
+    .terms {
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+
+    .terms a {
+      color: #792dc4;
+      text-decoration: underline;
+    }
+  </style>
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <div class="header d-flex align-items-center justify-content-between">
+  <div class="header d-flex align-items-center justify-content-between">
     <!-- Left Section -->
     <div class="d-flex align-items-center gap-3">
-      <a href="{{ route("index") }}"> <div class="logo"><img src="{{ asset("logo.png") }}" width="200px" alt=""></div></a>
-     
-      
+      <a href="{{ route("index") }}">
+        <div class="logo"><img src="{{ asset("logo.png") }}" width="200px" alt=""></div>
+      </a>
+
+
     </div>
 
     <!-- Center Section -->
     <div class="flex-grow-1 mx-4">
       <div class="d-flex align-items-center search-bar bg-white px-2">
-        <input type="text" class="search-input"   placeholder="Search for cakes, pastries, savories, etc.">
+        <input type="text" class="search-input" placeholder="Search for cakes, pastries, savories, etc.">
         <i class="fas fa-search search-icon"></i>
       </div>
     </div>
@@ -320,17 +349,31 @@
     <!-- Right Section -->
     <div class="d-flex align-items-center gap-3 icon-group">
       <i class="fas fa-birthday-cake"></i>
-      <div class="location text-dark "><i class="fas fa-map-marker-alt"></i> Delhi, India <i class="fas fa-chevron-down"></i></div>
+     
+      <li class="nav-item dropdown navbar-nav  nav-link dropdown-toggle " role="button" data-bs-toggle="dropdown">
+           <a href="" style="text-decoration: none;outline: auto #ad83b3;border-radius: 50%;  ">
+        <div class="icons d-flex align-items-center" width="">
+          <div class="profile lg w-100 h-100 p-2 m-2 text-white "
+            style="background-color: #6f42c1 ;  border-radius: 50%;  ">{{ strtoupper(substr(Auth::user()->name ?? 'U', 0, 2)) }}</div>
+        </div>
+
+      </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="">{{ Auth::user() ->name ??'student'}}</a></li>
+            <li><a href="{{ route("index.logout") }}" class="btn btn-danger"><i class="fas fa-sign-out-alt"></i> Logout </a></li>
+          </ul>
+        </li>
+      
       <i class="fas fa-shopping-cart"></i>
       <div class="">
-        <a href="{{ route("index.logout") }}" class="btn btn-danger" ><i class="fas fa-sign-out-alt"></i> Logout </a>
+        <a href="{{ route("index.logout") }}" class="btn btn-danger"><i class="fas fa-sign-out-alt"></i> Logout </a>
       </div>
     </div>
   </div>
 
-@section('content2')
-@show
-     <div class="row g-0 mt-5">
+  @section('content2')
+  @show
+  <div class="row g-0 mt-5">
     <div class="col-md-6 top-section d-flex flex-column justify-content-center">
       <h2>Visit & Experience Our Service In Your City</h2>
       <button class="btn btn-dark find-stores-btn">
@@ -338,7 +381,8 @@
       </button>
     </div>
     <div class="col-md-6">
-      <img src="https://d1f3aa6ifduais.cloudfront.net/assets/images/products/1621947382796_62.jpg" alt="Cake" class="cake-image">
+      <img src="https://d1f3aa6ifduais.cloudfront.net/assets/images/products/1621947382796_62.jpg" alt="Cake"
+        class="cake-image">
     </div>
   </div>
 
@@ -385,4 +429,5 @@
   </div>
 
 </body>
+
 </html>
