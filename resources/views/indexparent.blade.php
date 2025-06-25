@@ -9,7 +9,47 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  
+ <style>
+  .xx {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      margin: 0;
+      padding: 40px;
+      border-left: 2px solid #ec008c;
+      border-right: 2px solid #ec008c;
+    }
+
+    .faq-section {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .faq-section h1 {
+      text-align: center;
+      color: #ec008c;
+      font-size: 42px;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    .faq-item {
+      margin-bottom: 40px;
+    }
+
+    .faq-item p {
+      margin: 5px 0;
+      font-size: 18px;
+    }
+
+    .faq-number {
+      font-weight: bold;
+    }
+
+    .divider {
+      border-top: 1px solid #000;
+      margin-top: 20px;
+    }
+  </style>
   <style>
     .icon-group i {
   cursor: pointer;
@@ -335,6 +375,209 @@
       text-decoration: underline;
     }
   </style>
+  <style>
+    body {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.why-choose-us {
+  background-color: #e4e0f4;
+  color: #000;
+}
+
+.text-pink {
+  color: #d63384;
+  font-size: 2.5rem;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  background-color: #fda4d4;
+  border-radius: 50%;
+  padding: 12px;
+}
+  </style>
+  <style>
+    body {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.cake-showcase {
+  background-color: #ffeaf7;
+}
+
+.title-heading {
+  font-size: 2.5rem;
+  color: #d63384;
+}
+
+.title-heading .text-purple {
+  color: #5e2590;
+}
+
+.cake-card img {
+  height: 300px;
+  object-fit: contain;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+.card-title {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #000;
+}
+
+.btn-pink {
+  background-color: #e6007e;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.btn-pink:hover {
+  background-color: #cc006b;
+}
+  </style>
+   <style>
+    
+
+    .testimonial-section {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .testimonial-section h1 {
+      color: #ec008c;
+      font-size: 48px;
+      font-weight: bold;
+    }
+
+    .testimonial-box {
+      background-color: #ffe6ea;
+      padding: 30px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .testimonial-image {
+      width: 160px;
+      margin-right: 30px;
+    }
+
+    .testimonial-content {
+      text-align: left;
+    }
+
+    .testimonial-content .quote {
+      font-size: 60px;
+      color: #ec008c;
+      float: left;
+      margin-right: 10px;
+      line-height: 0.5;
+    }
+
+    .testimonial-content h4 {
+      color: #ec008c;
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .testimonial-content p {
+      font-size: 18px;
+      margin: 10px 0 0;
+    }
+
+    .testimonial-content .author {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+   <style>
+   .yy {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fff2f4;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 42px;
+      margin-bottom: 50px;
+    }
+
+    h1 span.pink {
+      color: #ec008c;
+    }
+
+    h1 span.purple {
+      color: #4b0082;
+    }
+
+    form {
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .form-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .form-group div {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 5px;
+      font-size: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    select,
+    textarea {
+      padding: 10px 15px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    textarea {
+      height: 150px;
+      resize: vertical;
+    }
+
+    .btn-submit {
+      display: block;
+      margin: 40px auto 0;
+      padding: 14px 40px;
+      background-color: #ec008c;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      background-color: #c60078;
+    }
+  </style>
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
@@ -351,7 +594,7 @@
     </div>
 
     <!-- Center Section -->
-    <div class="flex-grow-1 mx-4 size-8" >
+    <div class="flex-grow-1 mx-4 " >
       <div class="d-flex align-items-center search-bar bg-white px-2">
         <input type="text" class="search-input" placeholder="Search for cakes, pastries, savories, etc.">
         <i class="fas fa-search search-icon"></i>
@@ -362,7 +605,7 @@
     <div class="d-flex align-items-center gap-3 icon-group">
 
   <!-- Birthday Cake Icon -->
-  <i class="fas fa-birthday-cake fs-5"></i>
+  <a href="{{ route("wedding") }}"><i class="fas fa-birthday-cake fs-5"></i></a>
 
   <!-- Profile Dropdown -->
   <div class="">

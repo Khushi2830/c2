@@ -3,7 +3,7 @@
 
 @section('content2')
 
- <div class="container-fluid m-0 p-0">
+ <div class="container-fluid m-0 mt-2 p-0">
     <div class="row justify-content-center">
       <div class="col-md-12">
         <img src="{{ asset("banner10.png") }}" width="2000px"   alt="Happy Father's Day Family" class="img-fluid mx-auto d-block" />
@@ -11,7 +11,7 @@
     </div>
   </div>
 <!-- category  -->
-  <div class="container py-5">
+  <div class="container p-0 mt-0">
   <h2 class="section-title" style="color: #7b2dc3;">Our Categories</h2>
   <div class="row g-4">
     <!-- Cakes -->
@@ -28,7 +28,7 @@
 </div>
 
   <!-- cake product -->
-<div class="container py-4">
+<div class="container p-0 mt-0">
   <h2 class="section-title" style="color: #7b2dc3;" >Cakes</h2>
   <div class="row flex-nowrap overflow-auto g-3">
     <!-- Card 1 -->

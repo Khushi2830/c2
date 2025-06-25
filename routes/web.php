@@ -22,7 +22,7 @@ Route::get("/histroy",[HomeController::class, "histroy"])->name("histroy");
 Route::get("/blog1",[HomeController::class, "blog1"])->name("blog1");
 
 Route::middleware("index:auth")->group(function(){
-
+    
     Route::prefix("index")->group(function(){
         Route::get("/page",[HomeController::class, "index"])->name("index");
    });
@@ -43,8 +43,9 @@ Route::middleware("admin:auth")->group(function(){
        
    });
 });
-
-   
+  
+   route::get("/wedding", [HomeController::class, "wedding"])->name("wedding"); 
+   route::get("/insertwedding", [HomeController::class, "insertwedding"])->name("insertwedding"); 
   route::get("/admin/logout", [AdminController::class, "Adminlogout"])->name("admin.logout");
 
   
