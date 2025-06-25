@@ -157,9 +157,9 @@
       justify-content: space-between;
     }
     .logo {
-      font-size: 28px;
+      font-size: 20px;
       font-weight: bold;
-      color: #eccffd;
+      color: #4c32a1;
     }
     .partner {
       margin-left: 10px;
@@ -209,7 +209,7 @@
 
   <div class="header">
     <div class="d-flex align-items-center">
-      <div class="logo"><img src="{{ asset("logo.png") }}" width="150px" alt=""></div>
+      <div class="logo"><img src="{{ asset("logo.png") }}" width="150px" alt="" >| Admin Pannel</div>
     </div>
 
     <div class="search-box">

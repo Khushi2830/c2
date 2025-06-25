@@ -683,7 +683,7 @@ footer .border-top {
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{{ route("registerForm") }}">Manufacturing Franchise</a></li>
-            <li><a class="dropdown-item" href="">Cake Shop Franchise</a></li>
+            <li><a class="dropdown-item" href="{{ route("registerForm") }}">Cake Shop Franchise</a></li>
           </ul>
         </li>
         <li class="nav-item">
