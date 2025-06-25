@@ -22,7 +22,7 @@ class CategoryController extends Controller
     public function create()
     {
          $categories = Category::paginate(5); 
-    return view("admin.insertCategory" , );
+    return view("admin.insertCategory" ,compact("categories") );
     }
 
     /**
@@ -33,7 +33,7 @@ class CategoryController extends Controller
         $request->validate([
             'cat_title' => 'required|unique:categories,cat_title',
             'cat_description' => 'nullable',
-            'cover_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'cover_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
             'category_id' => 'nullable|exists:categories,id',
         ]);
 
