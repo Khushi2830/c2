@@ -284,10 +284,7 @@
     }
   </style>
   <style>
-    body {
-      background: #fdf4ff url('https://www.transparenttextures.com/patterns/cup-cakes.png') repeat;
-      font-family: 'Segoe UI', sans-serif;
-    }
+   
 
     /* .header {
             background-color: #792dc4;
@@ -368,8 +365,8 @@
   <i class="fas fa-birthday-cake fs-5"></i>
 
   <!-- Profile Dropdown -->
-  <div class="dropdown">
-    <a class="dropdown-toggle d-flex align-items-center" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none; outline: auto #6f42c1; border-radius: 50%;">
+  <div class="">
+    <a class="" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none; outline: none;">
       <div class="">
         <div class="profile p-2 m-2 text-white" style="background-color: #6f42c1; border-radius: 50%;">
           {{ Auth::user()->name ?? 'student' }}
