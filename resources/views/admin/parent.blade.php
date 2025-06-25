@@ -218,7 +218,7 @@
     </div>
 
     <div class="icons d-flex align-items-center" width="" >
-      <div class="profile lg w-100 h-100 p-2 m-2 " style="background-color: #6f42c1 ;" > {{ Auth::user()->name ?? 'student' }}</div>
+      <div class="profile lg w-100 h-100 p-2 m-2 " style="background-color:  #6845c7 ;" > {{ Auth::user()->name ?? 'student' }}</div>
     </div>
   </div>
    @section('content')

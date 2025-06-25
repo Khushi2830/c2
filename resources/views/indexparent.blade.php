@@ -13,7 +13,7 @@
   <style>
     .icon-group i {
   cursor: pointer;
-  color: #333;
+  color: #6f42c1;
 }
 .profile {
   min-width: 40px;
@@ -378,8 +378,8 @@
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
       <li>
-        <a class="dropdown-item" href="{{ route('index.logout') }}">
-          <i class="fas fa-sign-out-alt me-2" style="color: #444;"></i> Logout
+        <a class="dropdown-item" style="color: #6f42c1  ;"    href="{{ route('index.logout') }}">
+          <i class="fas fa-sign-out-alt me-2" style="color: #6f42c1  ;"></i> Logout
         </a>
       </li>
     </ul>
