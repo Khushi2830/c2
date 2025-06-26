@@ -44,8 +44,8 @@ Route::middleware("admin:auth")->group(function(){
    });
 });
   
-   route::get("/wedding", [HomeController::class, "wedding"])->name("wedding"); 
-   route::get("/insertwedding", [HomeController::class, "insertwedding"])->name("insertwedding"); 
+   route::post("/wedding", [HomeController::class, "wedding"])->name("wedding"); 
+   route::post("/insertwedding", [HomeController::class, "insertwedding"])->name("insertwedding"); 
   route::get("/admin/logout", [AdminController::class, "Adminlogout"])->name("admin.logout");
 
   

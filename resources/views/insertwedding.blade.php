@@ -4,7 +4,7 @@
 @section('content2')
 
 <div class="yy">
-    <form>
+    <form action="{{ route("insertwedding") }}" method="POST" class="form-container">
         @csrf
     <div class="form-group ">
       <div>
@@ -56,11 +56,11 @@
 
     <div class="form-group">
       <div style="flex: 1 1 100%;">
-        <label for="notes">Additional Notes</label>
-        <textarea id="notes"  value="{{ old("notes") }}"  placeholder="Write any additional notes here...">{{ old("notes") }}</textarea>
+        <label for="description">Additional Notes</label>
+        <textarea id="description"   placeholder="Write any additional notes here...">{{ old("description") }}</textarea>
       </div>
     </div>
-      @error('notes')
+      @error('description')
             <span class="text-danger">{{ $message }}</span>
             @enderror
 
