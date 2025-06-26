@@ -670,7 +670,7 @@ footer .border-top {
           <a class="nav-link active" style="color: #5a66a0;" href="{{ Route("home") }}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Our Products</a>
+          <a class="nav-link" href="{{ route("index") }}">Our Products</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ Route("abuout") }}">About us</a>
@@ -701,7 +701,7 @@ footer .border-top {
     </div>
   </div>
 </nav>
-    <!-- Father's Day Banner Section -->
+   
 
 
 

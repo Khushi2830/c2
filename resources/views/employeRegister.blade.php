@@ -123,7 +123,7 @@
                             </p>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-submit">I Accept & Submit</button>
+                            <button type="submit" class="btn btn-submit" style="background-color: #792dc4;" >I Accept & Submit</button>
                             </div>
                            
                     </form>

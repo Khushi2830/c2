@@ -34,13 +34,13 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-submit">Signup</button>
+                            <button type="submit"style="background-color: #792dc4;"  class="btn btn-submit">Signup</button>
                         </div>
                         
                         
                         <div class="mb-3">
-                            <p class="terms text-center ">
-                                 <a href="{{ route("registerForm") }}">Sin-up Provider</a>.
+                            <p class="terms text-center " >
+                                 <a href="{{ route("registerForm") }}" >Sin-up Provider</a>.
                             </p>
                         </div>
                     </form>

@@ -584,7 +584,7 @@
 
 <body>
   <div class="header d-flex align-items-center justify-content-between">
-    <!-- Left Section -->
+    
     <div class="d-flex align-items-center gap-3">
       <a href="{{ route("index") }}">
         <div class="logo"><img src="{{ asset("logo.png") }}" width="200px" alt=""></div>
@@ -593,7 +593,7 @@
 
     </div>
 
-    <!-- Center Section -->
+    
     <div class="flex-grow-1 mx-4 " >
       <div class="d-flex align-items-center search-bar bg-white px-2">
         <input type="text" class="search-input" placeholder="Search for cakes, pastries, savories, etc.">
@@ -601,13 +601,13 @@
       </div>
     </div>
 
-    <!-- Right Section -->
+    
     <div class="d-flex align-items-center gap-3 icon-group">
 
-  <!-- Birthday Cake Icon -->
+ 
   <a href="{{ route("wedding") }}"><i class="fas fa-birthday-cake fs-5"></i></a>
 
-  <!-- Profile Dropdown -->
+ 
   <div class="">
     <a class="" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none; outline: none;">
       <div class="">
@@ -646,7 +646,7 @@
     </div>
   </div>
 
-  <!-- Footer Section -->
+  
   <div class="footer">
     <div class="row text-center text-md-start">
       <div class="col-md-3 mb-3">

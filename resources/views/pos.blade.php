@@ -73,7 +73,7 @@
 <div class="container-fluid">
   <div class="row">
 
-    <!-- Sidebar -->
+    
     <div class="col-2 sidebar">
       <input class="form-control mb-3" type="text" placeholder="Search Category...">
       <div class="category">All Items</div>
@@ -86,11 +86,11 @@
       <div class="category">Watches</div>
     </div>
 
-    <!-- Product List -->
+   
     <div class="col-6 p-3">
          <input class="form-control mb-3" type="text" placeholder="Search Product...">
       <div class="row" id="product-list">
-        <!-- Example Products -->
+      
         <div class="col-md-4">
           <div class="product-card text-center" onclick="addToCart('Dr. Martens', 299.00)">
             <img src="https://via.placeholder.com/120" class="product-img" alt="Dr. Martens">
@@ -101,7 +101,7 @@
       </div>
     </div>
 
-    <!-- Cart -->
+   
     <div class="col-md-4 cart-section">
       <h5>🛒 Cart</h5>
       <table class="table table-bordered table-sm">

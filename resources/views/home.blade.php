@@ -216,13 +216,13 @@
   Use Code : <strong>monginis</strong>
 </div>
 
-<!-- Testimonial Section -->
+
 <div class="container my-5 text-center">
   <h3>What our clients say <span class="highlight" style="color: #5f3dc4;" >about us</span></h3>
   
 </div>
 
-<!-- Newsletter Signup -->
+
 <div class="section-purple py-5 text-center">
   <h4><strong>Know The Sweet <span class="highlight" style="color: #5f3dc4;" >Deal First</span> !</strong></h4>
   <p>Sign Up to our newsletter and get to know the sweets first !</p>
@@ -232,7 +232,7 @@
   </form>
 </div>
 
-<!-- Specialty Section -->
+
 <div class="container text-center my-5">
   <h4>Our <span class="highlight" style="color: #5f3dc4;">Speciality</span></h4>
   <div class="row mt-4">
@@ -255,7 +255,7 @@
   </div>
 </div>
 
-<!-- Footer Tags Section -->
+
 <div class="bg-light text-center py-4">
   <strong>MOST SEARCHED FOR ON MONGINIS :</strong>
   <br>

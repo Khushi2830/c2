@@ -50,7 +50,7 @@ Route::middleware("admin:auth")->group(function(){
 
   
 
-  // EMPLOYEE ROUTES
+
   Route::prefix("/employee")->group(function(){
        Route::get('/register', [EmployeeController::class, 'showRegisterForm'])->name('registerForm');
        Route::post('/register', [EmployeeController::class, 'register'])->name('employeregister');
@@ -66,13 +66,13 @@ Route::middleware("admin:auth")->group(function(){
 
 
 
-// View pending applications
+
 Route::get('/admin/applications', [AdminController::class, 'manageApplication'])->name('manageApplication');
 
-// View approved employees
+
 Route::get('/admin/employees', [AdminController::class, 'manageEmploye'])->name('manageEmploye');
 
-// Approve a single employee
+
 Route::post('/admin/employee/approve/{employee}', [AdminController::class, 'approveEmployee'])->name('admin.approveEmployee');
 
   route::get("/index/logout", [HomeController::class, "Indexlogout"])->name("index.logout");

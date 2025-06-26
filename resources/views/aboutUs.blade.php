@@ -7,16 +7,14 @@
   <h2 style="color: #9eace0;" >About Us</h2>
 </section>
 
-<!-- Our Story Section -->
 <section class="story-section">
   <div class="container">
     <div class="row align-items-center">
-      <!-- Left Side Image -->
+    
       <div class="col-md-6 text-center mb-4 mb-md-0">
         <img src="https://www.monginis.net/wp-content/uploads/2022/06/Untitled-design-37.png" alt="Cake Sketch" class="story-image">
       </div>
 
-      <!-- Right Side Text -->
       <div class="col-md-6">
         <div class="story-title"style="color: #5f3dc4;" >Our Story</div>
         <p class="story-text">
@@ -31,7 +29,7 @@
 </section>
  <div class="section-heading" style="color: #5f3dc4;" >Our Mission, Values, and Vision</div>
 
-  <!-- Paragraph -->
+ 
   <div class="mission-text text-center px-3">
     <p>
       Creating exceptional cakes is our way of life, and our customers and partners are the focus of everything that we do.
@@ -42,7 +40,7 @@
     </p>
   </div>
 
-  <!-- Core Values -->
+  
   <div class="core-values px-3">
     <div class="core-title" style="color:#5f3dc4;" >Our Core values are</div>
     <ol>
@@ -58,7 +56,7 @@
     </ol>
   </div>
 
-  <!-- Mission Icon and Statement -->
+
   <div class="mission-statement px-3">
     <img src="https://www.monginis.net/wp-content/uploads/elementor/thumbs/4-pr0kn9wbqagwzwbvt378cuibgvm4bhkhjky0fpgva4.png" alt="Cake Icon">
     <p><strong>Our mission</strong> is to offer gourmet cakes, pastries, cupcakes, cookies, and more that are universally enjoyed
@@ -66,7 +64,7 @@
   </div>
   <div class="container-custom">
 
-    <!-- Core Purpose -->
+   
     <div class="icon-text-row">
       <img src="https://www.monginis.net/wp-content/uploads/elementor/thumbs/3-pr0knz9yutfnpdb0ow65q63ria513bd8n2k4e6f8m4.png" alt="Core Icon">
       <p class="text-content">
@@ -74,7 +72,7 @@
       </p>
     </div>
 
-    <!-- Passion Purpose -->
+  
     <div class="icon-text-row">
       <img src="https://www.monginis.net/wp-content/uploads/elementor/thumbs/2-pr0kokw980994efm6niktind656h0cr2e1kafjj6n0.png" alt="Cake Icon">
       <p class="text-content">

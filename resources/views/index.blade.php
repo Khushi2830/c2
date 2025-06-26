@@ -10,11 +10,11 @@
       </div>
     </div>
   </div>
-<!-- category  -->
+
   <div class="container p-0 mt-0">
   <h2 class="section-title" style="color: #7b2dc3;">Our Categories</h2>
   <div class="row g-4">
-    <!-- Cakes -->
+    
     @foreach ($categories as $category )
       
     <div class="col-md-6 col-lg-4">
@@ -27,11 +27,11 @@
   </div>
 </div>
 
-  <!-- cake product -->
+  
 <div class="container p-0 mt-0">
   <h2 class="section-title" style="color: #7b2dc3;" >Cakes</h2>
   <div class="row flex-nowrap overflow-auto g-3">
-    <!-- Card 1 -->
+  
     <div class="col-10 col-sm-6 col-md-4 col-lg-3">
       <div class="product-card">
         <div class="product-img">
