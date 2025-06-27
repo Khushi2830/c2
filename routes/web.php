@@ -11,6 +11,7 @@ use App\Http\Controllers\ProductController;
 
 use App\Http\Controllers\ProviderController;
 use App\Http\Controllers\WeddingController;
+use App\Models\wedding;
 use Illuminate\Support\Facades\Route;
 
 Route::get("/",[HomeController::class, "home"])->name("home");
@@ -44,11 +45,17 @@ Route::middleware("admin:auth")->group(function(){
        
    });
 });
+
+// wedding routes--------------------------------------------
 Route::get("/wedding", [WeddingController::class, "index"])->name("wedding");
-
 Route::get("/insertwedding", [WeddingController::class, "showWeddingForm"])->name("weddingform");
+Route::post("/insertwedding", [WeddingController::class, "register"])->name("weddingregister");
+Route::get('/admin/customise', [AdminController::class, 'customiseCake'])->name('manageCustomiseCake');
+Route::get('/admin/confirm', [AdminController::class, 'manageCake'])->name('managecake');
+Route::post('/admin/cake/confirm/{wedding}', [AdminController::class, 'approvecake'])->name('admin.approvecake');
 
-Route::post("/insertwedding", [WeddingController::class, "register"])->name("insertwedding");
+
+
   route::get("/admin/logout", [AdminController::class, "Adminlogout"])->name("admin.logout");
 
   
@@ -69,13 +76,9 @@ Route::post("/insertwedding", [WeddingController::class, "register"])->name("ins
 
 
 
-
+//employee routes--------------------------------------------
 Route::get('/admin/applications', [AdminController::class, 'manageApplication'])->name('manageApplication');
-
-
 Route::get('/admin/employees', [AdminController::class, 'manageEmploye'])->name('manageEmploye');
-
-
 Route::post('/admin/employee/approve/{employee}', [AdminController::class, 'approveEmployee'])->name('admin.approveEmployee');
 
   route::get("/index/logout", [HomeController::class, "Indexlogout"])->name("index.logout");

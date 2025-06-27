@@ -23,12 +23,6 @@ class HomeController extends Controller
       $blogs = blog::paginate(5);
       return view('blog1', compact("blogs"));
     }
-    public function wedding(){
-        return view('wedding', );
-    }
-    public function insertwedding(){
-        return view('insertwedding', );
-    }
    
   public function register(Request $req){
     if($req->isMethod("POST")){
