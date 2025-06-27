@@ -28,6 +28,7 @@ Route::middleware("index:auth")->group(function(){
     Route::prefix("index")->group(function(){
         Route::get("/page",[HomeController::class, "index"])->name("index");
    });
+    route::get("/filtercategory", [HomeController::class, "filter"])->name("filtercategory");
 });
 
 
@@ -46,7 +47,7 @@ Route::middleware("admin:auth")->group(function(){
    });
 });
 
-// wedding routes--------------------------------------------
+
 Route::get("/wedding", [WeddingController::class, "index"])->name("wedding");
 Route::get("/insertwedding", [WeddingController::class, "showWeddingForm"])->name("weddingform");
 Route::post("/insertwedding", [WeddingController::class, "register"])->name("weddingregister");

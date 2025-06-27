@@ -653,6 +653,32 @@ footer .border-top {
   </style>
 
 </head>
+ <style>
+  .header.tt {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background-color: #f8f9fa;
+    z-index: 999;
+    padding: 0 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .icon-group .profile {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+
+  body {
+    padding-top: 80px; /* Space for fixed header */
+  }
+</style>
 <body class="m-0 p-0" >
     <nav class="navbar navbar-expand-lg shadow-sm  ">
   <div class="container ">

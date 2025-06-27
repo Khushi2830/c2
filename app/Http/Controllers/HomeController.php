@@ -75,4 +75,8 @@ public function Indexlogout(Request $request){
         return redirect()->route("home")->with("success", "you have been logged out successfully.");
     }
 
+public function filter(){
+  return view("filtercategory");
+}
+
 }

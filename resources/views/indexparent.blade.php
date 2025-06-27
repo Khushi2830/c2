@@ -578,12 +578,38 @@
       background-color: #c60078;
     }
   </style>
+  <style>
+  .header.tt {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background-color: #f8f9fa;
+    z-index: 999;
+    padding: 0 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .icon-group .profile {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+
+  body {
+    padding-top: 80px; /* Space for fixed header */
+  }
+</style>
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <div class="header d-flex align-items-center justify-content-between">
+  <div class="header tt d-flex align-items-center justify-content-between" style="background-color: #e4c8f4;">
     
     <div class="d-flex align-items-center gap-3">
       <a href="{{ route("index") }}">
