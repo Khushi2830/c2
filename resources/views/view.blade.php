@@ -12,15 +12,10 @@
 
     <!-- Product Details -->
     <div class="col-md-6">
-        @foreach ($products as $product)
+        @if( $product)
             
        
-      @if ($product)
-        <h3 class="fw-bold">{{ $product->title }}</h3>
-     @else
-        <p>Product not found.</p>
-     @endif
-
+      <h3 class="fw-bold">{{$product->title}}</h3>
       
       <h4 class="text-danger fw-bold"><del>₹{{$product->price}} </del>₹{{$product->descount_price}}</h4>
       <p class="text-muted">{{$product->category->cat_title}}</p>
@@ -50,7 +45,9 @@
            {{ $product->description }}
         </p>
       </div>
-       @endforeach
+       @else
+       <h3 class="fw-bold">Product Not Found</h3>
+         @endif
     </div>
   </div>
 

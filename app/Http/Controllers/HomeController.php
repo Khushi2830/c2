@@ -88,14 +88,9 @@ public function filter($id){
 // //   return view("search", compact("products"));
 // }
 
-public function viewProduct($id){
-  $products = Product::findOrFail($id);
-  if ($products) {
-    echo $products->title;
-} else {
-    // Handle the case when product is not found
-    echo "Product not found.";
+public function viewProduct($id) {
+    $product = Product::findOrFail($id); // singular, not plural
+    return view("view", compact("product"));
 }
-  return view("view", compact("products"));
-}
+
 }
