@@ -734,7 +734,7 @@
       </li>
     </ul>
   </div>
-  <i class="fas fa-shopping-cart fs-5"></i>
+  <a href="{{ route("show.cart") }}"><i class="fas fa-shopping-cart fs-5"></i></a>
 
  
 

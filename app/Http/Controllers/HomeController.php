@@ -97,4 +97,31 @@ public function viewProduct($id) {
     return view("view", compact("product", "relatedProducts"));
 }
 
+public function addToCart(Request $request, $id)
+{
+    $product = Product::findOrFail($id);
+
+    $cart = session()->get('cart', []);
+      if (isset($cart[$id])) {
+        $cart[$id]['quantity']++;
+    } else {
+       
+        $cart[$id] = [
+            "title" => $product->title,
+            "quantity" => 1,
+            "price" => $product->descount_price,
+            "image" => $product->image
+        ];
+    }
+    session()->put('cart', $cart);
+ return redirect()->back()->with('success', 'Product added to cart!');
+}
+
+public function showCart()
+{
+    $cart = session()->get('cart', []);
+    return view('cart', compact('cart'));
+}
+
+
 }

@@ -10,7 +10,7 @@
       <img src="{{ asset("storage/" . $product->image) }}" alt="{{ $product->title }}" alt="Rainbow Pastry" class="img-fluid rounded">
     </div>
 
-    <!-- Product Details -->
+  
     <div class="col-md-6">
        
             
@@ -20,21 +20,14 @@
       <h4 class="text-danger fw-bold"><del>₹{{$product->price}} </del>₹{{$product->descount_price}}</h4>
       <p class="text-muted">{{$product->category->cat_title}}</p>
 
-      <!-- Quantity -->
-      <div class="my-3">
-        <label class="fw-bold me-3">Qty</label>
-        <button class="qty-btn">−</button>
-        <input type="text" value="1" class="qty-input" readonly>
-        <button class="qty-btn">+</button>
-      </div>
-
-      <!-- Flavours -->
+      
+    
       <div class="my-3">
         <label class="fw-bold d-block mb-2">Quantity</label>
         <div class="flavour-box">{{$product->kg}}</div>
       </div>
 
-      <!-- Offers -->
+     
       <div class="my-4">
         <h5 class="text-danger fw-bold">Creamer</h5>
         <div class="mb-2">
@@ -51,13 +44,19 @@
     </div>
   </div>
 
-  <!-- Bottom Bar -->
-  <div class="bottom-bar mt-4 d-flex gap-2 ">
-       <button class="btn w-50 btn-pink px-4 py-2">ADD TO CART</button>
-      <button class="btn w-50 btn-purple px-4 py-2">PROCEED TO CHECKOUT</button>
-  </div>
 
-  <!-- Related Products -->
+  <div class="bottom-bar mt-4 d-flex gap-2 ">
+       <form action="{{ route('add.to.cart', $product->id) }}" method="POST" class=" btn px-4 py-2 btn-pink w-50">
+        @csrf
+        <button type="submit" class="btn px-4 py-2 btn-pink w-50">ADD TO CART</button>
+       </form>
+      <form action="" method="POST" class=" btn px-4 py-2 btn-purple w-50">
+        @csrf
+        <button action="" class="btn w-50 btn-purple px-4 py-2">PROCEED TO CHECKOUT</button>
+      </form>
+  </div>
+  
+ 
   <div class="related-products mt-2">
     <h4 class="fw-bold mb-4 " style="color: #6f42c1;">Related Products</h4>
     <div class="row g-4">

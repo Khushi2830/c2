@@ -8,7 +8,6 @@ use App\Http\Controllers\EnployController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PosController;
 use App\Http\Controllers\ProductController;
-
 use App\Http\Controllers\ProviderController;
 use App\Http\Controllers\WeddingController;
 use App\Models\wedding;
@@ -31,6 +30,10 @@ Route::middleware("index:auth")->group(function(){
     route::get("/filtercategory/{id}", [HomeController::class, "filter"])->name("filtercategory");
     route::get("/view/{id}", [HomeController::class, "viewProduct"])->name("view");
     Route::get('/product/{id}', [HomeController::class, 'viewProduct'])->name('viewProduct');
+    Route::post('/add-to-cart/{id}', [HomeController::class, 'addToCart'])->name('add.to.cart');
+    Route::get('/cart', [HomeController::class, 'showCart'])->name('show.cart');
+
+
 
 });
 
