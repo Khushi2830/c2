@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\blog;
 use App\Models\category;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -75,9 +76,27 @@ public function Indexlogout(Request $request){
         return redirect()->route("home")->with("success", "you have been logged out successfully.");
     }
 
-public function filter(){
-  $categories = category::all();
-  return view("filtercategory", compact("categories") );
+public function filter($id){
+  $categories = Category::all();
+
+    $products = Product::where('category_id', $id)->paginate(5);
+
+  return view("filtercategory", compact("categories" , "products") );
 }
 
+// public function filterCategory(Request $request){
+//     $categoryId = $request->input('category_id');
+//     $blogs = blog::where('category_id', $categoryId)->paginate(5);
+//     return view('filtercategory', compact('blogs'));
+//   }
+//  public function filtercategry($id){
+//     $categories = category::all();
+//     $products = Product::where('category_id', $id)->paginate(5);
+//     return view("filtercategory", compact("products", "categories"));
+//   }
+// public function filtercategory($id)
+// {
+    
+//     return view('filtercategory', compact('products', 'categories'));
+// }
 }

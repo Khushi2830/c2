@@ -10,52 +10,45 @@
       <div>Cakes</div>
     </div>
      @foreach ($categories as $category )
-    <div class="sidebar-item">
+       
+         <div class="sidebar-item">
+          <a href="{{ route("filtercategory", $category->id) }}">
       <img src="{{ asset('storage/' . $category->cover_image) }}" alt="Pastries">
-      <div>{{ $category->cat_title }}</div>
+      <div style="text-decoration: none;">{{ $category->cat_title }}</div>
+       </a>
     </div>
+      
     @endforeach
   </div>
 
   <!-- Main Content -->
   <div class="content">
     <div class="category-title" style="color: #6f42c1">Cakes</div>
+    
     <div class="row g-4">
-
+ @foreach ( $products as $product)
       <!-- Cake Card 1 -->
       <div class="col-md-4">
-        <div class="card shadow-sm h-100">
-          <img src="https://i.imgur.com/ixy2zZD.jpg" class="card-img-top" alt="Cake 1">
+           <div class="card shadow-sm h-100">
+          <img src="{{ asset("storage/" . $product->image) }}" class="card-img-top" alt="Cake 1">
           <div class="card-body">
-            <h5 class="card-title">Special Designer Choco Bite</h5>
-            <p class="text-muted mb-2">Special Designer Dutch Choco Heart</p>
+            <h5 class="card-title">{{$product->title}}</h5>
+            <p class="text-muted mb-2">{{ Str::limit($product->description, 20) }}</p>
             <p class="d-flex align-items-center text-success mb-1">
               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Indian_vegetarian_mark.svg/2048px-Indian_vegetarian_mark.svg.png" class="veg-icon" alt="Veg Icon">
-              100% Veg.
+              100% {{$product->veg}}
             </p>
-            <p class="price" style="color: #6f42c1">₹775.00</p>
+            <p class="price" style="color: #6f42c1"><del>₹{{$product->price}} </del>₹{{$product->descount_price}}</p>
             <button class="add-btn" style="background-color: #6f42c1">Add</button>
           </div>
         </div>
+       
+        
       </div>
-      <div class="col-md-4">
-        <div class="card shadow-sm h-100">
-          <img src="https://i.imgur.com/ixy2zZD.jpg" class="card-img-top" alt="Cake 1">
-          <div class="card-body">
-            <h5 class="card-title">Special Designer Choco Bite</h5>
-            <p class="text-muted mb-2">Special Designer Dutch Choco Heart</p>
-            <p class="d-flex align-items-center text-success mb-1">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Indian_vegetarian_mark.svg/2048px-Indian_vegetarian_mark.svg.png" class="veg-icon" alt="Veg Icon">
-              100% Veg.
-            </p>
-            <p class="price">₹775.00</p>
-            <button class="add-btn">Add</button>
-          </div>
-        </div>
-      </div>
+  @endforeach
 
     </div>
-
+ 
     <div class="footer mt-2">
     <div class="row text-center text-md-start">
       <div class="col-md-3 mb-3">

@@ -16,13 +16,16 @@
   <div class="row g-4">
     
     @foreach ($categories as $category )
-      
+     
     <div class="col-md-6 col-lg-4">
+       <a href="{{ route("filtercategory", $category->id) }}">
       <div class="category-card">
         <img src="{{ asset('storage/' . $category->cover_image) }}" alt="{{ $category->cat_title }}">
         <div class="category-overlay">{{ $category->cat_title }}</div>
       </div>
+        </a>
     </div>
+
     @endforeach
   </div>
 </div>

@@ -55,7 +55,7 @@
                             <td>{{$product->kg}}</td>
                             <td>{{$product->veg}}</td>
                             <td><del>₹{{$product->price}} </del>₹{{$product->descount_price}}</td>
-                            <td>{{$product->description}}</td>
+                            <td>{{ Str::limit($product->description, 20) }}</td>
                             <td><img src="{{ asset("storage/" . $product->image) }}" alt="{{ $product->title }}" class="product-image" width="100px"></td>
                              <td class="">
                                 <div class="action-buttons d-flex gap-2 ">
