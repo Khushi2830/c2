@@ -604,6 +604,90 @@
     padding-top: 80px; /* Space for fixed header */
   }
 </style>
+ <style>
+    body {
+      background-color: #fff;
+    }
+
+    .sidebar {
+      width: 150px;
+      background-color: #fff8f1;
+      padding-top: 20px;
+      border-right: 2px solid #f1d3eb;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      overflow-y: auto;
+    }
+
+    .sidebar img {
+      width: 100%;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .sidebar-item {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .content {
+      margin-left: 170px;
+      padding: 30px;
+
+    }
+    .card {
+      transition: 0.3s ease;
+      border-radius: 12px;
+    
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .veg-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
+
+    .price {
+      color: #e91e63;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .add-btn {
+      background-color: #e91e63;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      padding: 6px 24px;
+    }
+
+    .card-img-top {
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .category-title {
+      font-weight: bold;
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+  </style>
+  
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>

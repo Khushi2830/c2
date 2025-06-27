@@ -76,7 +76,8 @@ public function Indexlogout(Request $request){
     }
 
 public function filter(){
-  return view("filtercategory");
+  $categories = category::all();
+  return view("filtercategory", compact("categories") );
 }
 
 }
