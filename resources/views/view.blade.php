@@ -5,14 +5,14 @@
 
  <div class="container">
   <div class="row g-4">
-    <!-- Product Image -->
+    @if( $product)
     <div class="col-md-6">
-      <img src="https://d1f3aa6ifduais.cloudfront.net/assets/images/products/1621947382796_62.jpg" alt="Rainbow Pastry" class="img-fluid rounded">
+      <img src="{{ asset("storage/" . $product->image) }}" alt="{{ $product->title }}" alt="Rainbow Pastry" class="img-fluid rounded">
     </div>
 
     <!-- Product Details -->
     <div class="col-md-6">
-        @if( $product)
+       
             
        
       <h3 class="fw-bold">{{$product->title}}</h3>
@@ -58,49 +58,26 @@
   </div>
 
   <!-- Related Products -->
-  <div class="related-products mt-5">
-    <h4 class="fw-bold mb-4 text-primary">Related Products</h4>
+  <div class="related-products mt-2">
+    <h4 class="fw-bold mb-4 " style="color: #6f42c1;">Related Products</h4>
     <div class="row g-4">
+        @forelse($relatedProducts as $related)
       <div class="col-md-3">
         <div class="card h-100">
-          <img src="https://www.monginis.net/wp-content/uploads/2022/05/Oreo-Designer.jpg" class="card-img-top" alt="Oreo Cake">
+          <img src="{{ asset("storage/" . $related->image) }}" alt="{{ $related->title }}" class="card-img-top" alt="Oreo Cake">
           <div class="card-body">
-            <h6 class="card-title">Oreo Cake</h6>
-            <p class="text-danger fw-bold mb-1">₹450.00</p>
-            <button class="btn btn-sm btn-pink w-100">Add</button>
+            <h6 class="card-title">{{ $related->title }}</h6>
+            <p class="text-danger fw-bold mb-1"><del>₹{{$related->price}} </del>₹{{$related->descount_price}}</p>
+            <a href="{{ route("view", $related->id) }}" class="btn w-100 text-white" style="background-color: #6f42c1">Add</a>
           </div>
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="card h-100">
-          <img src="https://www.monginis.net/wp-content/uploads/2022/05/KitKat-Ferrero.jpg" class="card-img-top" alt="Kitkat Cake">
-          <div class="card-body">
-            <h6 class="card-title">Kitkat Ferrero Cake</h6>
-            <p class="text-danger fw-bold mb-1">₹500.00</p>
-            <button class="btn btn-sm btn-pink w-100">Add</button>
-          </div>
-        </div>
+     @empty
+      <div class="col-12">
+        <p class="text-center">No related products found.</p>
       </div>
-      <div class="col-md-3">
-        <div class="card h-100">
-          <img src="https://www.monginis.net/wp-content/uploads/2022/05/Designer-Choco-Bite.jpg" class="card-img-top" alt="Choco Bite">
-          <div class="card-body">
-            <h6 class="card-title">Choco Bite Cake</h6>
-            <p class="text-danger fw-bold mb-1">₹480.00</p>
-            <button class="btn btn-sm btn-pink w-100">Add</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card h-100">
-          <img src="https://www.monginis.net/wp-content/uploads/2022/05/Designer-Choco-Stick.jpg" class="card-img-top" alt="Choco Stick">
-          <div class="card-body">
-            <h6 class="card-title">Choco Stick Cake</h6>
-            <p class="text-danger fw-bold mb-1">₹475.00</p>
-            <button class="btn btn-sm btn-pink w-100">Add</button>
-          </div>
-        </div>
-      </div>
+      @endforelse
+ 
     </div>
   </div>
 </div>

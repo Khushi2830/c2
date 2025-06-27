@@ -89,8 +89,12 @@ public function filter($id){
 // }
 
 public function viewProduct($id) {
-    $product = Product::findOrFail($id); // singular, not plural
-    return view("view", compact("product"));
+    $product = Product::findOrFail($id);
+     $relatedProducts = Product::where('category_id', $product->category_id)
+      ->where('id', '!=', $id)
+      ->take(4) // limit to 4 items
+      ->get();
+    return view("view", compact("product", "relatedProducts"));
 }
 
 }

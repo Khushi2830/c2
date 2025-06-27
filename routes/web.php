@@ -30,6 +30,8 @@ Route::middleware("index:auth")->group(function(){
    });
     route::get("/filtercategory/{id}", [HomeController::class, "filter"])->name("filtercategory");
     route::get("/view/{id}", [HomeController::class, "viewProduct"])->name("view");
+    Route::get('/product/{id}', [HomeController::class, 'viewProduct'])->name('viewProduct');
+
 });
 
 
