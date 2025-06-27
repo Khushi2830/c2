@@ -9,7 +9,7 @@
     </p>
 
     <div class="row g-4">
-        <!-- Left side - Cart details -->
+        
         <div class="col-lg-8">
             <div class="card shadow-sm p-3">
                 @foreach($cart as $id => $item)
