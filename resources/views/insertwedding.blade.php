@@ -4,8 +4,7 @@
 @section('content2')
 
 <div class="yy">
-    <form action="{{ route("insertwedding") }}" method="POST" class="form-container">
-        @csrf
+   <form action="{{ route('insertwedding') }}" method="POST">
     <div class="form-group ">
       <div>
         <label for="name">Name</label>

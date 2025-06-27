@@ -10,6 +10,7 @@ use App\Http\Controllers\PosController;
 use App\Http\Controllers\ProductController;
 
 use App\Http\Controllers\ProviderController;
+use App\Http\Controllers\WeddingController;
 use Illuminate\Support\Facades\Route;
 
 Route::get("/",[HomeController::class, "home"])->name("home");
@@ -43,9 +44,11 @@ Route::middleware("admin:auth")->group(function(){
        
    });
 });
-  
-   route::post("/wedding", [HomeController::class, "wedding"])->name("wedding"); 
-   route::post("/insertwedding", [HomeController::class, "insertwedding"])->name("insertwedding"); 
+Route::get("/wedding", [WeddingController::class, "index"])->name("wedding");
+
+Route::get("/insertwedding", [WeddingController::class, "showWeddingForm"])->name("weddingform");
+
+Route::post("/insertwedding", [WeddingController::class, "register"])->name("insertwedding");
   route::get("/admin/logout", [AdminController::class, "Adminlogout"])->name("admin.logout");
 
   

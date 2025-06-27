@@ -6,14 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class wedding extends Model
 {
-    protected $fillable = [
-        'name',
-        'phone',
-        'email',
-        'date',
-        'city',
-        'description',
-    ];
+  protected $fillable = [
+    'name', 'email', 'phone', 'date', 'city', 'description', 'status'
+];
 
    
 }
