@@ -78,25 +78,24 @@ public function Indexlogout(Request $request){
 
 public function filter($id){
   $categories = Category::all();
-
-    $products = Product::where('category_id', $id)->paginate(5);
-
+  $products = Product::where('category_id', $id)->paginate(5);
   return view("filtercategory", compact("categories" , "products") );
 }
 
-// public function filterCategory(Request $request){
-//     $categoryId = $request->input('category_id');
-//     $blogs = blog::where('category_id', $categoryId)->paginate(5);
-//     return view('filtercategory', compact('blogs'));
-//   }
-//  public function filtercategry($id){
-//     $categories = category::all();
-//     $products = Product::where('category_id', $id)->paginate(5);
-//     return view("filtercategory", compact("products", "categories"));
-//   }
-// public function filtercategory($id)
-// {
-    
-//     return view('filtercategory', compact('products', 'categories'));
+// // public function search(Request $request){
+// //   $search = $request->input('search');
+// //   $products = Product::where('name', 'LIKE', "%{$search}%")->paginate(5);
+// //   return view("search", compact("products"));
 // }
+
+public function viewProduct($id){
+  $products = Product::findOrFail($id);
+  if ($products) {
+    echo $products->title;
+} else {
+    // Handle the case when product is not found
+    echo "Product not found.";
+}
+  return view("view", compact("products"));
+}
 }
