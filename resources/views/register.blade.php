@@ -4,6 +4,12 @@
 @section('content1')
     <div class="container-w ">
         <div class="form-container">
+            @session('msg')
+                                <div class="alert alert-warning">
+                                    {{ session('msg') }}
+                                </div>
+                            @endsession
+            
             <form  action="{{ Route("register") }}" method="POST" class="custom-form"  >
                 @csrf
                 <div class="row">

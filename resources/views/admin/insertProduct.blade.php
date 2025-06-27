@@ -5,12 +5,12 @@
 @endsection
 
 @section('content')
-<div class="container-fluid dashboard-container py-4">
+<div class="container-fluid m-0 p-0">
     <div class="row">
         <div class="col-lg-3">
             @include("admin.sidebar")
         </div>
-        <div class="col-lg-9">
+        <div class="col-lg-9 mt-5 ">
             <div class="dashboard-header d-flex justify-content-between align-items-center mb-4">
                 <h2 class="page-title mb-0" style="color: #6f42c1;">Insert Product</h2>
                 <a href="{{ route('product.index') }}" class="btn d-flex align-items-center gap-1" style="background-color: #6f42c1; color: white;">

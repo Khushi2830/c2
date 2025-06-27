@@ -64,8 +64,10 @@ Route::post("/insertwedding", [WeddingController::class, "register"])->name("ins
         
   });
   
-
-  Route::get('/pos', [PosController::class, 'index'])->name('pos');
+Route::middleware(['auth:employee'])->group(function () {
+    Route::get('/pos', [PosController::class, 'index'])->name('pos');
+});
+ 
 
 
 

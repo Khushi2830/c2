@@ -8,6 +8,7 @@ class PosController extends Controller
 {
     public function index()
     {
-        return view('pos');
+        $categories = \App\Models\Category::all();
+        return view('pos', ['categories' => $categories]);
     }
 }

@@ -40,9 +40,14 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
         'employee' => [
             'driver' => 'session',
             'provider' => 'employees',
+        ],
+        'Pos' => [
+            'driver' => 'session',
+            'provider' => 'pos',
         ],
     ],
 
@@ -73,6 +78,7 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+
         'employees' => [
              'driver' => 'eloquent',
              'model' => App\Models\Employee::class,
@@ -81,6 +87,15 @@ return [
         // 'employees' => [
         //     'driver' => 'database',
         //     'table' => 'employees',
+        // ],
+        'pos' => [
+             'driver' => 'eloquent',
+             'model' => App\Models\Employee::class,
+         ],
+
+        // 'employees' => [
+        //     'driver' => 'database',
+        //     'table' => 'pos',
         // ],
     ],
 

@@ -68,7 +68,7 @@ class HomeController extends Controller
 
    }
   }
-  return  view("login");
+  return  view("login")->with("msg", "Invalid email or password.");  ;
 }
  
 public function index(){

@@ -70,20 +70,43 @@
   </style>
 </head>
 <body>
+
+<nav class="navbar navbar-expand-lg navbar-light  shadow-sm px-4" style="background-color:#e4e0f4;" >
+    <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+        <img src="{{ asset('logo.png') }}" alt="Creamer Logo" height="40" class="me-2">
+    </a>
+
+    <div class="ms-auto d-flex align-items-center"  >
+        @auth
+            <span class="me-3 fw-semibold text-dark">
+                👤 {{ Auth::user()->name }}
+            </span>
+
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" class="btn  btn-sm" style="background-color: #6f42c1; color: white;" >
+                    Logout
+                </button>
+            </form>
+        @endauth
+
+        @guest
+            <a href="{{ route('login') }}" class="btn btn-outline-primary btn-sm">Login</a>
+        @endguest
+    </div>
+</nav>
+
 <div class="container-fluid">
   <div class="row">
 
     
     <div class="col-2 sidebar">
       <input class="form-control mb-3" type="text" placeholder="Search Category...">
-      <div class="category">All Items</div>
-      <div class="category">Home Furniture</div>
-      <div class="category">Office Furniture</div>
-      <div class="category">Beauty and Health</div>
-      <div class="category">Skin Care</div>
-      <div class="category">Jewelry</div>
-      <div class="category">Men Bags</div>
-      <div class="category">Watches</div>
+      <div class="category active">All Items</div>
+        @foreach ($categories as $category )
+      
+      <div class="category">{{ $category->cat_title }}</div>
+       @endforeach
     </div>
 
    
@@ -120,8 +143,8 @@
         <span id="cart-total">$0.00</span>
       </div>
       <div class="mt-3">
-        <button class="btn btn-warning w-100 mb-2 btn-checkout">💵 Fast Cash</button>
-        <button class="btn btn-primary w-100 btn-checkout">✅ Check Out</button>
+        <button class="btn  w-100 mb-2 btn-checkout"  style="background-color: #6f42c1; color: white; " >💵 Fast Cash</button>
+        <button class="btn  w-100 btn-checkout"  style="background-color: #6f42c1; color: white; ">✅ Check Out</button>
       </div>
     </div>
 
