@@ -687,7 +687,88 @@
       margin-bottom: 30px;
     }
   </style>
-  
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+    }
+
+    .veg-icon {
+      width: 18px;
+      margin-right: 6px;
+    }
+
+    .qty-btn {
+      background-color: #ec008c;
+      color: white;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      border: none;
+    }
+
+    .qty-input {
+      width: 40px;
+      text-align: center;
+      border: none;
+    }
+
+    .flavour-box {
+      border: 1px solid #ec008c;
+      padding: 10px 16px;
+      border-radius: 8px;
+      color: #ec008c;
+      font-weight: 500;
+      display: inline-block;
+    }
+
+    .offer-box {
+      background-color: #dff0d8;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #3c763d;
+      display: inline-block;
+    }
+
+    .bottom-bar {
+     
+      bottom: 0;
+      background: #fff;
+      display: flex;
+      align-items: end;
+      padding: 15px;
+      border-top: 1px solid #ddd;
+      
+    }
+
+    .btn-pink {
+      background-color: #ec008c;
+      color: white;
+      font-weight: bold;
+      border: none;
+    }
+
+    .btn-purple {
+      background-color: #1d0033;
+      color: white;
+      font-weight: bold;
+      border: none;
+    }
+
+    .related-products .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .card-img-top {
+      height: 180px;
+      object-fit: cover;
+    }
+  </style>
+ 
+
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>

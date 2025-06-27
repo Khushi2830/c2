@@ -29,6 +29,7 @@ Route::middleware("index:auth")->group(function(){
         Route::get("/page",[HomeController::class, "index"])->name("index");
    });
     route::get("/filtercategory/{id}", [HomeController::class, "filter"])->name("filtercategory");
+    route::get("/view/{id}", [HomeController::class, "viewProduct"])->name("view");
 });
 
 
@@ -85,5 +86,3 @@ Route::get('/admin/employees', [AdminController::class, 'manageEmploye'])->name(
 Route::post('/admin/employee/approve/{employee}', [AdminController::class, 'approveEmployee'])->name('admin.approveEmployee');
 
   route::get("/index/logout", [HomeController::class, "Indexlogout"])->name("index.logout");
-
-Route::get('/filter/category/{id}', [HomeController::class, 'filterCategory'])->name('filter.category');

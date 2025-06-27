@@ -39,7 +39,7 @@
               100% {{$product->veg}}
             </p>
             <p class="price" style="color: #6f42c1"><del>₹{{$product->price}} </del>₹{{$product->descount_price}}</p>
-            <button class="add-btn" style="background-color: #6f42c1">Add</button>
+             <a href="{{ route("view", $product->id) }}" class="add-btn" style="background-color: #6f42c1">Add</a>
           </div>
         </div>
        
