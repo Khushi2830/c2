@@ -21,13 +21,12 @@
         @endforeach
     </div>
 
-    <!-- Main Content -->
     <div class="content">
         <div class="category-title" style="color: #6f42c1">Cakes</div>
 
         <div class="row g-4">
             @foreach ($products as $product)
-                <!-- Cake Card 1 -->
+               
                 <div class="col-md-4">
                     <div class="card shadow-sm h-100">
                         <img src="{{ asset("storage/" . $product->image) }}" class="card-img-top" alt="Cake 1">

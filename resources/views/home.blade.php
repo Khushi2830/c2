@@ -30,13 +30,13 @@
     </div>
     </div>
 
-    <!-- Bestseller Categories -->
+   
     <div class="section-purple text-center py-5">
     <h3>Shop By <span class="highlight" style="color:#5f3dc4;">Bestseller Categories</span></h3>
     <div class="container mt-4">
       <div class="row g-4 justify-content-center">
 
-      <!-- Birthday Surprises Card -->
+      
       <div class="col-md-6">
         <div class="d-flex align-items-center bg-white rounded shadow-sm p-3 h-100">
         <img
@@ -50,7 +50,6 @@
         </div>
       </div>
 
-      <!-- Anniversary Surprises Card -->
       <div class="col-md-6">
         <div class="d-flex align-items-center bg-white rounded shadow-sm p-3 h-100">
         <img
@@ -68,7 +67,7 @@
     </div>
     </div>
 
-    <!-- Shop By Cake -->
+  
     <div class="container py-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
       <h2 class="fw-bold">Shop By <span style=" color: #5f3dc4;">Cake</span></h2>

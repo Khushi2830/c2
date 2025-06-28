@@ -10,7 +10,7 @@ class AddressController extends Controller
 
     public function store(Request $request)
     {
-        // Validate form input
+ 
         $validated = $request->validate([
             'address' => 'required|string|max:255',
             'city' => 'required|string|max:100',
@@ -29,13 +29,13 @@ class AddressController extends Controller
 
     public function index()
     {
-        // Fetch all addresses for the authenticated user
+        
         $addresses = Address::paginate(5);
         return view('admin.manageAddress', compact('addresses'))->with('msg', 'Address details retrieved successfully!');
     }
     public function destroy($id)
     {
-        // Find the address by ID and delete it
+      
         $address = Address::findOrFail($id);
         $address->delete();
 

@@ -745,7 +745,7 @@
 
   body {
     padding-top: 80px;
-    /* Space for fixed header */
+  
   }
 </style>
 
@@ -810,7 +810,7 @@
   <footer class=" border-top pt-5 pb-3 mt-5" style="background-color: #e4e0f4;">
     <div class="container">
       <div class="row text-center text-md-start">
-        <!-- Logo Column -->
+       
         <div class="col-md-3 mb-4">
           <img src="{{ asset("logo.png") }}" alt="Monginis Logo" width="130">
           <p class="mt-3">
@@ -821,7 +821,7 @@
           </p>
         </div>
 
-        <!-- Products Column -->
+     
         <div class="col-md-3 mb-4">
           <h6 class="fw-bold" style="color: #5a66a0;">Products</h6>
           <p>
@@ -833,7 +833,6 @@
           </p>
         </div>
 
-        <!-- Info Column -->
         <div class="col-md-3 mb-4">
           <h6 class="fw-bold" style="color: #5a66a0;">Company</h6>
           <p>
@@ -844,7 +843,7 @@
           </p>
         </div>
 
-        <!-- Policies & Social -->
+        
         <div class="col-md-3 mb-4">
           <h6 class="fw-bold" style="color: #5a66a0;">Connect with us</h6>
           <div class="d-flex gap-2 justify-content-md-start justify-content-center">
@@ -862,7 +861,6 @@
         </div>
       </div>
 
-      <!-- Copyright -->
       <div class="row text-center pt-4 border-top">
         <div class="col-12">
           <small>Copyright © Monginis. All rights reserved</small><br>

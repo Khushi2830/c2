@@ -101,7 +101,7 @@ class HomeController extends Controller
     $product = Product::findOrFail($id);
     $relatedProducts = Product::where('category_id', $product->category_id)
       ->where('id', '!=', $id)
-      ->take(4) // limit to 4 items
+      ->take(4) 
       ->get();
     return view("view", compact("product", "relatedProducts"));
   }
@@ -147,7 +147,7 @@ class HomeController extends Controller
     return redirect()->back();
   }
 
-  // Decrease quantity
+  
   public function decrease($id)
   {
     $cart = session()->get('cart', []);
@@ -156,7 +156,7 @@ class HomeController extends Controller
       if ($cart[$id]['quantity'] > 1) {
         $cart[$id]['quantity'] -= 1;
       } else {
-        unset($cart[$id]); // remove item if quantity becomes 0
+        unset($cart[$id]);
       }
       session()->put('cart', $cart);
     }
@@ -164,7 +164,7 @@ class HomeController extends Controller
     return redirect()->back();
   }
 
-  // Remove item completely
+ 
   public function remove($id)
   {
     $cart = session()->get('cart', []);
