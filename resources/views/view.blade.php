@@ -6,9 +6,10 @@
   <div class="container">
     <div class="row g-4">
     @if($product)
-    <div class="col-md-6">
-      <img src="{{ asset("storage/" . $product->image) }}" alt="{{ $product->title }}" alt="Rainbow Pastry"
-      class="img-fluid rounded">
+     <div class="col-md-6 text-center mt-5 ">
+      <img src="{{ asset('storage/' . $product->image) }}" 
+           alt="{{ $product->title }}" 
+           class="img-fluid rounded product-image shadow">
     </div>
 
 
@@ -116,7 +117,15 @@
     </div>
   </div>
 
-
+ <style>
+  
+.product-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 0rem;
+}
+ </style>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 @endsection
