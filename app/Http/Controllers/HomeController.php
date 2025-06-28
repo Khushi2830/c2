@@ -120,8 +120,62 @@ public function addToCart(Request $request, $id)
 public function showCart()
 {
     $cart = session()->get('cart', []);
-    return view('cart', compact('cart'));
-}
+     $user = Auth::user();
+    $address = $user?->address;
 
+    return view('cart', compact('cart', 'address'));
+}
+ 
+public function increase($id)
+    {
+        $cart = session()->get('cart', []);
+
+        if (isset($cart[$id])) {
+            $cart[$id]['quantity'] += 1;
+            session()->put('cart', $cart);
+        }
+
+        return redirect()->back();
+    }
+
+    // Decrease quantity
+    public function decrease($id)
+    {
+        $cart = session()->get('cart', []);
+
+        if (isset($cart[$id])) {
+            if ($cart[$id]['quantity'] > 1) {
+                $cart[$id]['quantity'] -= 1;
+            } else {
+                unset($cart[$id]); // remove item if quantity becomes 0
+            }
+            session()->put('cart', $cart);
+        }
+
+        return redirect()->back();
+    }
+
+    // Remove item completely
+    public function remove($id)
+    {
+        $cart = session()->get('cart', []);
+
+        if (isset($cart[$id])) {
+            unset($cart[$id]);
+            session()->put('cart', $cart);
+        }
+
+        return redirect()->back()->with('msg', 'Item removed from cart.');
+    }
+    public function checkout()
+    {
+        $cart = session()->get('cart', []);
+
+        if (empty($cart)) {
+            return redirect()->back()->with('msg', 'Your cart is empty.');
+        }
+
+        return view('checkout', compact('cart'));
+    }
 
 }

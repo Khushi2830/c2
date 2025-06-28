@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EnployController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PosController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProviderController;
@@ -34,6 +35,11 @@ Route::middleware("index:auth")->group(function () {
   Route::post('/add-to-cart/{id}', [HomeController::class, 'addToCart'])->name('add.to.cart');
   Route::get('/cart', [HomeController::class, 'showCart'])->name('show.cart');
   Route::post('/cart', [AddressController::class, 'store'])->name('address.store');
+  Route::post('/place-order', [OrderController::class, 'storeOrder'])->name('placeOrder');
+Route::post('/cart/increase/{id}', [HomeController::class, 'increase'])->name('cart.increase');
+Route::post('/cart/decrease/{id}', [HomeController::class, 'decrease'])->name('cart.decrease');
+Route::post('/cart/remove/{id}', [HomeController::class, 'remove'])->name('cart.remove');
+Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
 
 
 });

@@ -13,24 +13,30 @@
             <div class="col-lg-8">
                 <div class="card shadow-sm p-3">
                     @foreach($cart as $id => $item)
-                        <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
-                            <div class="d-flex">
-                                <img src="{{ asset('storage/' . $item['image']) }}" alt="Product" width="100"
-                                    class="me-3 rounded">
-                                <div>
-                                    <h5 class="fw-bold mb-1">{{ $item['title'] }}</h5>
-                                    <p class="text-danger mb-0">₹{{ $item['price'] }}</p>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center gap-2">
-                                <h6 class="">Total Quantity :</h6>
-                                <h6><span class="quantity-value fw-bold">{{ $item['quantity'] }}</span></h6>
-                                <button class="btn btn-sm text-danger">
-                                    <i class="bi bi-trash3-fill"></i>
-                                </button>
-                            </div>
-                        </div>
-                    @endforeach
+    @php $subtotal = $item['price'] * $item['quantity']; @endphp
+    <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
+        <div class="d-flex">
+            <img src="{{ asset('storage/' . $item['image']) }}" alt="Product" width="100" class="me-3 rounded">
+            <div>
+                <h5 class="fw-bold mb-1">{{ $item['title'] }}</h5>
+                <p class="text-danger mb-1">Price: ₹{{ $item['price'] }}</p>
+                <p class="text-muted mb-0">Subtotal: ₹{{ $subtotal }}</p>
+            </div>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+            <form action="{{ route('cart.decrease', $id) }}" method="POST" class="d-inline">@csrf
+                <button class="btn btn-sm btn-outline-dark">−</button>
+            </form>
+            <span class="fw-bold">{{ $item['quantity'] }}</span>
+            <form action="{{ route('cart.increase', $id) }}" method="POST" class="d-inline">@csrf
+                <button class="btn btn-sm btn-outline-dark">+</button>
+            </form>
+            <form action="{{ route('cart.remove', $id) }}" method="POST" class="d-inline">@csrf
+                <button class="btn btn-sm text-danger"><i class="bi bi-trash3-fill"></i></button>
+            </form>
+        </div>
+    </div>
+@endforeach
 
                     <div class="text-end">
                         <a href="{{ route("index") }}" class="btn btn-pink text-white" style="background-color: #5f3dc4;"  >ADD MORE ITEMS</a>
@@ -47,9 +53,6 @@
                         @csrf
                         <div class="row">
                         </div>
-
-
-                        <!-- Address Section -->
                         <h6 class="mt-4 mb-2">Address</h6>
                         <div class="mt-2">
                             <label for="address">Street Address</label>
@@ -89,42 +92,38 @@
                     </form>
                 </div>
 
-                <div class="card mt-4 p-3">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <h5>Order Booked By</h5>
-                            <div class="row g-2">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="khushi kumari">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="8292057979">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <h5>Do You Want GST Invoice?</h5>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-outline-dark">Yes</button>
-                                <button class="btn btn-pink text-white">No</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              
             </div>
 
 
             <div class="col-lg-4">
-                <!-- <div class="card shadow-sm p-3 mb-4">
-                    <h5 class="fw-bold">Discount</h5>
-                    <div class="input-group mb-2">
-                        <input type="text" class="form-control" placeholder="Enter discount code">
-                        <button class="btn btn-pink text-white" style="background-color: #5f3dc4;" >APPLY</button>
-                    </div>
-                    <a href="#" class="text-decoration-none text-dark">
-                        <i class="bi bi-gear me-1"></i> View Coupons
-                    </a>
-                </div> -->
+                 <div class="card shadow-sm p-3 mb-3">
+                  
+    <h5 class="fw-bold mb-3">User Details</h5>
+    
+    @if(Auth::check())
+        <p><strong>Name:</strong> {{ Auth::user()->name }}</p>
+        <p><strong>Email:</strong> {{ Auth::user()->email }}</p>
+        <p><strong>Phone:</strong> {{ Auth::user()->phone ?? 'Not Provided' }}</p>
+    @else
+        <p class="text-danger">You are not logged in. Please log in to proceed with checkout.</p>
+    @endif
+
+
+                    
+                </div>
+                 <div class="card shadow-sm p-3 mb-3">
+    <h5 class="fw-bold mb-3">Shipping Address</h5>
+
+    @if(Auth::check() && Auth::user()->address)
+        <p><strong>Street:</strong> {{ Auth::user()->address->address }}</p>
+        <p><strong>City:</strong> {{ Auth::user()->address->city }}</p>
+        <p><strong>State:</strong> {{ Auth::user()->address->state }}</p>
+        <p><strong>Pincode:</strong> {{ Auth::user()->address->pincode }}</p>
+    @else
+        <p class="text-danger">No address found. Please fill in your address before checkout.</p>
+    @endif
+               </div>
 
                 <div class="card shadow-sm p-3">
                     <h5 class="fw-bold">Summary</h5>
@@ -133,10 +132,6 @@
                             <span>Sub Total</span>
                             <span>₹{{ collect($cart)->sum(fn($item) => $item['price'] * $item['quantity']) }}</span>
                         </li>
-                        <li class="d-flex justify-content-between py-1">
-                            <span>Delivery Charges</span>
-                            <span>+₹75 <small class="text-danger">(Free above 399)</small></span>
-                        </li>
                         <li class="d-flex justify-content-between py-1 border-bottom">
                             <span>Discount</span>
                             <span>-₹0.00</span>
@@ -148,31 +143,14 @@
                             </span>
                         </li>
                     </ul>
+                    
                 </div>
-
-                <div class="card shadow-sm p-3 mt-4">
-                    <h5 class="fw-bold">Summary</h5>
-                    <ul class="list-unstyled">
-                        <li class="d-flex justify-content-between py-1">
-                            <span>Sub Total</span>
-                            <span>₹{{ collect($cart)->sum(fn($item) => $item['price'] * $item['quantity']) }}</span>
-                        </li>
-                        <li class="d-flex justify-content-between py-1">
-                            <span>Delivery Charges</span>
-                            <span>+₹75 <small class="text-danger">(Free above 399)</small></span>
-                        </li>
-                        <li class="d-flex justify-content-between py-1 border-bottom">
-                            <span>Discount</span>
-                            <span>-₹0.00</span>
-                        </li>
-                        <li class="d-flex justify-content-between fw-bold pt-2">
-                            <span>Total</span>
-                            <span class="text-danger">
-                                ₹{{ collect($cart)->sum(fn($item) => $item['price'] * $item['quantity']) + 75 }}
-                            </span>
-                        </li>
-                    </ul>
+               
+                <div class="card shadow-sm p-3 justify-content-center text-center mt-4">
+                    <a href="{{ route("checkout") }}" class="btn btn-success">Proceed to Checkout</a>
                 </div>
+                 
+                
             </div>
         </div>
     </div>
