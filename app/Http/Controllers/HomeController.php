@@ -74,7 +74,8 @@ class HomeController extends Controller
   public function index()
   {
     $categories = category::all();
-    return view("index", compact("categories"));
+    $products = Product::all();
+    return view("index", compact("categories", "products"));
   }
 
   public function Indexlogout(Request $request)

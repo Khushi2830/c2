@@ -24,32 +24,38 @@
     <div class="content">
         <div class="category-title" style="color: #6f42c1">Cakes</div>
 
-        <div class="row g-4">
-            @foreach ($products as $product)
-               
-                <div class="col-md-4">
-                    <div class="card shadow-sm h-100">
-                        <img src="{{ asset("storage/" . $product->image) }}" class="card-img-top" alt="Cake 1">
-                        <div class="card-body">
-                            <h5 class="card-title">{{$product->title}}</h5>
-                            <p class="text-muted mb-2">{{ Str::limit($product->description, 20) }}</p>
-                            <p class="d-flex align-items-center text-success mb-1">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Indian_vegetarian_mark.svg/2048px-Indian_vegetarian_mark.svg.png"
-                                    class="veg-icon" alt="Veg Icon">
-                                100% {{$product->veg}}
-                            </p>
-                            <p class="price" style="color: #6f42c1"><del>₹{{$product->price}}
-                                </del>₹{{$product->descount_price}}</p>
-                            <a href="{{ route("view", $product->id) }}" class="btn w-100 text-white"
-                                style="background-color: #6f42c1">Add</a>
-                        </div>
+       <div class="row g-4">
+    @foreach ($products as $product)
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 h-100 rounded-4 overflow-hidden">
+                <div class="position-relative">
+                    <img src="{{ asset("storage/" . $product->image) }}" class="card-img-top object-fit-cover" alt="Cake" style="height: 220px; object-fit: cover;">
+                    <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-1 rounded-pill fs-6">₹{{ $product->descount_price }}</span>
+                </div>
+
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                        <h5 class="card-title fw-semibold">{{ $product->title }}</h5>
+                        <p class="text-muted small">{{ Str::limit($product->description, 40) }}</p>
+
+                        <p class="d-flex align-items-center text-success mb-2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Indian_vegetarian_mark.svg/2048px-Indian_vegetarian_mark.svg.png"
+                                class="veg-icon me-2" alt="Veg Icon" style="width: 18px; height: 18px;">
+                            100% {{ $product->veg }}
+                        </p>
+
+                        <p class="mb-2">
+                            <span class="text-muted text-decoration-line-through me-2">₹{{ $product->price }}</span>
+                            <span class="text-primary fw-bold">₹{{ $product->descount_price }}</span>
+                        </p>
                     </div>
 
-
+                    <a href="{{ route('view', $product->id) }}" class="btn btn-purple mt-3 w-100">Add</a>
                 </div>
-            @endforeach
-
+            </div>
         </div>
+    @endforeach
+</div>
 
         <div class="footer mt-2">
             <div class="row text-center text-md-start">
@@ -93,5 +99,29 @@
         </div>
     </div>
 
+<style>
+    .btn-purple {
+        background-color: #6f42c1;
+        color: #fff;
+        border: none;
+        transition: 0.3s ease;
+    }
 
+    .btn-purple:hover {
+        background-color: #5936a8;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-body {
+        padding: 1.2rem;
+    }
+
+    .veg-icon {
+        width: 18px;
+        height: 18px;
+    }
+</style>
 @endsection

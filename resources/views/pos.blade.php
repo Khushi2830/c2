@@ -122,17 +122,18 @@
       </div>
 
 
-      <div class="col-6 p-3">
+      <div class="col-6 p-2">
         <input class="form-control mb-3" type="text" placeholder="Search Product...">
         <div class="row" id="product-list">
-
-          <div class="col-md-4">
-            <div class="product-card text-center" onclick="addToCart('Dr. Martens', 299.00)">
-              <img src="https://via.placeholder.com/120" class="product-img" alt="Dr. Martens">
-              <div><strong>Dr. Martens</strong></div>
-              <div>$299.00</div>
+          @foreach ($products as $product)
+          <div class="col-md-4 g-2  ">
+            <div class="product-card text-center" onclick="addToCart('{{$product->title}}', '₹{{$product->descount_price}}')">
+              <img src="{{ asset("storage/" . $product->image) }}" class="product-img" alt="Dr. Martens">
+              <div><strong>{{$product->title}}</strong></div>
+              <div><del>₹{{$product->price}}</del>₹{{$product->descount_price}}</div>
             </div>
           </div>
+          @endforeach
         </div>
       </div>
 
@@ -167,19 +168,19 @@
   <script>
     let cart = {};
 
-    function addToCart(productName, price) {
-      if (cart[productName]) {
-        cart[productName].qty += 1;
+    function addToCart(title, discount_price) {
+      if (cart[title]) {
+        cart[title].qty += 1;
       } else {
-        cart[productName] = { price: price, qty: 1 };
+        cart[title] = { discount_price: discount_price, qty: 1 };
       }
       renderCart();
     }
 
-    function updateQty(productName, change) {
-      if (cart[productName]) {
-        cart[productName].qty += change;
-        if (cart[productName].qty <= 0) delete cart[productName];
+    function updateQty(title, change) {
+      if (cart[title]) {
+        cart[title].qty += change;
+        if (cart[title].qty <= 0) delete cart[title];
       }
       renderCart();
     }

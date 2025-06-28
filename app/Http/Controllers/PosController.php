@@ -9,6 +9,7 @@ class PosController extends Controller
     public function index()
     {
         $categories = \App\Models\Category::all();
-        return view('pos', ['categories' => $categories]);
+        $products = \App\Models\Product::all();
+        return view('pos', ['categories' => $categories], ['products' => $products]);
     }
 }
