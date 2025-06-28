@@ -9,8 +9,8 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
- <style>
-  .xx {
+  <style>
+    .xx {
       font-family: Arial, sans-serif;
       background-color: #fff;
       margin: 0;
@@ -52,18 +52,20 @@
   </style>
   <style>
     .icon-group i {
-  cursor: pointer;
-  color: #6f42c1;
-}
-.profile {
-  min-width: 40px;
-  height: 40px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-}
+      cursor: pointer;
+      color: #6f42c1;
+    }
+
+    .profile {
+      min-width: 40px;
+      height: 40px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -324,8 +326,6 @@
     }
   </style>
   <style>
-   
-
     /* .header {
             background-color: #792dc4;
             color: white;
@@ -377,73 +377,71 @@
   </style>
   <style>
     body {
-  font-family: 'Segoe UI', sans-serif;
-}
+      font-family: 'Segoe UI', sans-serif;
+    }
 
-.why-choose-us {
-  background-color: #e4e0f4;
-  color: #000;
-}
+    .why-choose-us {
+      background-color: #e4e0f4;
+      color: #000;
+    }
 
-.text-pink {
-  color: #d63384;
-  font-size: 2.5rem;
-}
+    .text-pink {
+      color: #d63384;
+      font-size: 2.5rem;
+    }
 
-.icon {
-  width: 60px;
-  height: 60px;
-  background-color: #fda4d4;
-  border-radius: 50%;
-  padding: 12px;
-}
+    .icon {
+      width: 60px;
+      height: 60px;
+      background-color: #fda4d4;
+      border-radius: 50%;
+      padding: 12px;
+    }
   </style>
   <style>
     body {
-  font-family: 'Segoe UI', sans-serif;
-}
+      font-family: 'Segoe UI', sans-serif;
+    }
 
-.cake-showcase {
-  background-color: #ffeaf7;
-}
+    .cake-showcase {
+      background-color: #ffeaf7;
+    }
 
-.title-heading {
-  font-size: 2.5rem;
-  color: #d63384;
-}
+    .title-heading {
+      font-size: 2.5rem;
+      color: #d63384;
+    }
 
-.title-heading .text-purple {
-  color: #5e2590;
-}
+    .title-heading .text-purple {
+      color: #5e2590;
+    }
 
-.cake-card img {
-  height: 300px;
-  object-fit: contain;
-  padding: 1rem;
-  background-color: #fff;
-}
+    .cake-card img {
+      height: 300px;
+      object-fit: contain;
+      padding: 1rem;
+      background-color: #fff;
+    }
 
-.card-title {
-  margin-top: 1rem;
-  font-size: 1.1rem;
-  color: #000;
-}
+    .card-title {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      color: #000;
+    }
 
-.btn-pink {
-  background-color: #e6007e;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: 0.3s ease;
-}
+    .btn-pink {
+      background-color: #e6007e;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: 0.3s ease;
+    }
 
-.btn-pink:hover {
-  background-color: #cc006b;
-}
+    .btn-pink:hover {
+      background-color: #cc006b;
+    }
   </style>
-   <style>
-    
-
+  <style>
     .testimonial-section {
       text-align: center;
       margin-bottom: 40px;
@@ -499,8 +497,8 @@
       font-weight: bold;
     }
   </style>
-   <style>
-   .yy {
+  <style>
+    .yy {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
       background-color: #fff2f4;
@@ -579,32 +577,33 @@
     }
   </style>
   <style>
-  .header.tt {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 70px;
-    background-color: #f8f9fa;
-    z-index: 999;
-    padding: 0 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
+    .header.tt {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 70px;
+      background-color: #f8f9fa;
+      z-index: 999;
+      padding: 0 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
 
-  .icon-group .profile {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-  }
+    .icon-group .profile {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
 
-  body {
-    padding-top: 80px; /* Space for fixed header */
-  }
-</style>
- <style>
+    body {
+      padding-top: 80px;
+      /* Space for fixed header */
+    }
+  </style>
+  <style>
     body {
       background-color: #fff;
     }
@@ -640,15 +639,16 @@
       padding: 30px;
 
     }
+
     .card {
       transition: 0.3s ease;
       border-radius: 12px;
-    
+
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
     }
 
     .card-title {
@@ -733,14 +733,14 @@
     }
 
     .bottom-bar {
-     
+
       bottom: 0;
       background: #fff;
       display: flex;
       align-items: end;
       padding: 15px;
       border-top: 1px solid #ddd;
-      
+
     }
 
     .btn-pink {
@@ -759,7 +759,7 @@
 
     .related-products .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
 
     .card-img-top {
@@ -767,21 +767,24 @@
       object-fit: cover;
     }
   </style>
-   <style>
+  <style>
     .nav-tabs .nav-link.active {
       border: none;
       border-bottom: 2px solid #b435d7;
       color: #b435d7;
       font-weight: 500;
     }
+
     .nav-tabs .nav-link {
       border: none;
       color: #555;
     }
+
     .tab-content ul {
       list-style: none;
       padding-left: 0;
     }
+
     .tab-content ul li::before {
       content: "●";
       color: #d1d1d1;
@@ -790,28 +793,30 @@
       width: 1em;
       margin-left: -1em;
     }
+
     .tab-content ul li {
       margin-bottom: 8px;
     }
+
     h4 {
       font-weight: bold;
       margin-bottom: 1rem;
     }
   </style>
-<style>
-  .custom-form input {
-    border-radius: 0.4rem;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid #ccc;
-}
-</style>
+  <style>
+    .custom-form input {
+      border-radius: 0.4rem;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid #ccc;
+    }
+  </style>
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <div class="header tt d-flex align-items-center justify-content-between" style="background-color: #e4c8f4;">
-    
+
     <div class="d-flex align-items-center gap-3">
       <a href="{{ route("index") }}">
         <div class="logo"><img src="{{ asset("logo.png") }}" width="200px" alt=""></div>
@@ -820,50 +825,51 @@
 
     </div>
 
-    
-    <div class="flex-grow-1 mx-4 " >
+
+    <div class="flex-grow-1 mx-4 ">
       <div class="d-flex align-items-center search-bar bg-white px-2">
         <input type="text" class="search-input" placeholder="Search for cakes, pastries, savories, etc.">
         <i class="fas fa-search search-icon"></i>
       </div>
     </div>
 
-    
+
     <div class="d-flex align-items-center gap-3 icon-group">
 
- 
-  <a href="{{ route("wedding") }}"><i class="fas fa-birthday-cake fs-5"></i></a>
 
- 
-  <div class="">
-    <a class="" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none; outline: none;">
+      <a href="{{ route("wedding") }}"><i class="fas fa-birthday-cake fs-5"></i></a>
+
+
       <div class="">
-        <div class="profile p-2 m-2 text-white" style="background-color: #6f42c1; border-radius: 50%;">
-          {{ Auth::user()->name ?? 'student' }}
-        </div>
-      </div>
-    </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-      <li>
-        <a class="dropdown-item" style="color: #6f42c1  ;"    href="{{ route('index.logout') }}">
-          <i class="fas fa-sign-out-alt me-2" style="color: #6f42c1  ;"></i> Logout
+        <a class="" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+          style="text-decoration: none; outline: none;">
+          <div class="">
+            <div class="profile p-2 m-2 text-white" style="background-color: #6f42c1; border-radius: 50%;">
+              {{ Auth::user()->name ?? 'student' }}
+            </div>
+          </div>
         </a>
-      </li>
-    </ul>
-  </div>
-  <a href="{{ route("show.cart") }}"><i class="fas fa-shopping-cart fs-5"></i></a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+          <li>
+            <a class="dropdown-item" style="color: #6f42c1  ;" href="{{ route('index.logout') }}">
+              <i class="fas fa-sign-out-alt me-2" style="color: #6f42c1  ;"></i> Logout
+            </a>
+          </li>
+        </ul>
+      </div>
+      <a href="{{ route("show.cart") }}"><i class="fas fa-shopping-cart fs-5"></i></a>
 
- 
 
-</div>
+
+    </div>
   </div>
 
   @section('content3')
   @show
- 
 
-  
-  
+
+
+
 
 </body>
 

@@ -12,8 +12,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-         $blogs = blog::paginate(5);
-        return view('admin.manageBlog',compact("blogs"));
+        $blogs = blog::paginate(5);
+        return view('admin.manageBlog', compact("blogs"));
     }
 
     /**
@@ -28,30 +28,29 @@ class BlogController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        {
-        $request->validate([
-            'title' => 'required|unique:blogs,title',
-            'author' => 'required|unique:blogs,author',
-            'content' => 'nullable',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
+    { {
+            $request->validate([
+                'title' => 'required|unique:blogs,title',
+                'author' => 'required|unique:blogs,author',
+                'content' => 'nullable',
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
 
-        $blog = new blog();
-        $blog->title = $request->title;
-        $blog->author = $request->author; 
-        $blog->content = $request->content;
+            $blog = new blog();
+            $blog->title = $request->title;
+            $blog->author = $request->author;
+            $blog->content = $request->content;
 
-       if ($request->hasFile('image')) {
-    $imageName = time() . '.' . $request->image->extension();
-    $request->file("image")->storeAs("blog_images", $imageName, "public");
-    $blog->image = 'blog_images/' . $imageName;
-}
+            if ($request->hasFile('image')) {
+                $imageName = time() . '.' . $request->image->extension();
+                $request->file("image")->storeAs("blog_images", $imageName, "public");
+                $blog->image = 'blog_images/' . $imageName;
+            }
 
-        $blog->save();
+            $blog->save();
 
-        return redirect()->route('blog.index')->with('msg', 'blog created successfully.');
-    }
+            return redirect()->route('blog.index')->with('msg', 'blog created successfully.');
+        }
 
     }
 

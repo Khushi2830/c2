@@ -5,30 +5,30 @@
     <div class="container-w ">
         <div class="form-container">
             @session('msg')
-                                <div class="alert alert-warning">
-                                    {{ session('msg') }}
-                                </div>
-                            @endsession
-            
-            <form  action="{{ Route("register") }}" method="POST" class="custom-form"  >
+                <div class="alert alert-warning">
+                    {{ session('msg') }}
+                </div>
+            @endsession
+
+            <form action="{{ Route("register") }}" method="POST" class="custom-form">
                 @csrf
                 <div class="row">
                     <div class="col">
                         <label for="name">First Name</label>
                         <input type="text" id="name" name="name">
-                      
-                    </div> 
-                     @error('name')
-                            <p class="text-danger small mt-1">{{ $message }}</p>
-                        @enderror
+
+                    </div>
+                    @error('name')
+                        <p class="text-danger small mt-1">{{ $message }}</p>
+                    @enderror
                     <div class="col">
                         <label for="lastname">last Name</label>
                         <input type="text" id="lastname" name="lastname">
-                    
+
                     </div>
-                        @error('lastname')
-                            <p class="text-danger small mt-1">{{ $message }}</p>
-                        @enderror
+                    @error('lastname')
+                        <p class="text-danger small mt-1">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="row">
                     <div class="col">
@@ -40,18 +40,18 @@
                                 <p class="text-danger small mt-1">{{ $message }}</p>
                             @enderror
                         </div>
-                         @error('phone')
-                                <p class="text-danger small mt-1">{{ $message }}</p>
-                            @enderror
+                        @error('phone')
+                            <p class="text-danger small mt-1">{{ $message }}</p>
+                        @enderror
 
 
                     </div>
                     <div class="col">
                         <label for="date">Date of the Event</label>
                         <input type="date" id="date" name="date">
-                    
+
                     </div>
-                    
+
                 </div>
                 <label for="email">Email</label>
                 <div class="input-icon">

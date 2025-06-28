@@ -10,48 +10,48 @@ use Illuminate\Http\Request;
 class OrderController extends Controller
 {
     public function storeOrder(Request $request)
-{
-    $cart = session()->get('cart');
+    {
+        $cart = session()->get('cart');
 
-    if (!$cart || count($cart) == 0) {
-        return back()->with('error', 'Cart is empty!');
-    }
+        if (!$cart || count($cart) == 0) {
+            return back()->with('error', 'Cart is empty!');
+        }
 
-    $total = 0;
+        $total = 0;
 
-    // Calculate total
-    foreach ($cart as $id => $item) {
-        $total += $item['price'] * $item['quantity'];
-    }
+        // Calculate total
+        foreach ($cart as $id => $item) {
+            $total += $item['price'] * $item['quantity'];
+        }
 
-    // Create main order
-    $order = order::create([
-        'customer_name' => $request->customer_name,
-        'phone' => $request->phone,
-        'total' => $total,
-        'status' => 'pending',
-    ]);
-
-    // Now loop through cart and store items in order_items
-    foreach ($cart as $productId => $item) {
-        orderitem::create([
-            'order_id' => $order->id,
-            'product_id' => $productId,
-            'quantity' => $item['quantity'], // <-- STORED HERE
-            'price' => $item['price'],
+        // Create main order
+        $order = order::create([
+            'customer_name' => $request->customer_name,
+            'phone' => $request->phone,
+            'total' => $total,
+            'status' => 'pending',
         ]);
+
+        // Now loop through cart and store items in order_items
+        foreach ($cart as $productId => $item) {
+            orderitem::create([
+                'order_id' => $order->id,
+                'product_id' => $productId,
+                'quantity' => $item['quantity'], // <-- STORED HERE
+                'price' => $item['price'],
+            ]);
+        }
+
+        //Optionally store payment info
+        payment::create([
+            'order_id' => $order->id,
+            'payment_method' => $request->payment_method,
+            'payment_status' => 'pending',
+            'amount' => $total,
+        ]);
+
+        session()->forget('cart'); // Clear cart after order placed
+
+        return redirect()->back()->with('msg', 'Order placed successfully!');
     }
-
-    //Optionally store payment info
-    payment::create([
-        'order_id' => $order->id,
-        'payment_method' => $request->payment_method,
-        'payment_status' => 'pending',
-        'amount' => $total,
-    ]);
-
-    session()->forget('cart'); // Clear cart after order placed
-
-    return redirect()->back()->with('msg', 'Order placed successfully!');
-}
 }

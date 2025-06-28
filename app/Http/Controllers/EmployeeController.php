@@ -8,11 +8,13 @@ use Illuminate\Support\Facades\Auth;
 
 class EmployeeController extends Controller
 {
-    public function showRegisterForm() {
+    public function showRegisterForm()
+    {
         return view('employeRegister');
     }
 
-    public function register(Request $req) {
+    public function register(Request $req)
+    {
         $data = $req->validate([
             'name' => 'required',
             'last_name' => 'required',
@@ -32,11 +34,13 @@ class EmployeeController extends Controller
         return redirect()->route('registerForm')->with('mis', 'Wait for admin approval.');
     }
 
-    public function showLoginForm() {
+    public function showLoginForm()
+    {
         return view('employeLogin');
     }
 
-    public function login(Request $req) {
+    public function login(Request $req)
+    {
         $credentials = $req->only('email', 'password');
         if (Auth::guard('employee')->attempt($credentials)) {
             $employee = Auth::guard('employee')->user();
@@ -50,7 +54,8 @@ class EmployeeController extends Controller
         return back()->with('error', 'Invalid credentials');
     }
 
-    public function logout() {
+    public function logout()
+    {
         Auth::guard('employee')->logout();
         return redirect()->route('loginForm');
     }

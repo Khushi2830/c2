@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,32 +10,32 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <style>
     .form-control-custom {
-    padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid #ced4da;
-    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ced4da;
+      transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
 
-.form-control-custom:focus {
-    border-color: #0d6efd;
-    box-shadow: 0 0 0 0.2rem rgba(13,110,253,.25);
-}
+    .form-control-custom:focus {
+      border-color: #0d6efd;
+      box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, .25);
+    }
 
-.form-error {
-    font-size: 0.875rem;
-    color: #dc3545;
-}
+    .form-error {
+      font-size: 0.875rem;
+      color: #dc3545;
+    }
 
-      .stat-card {
+    .stat-card {
       background: #fff;
       border-radius: 10px;
       padding: 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
       position: relative;
       overflow: hidden;
       transform: translateY(-3px);
       transition: all 0.2s ease-in-out;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4) !important;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4) !important;
     }
 
     .stat-card .icon-box {
@@ -87,6 +88,7 @@
       font-size: 16px;
       color: #333;
     }
+
     .sidebar {
       width: 260px;
       min-height: 80vh;
@@ -124,7 +126,8 @@
       transition: background 0.3s ease;
     }
 
-    .sidebar .menu-item:hover, .sidebar .menu-item.active {
+    .sidebar .menu-item:hover,
+    .sidebar .menu-item.active {
       background-color: #7b5de4;
     }
 
@@ -149,6 +152,7 @@
     .submenu a:hover {
       color: white;
     }
+
     .header {
       background-color: #e4e0f4;
       padding: 10px 20px;
@@ -156,27 +160,32 @@
       align-items: center;
       justify-content: space-between;
     }
+
     .logo {
       font-size: 20px;
       font-weight: bold;
       color: #4c32a1;
     }
+
     .partner {
       margin-left: 10px;
       font-weight: 500;
     }
+
     .search-box {
       max-width: 500px;
       flex-grow: 1;
       margin: 0 20px;
       position: relative;
     }
+
     .search-box input {
       width: 100%;
       padding: 10px 40px 10px 15px;
       border-radius: 6px;
       border: 1px solid #5369c0;
     }
+
     .search-box i {
       position: absolute;
       right: 12px;
@@ -184,12 +193,15 @@
       transform: translateY(-50%);
       color: gray;
     }
-    .icons i, .icons .profile {
+
+    .icons i,
+    .icons .profile {
       font-size: 22px;
       margin-left: 20px;
-      color:#5369c0;
+      color: #5369c0;
       cursor: pointer;
     }
+
     .icons .profile {
       background-color: #fbd25b;
       color: white;
@@ -202,14 +214,15 @@
       font-size: 16px;
     }
   </style>
-  
-  
+
+
 </head>
+
 <body>
 
   <div class="header">
     <div class="d-flex align-items-center">
-      <div class="logo"><img src="{{ asset("logo.png") }}" width="150px" alt="" >| Admin Pannel</div>
+      <div class="logo"><img src="{{ asset("logo.png") }}" width="150px" alt="">| Admin Pannel</div>
     </div>
 
     <div class="search-box">
@@ -217,11 +230,13 @@
       <i class="fas fa-search"></i>
     </div>
 
-    <div class="icons d-flex align-items-center" width="" >
-      <div class="profile lg w-100 h-100 p-2 m-2 " style="background-color:  #6845c7 ;" > {{ Auth::user()->name ?? 'student' }}</div>
+    <div class="icons d-flex align-items-center" width="">
+      <div class="profile lg w-100 h-100 p-2 m-2 " style="background-color:  #6845c7 ;">
+        {{ Auth::user()->name ?? 'student' }}</div>
     </div>
   </div>
-   @section('content')
-   @show
+  @section('content')
+  @show
 </body>
+
 </html>

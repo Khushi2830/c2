@@ -23,7 +23,7 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('admin.insertProduct',compact('categories'));
+        return view('admin.insertProduct', compact('categories'));
     }
 
     /**
@@ -34,19 +34,19 @@ class ProductController extends Controller
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'price' => 'required|numeric|min:0',
-           'descount_price' => 'nullable|numeric|min:0',
+            'descount_price' => 'nullable|numeric|min:0',
             'category_id' => 'required|exists:categories,id',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'kg' => 'required|string',
-             'veg' => 'required|string',
+            'veg' => 'required|string',
             'description' => 'nullable|string',
-             
+
         ]);
 
-        $data["image"] = $request->file("image")->store("product_images","public");
+        $data["image"] = $request->file("image")->store("product_images", "public");
 
         $product = Product::create($data);
-        return redirect()->route('product.index')->with ('msg', 'product inserted successfully.');
+        return redirect()->route('product.index')->with('msg', 'product inserted successfully.');
 
     }
 
@@ -78,10 +78,9 @@ class ProductController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(Product $product)
-    {
-        {
-        $product->delete();
-        return redirect()->back()->with('maseg', 'product Deleted successfully.');
-    }
+    { {
+            $product->delete();
+            return redirect()->back()->with('maseg', 'product Deleted successfully.');
+        }
     }
 }

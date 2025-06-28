@@ -26,7 +26,7 @@ class indexMiddleware
     //         return redirect()->route('index')->with('success', 'Welcome to the index page!');
     //     }
 
-       
+
     //     return $next($request);
     // }
 

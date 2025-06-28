@@ -12,8 +12,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-         $categories = Category::paginate(3);
-       return view("admin.manageCategory", compact("categories"));
+        $categories = Category::paginate(3);
+        return view("admin.manageCategory", compact("categories"));
     }
 
     /**
@@ -21,8 +21,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-         $categories = Category::paginate(5); 
-    return view("admin.insertCategory" ,compact("categories") );
+        $categories = Category::paginate(5);
+        return view("admin.insertCategory", compact("categories"));
     }
 
     /**
@@ -42,13 +42,13 @@ class CategoryController extends Controller
         $category->cat_description = $request->cat_description;
         $category->category_id = $request->category_id;
 
-       
-    if ($request->hasFile('cover_image')) {
-        $imageName = time().'.'.$request->cover_image->extension();
-        // Save with custom name
-        $request->file("cover_image")->storeAs("category_images", $imageName, "public");
-        $category->cover_image = 'category_images/' . $imageName;
-    }
+
+        if ($request->hasFile('cover_image')) {
+            $imageName = time() . '.' . $request->cover_image->extension();
+            // Save with custom name
+            $request->file("cover_image")->storeAs("category_images", $imageName, "public");
+            $category->cover_image = 'category_images/' . $imageName;
+        }
 
         $category->save();
 

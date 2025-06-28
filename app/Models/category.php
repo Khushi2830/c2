@@ -10,6 +10,6 @@ class category extends Model
 
     public function subcategories()
     {
-        return $this->hasOne(category::class,"id", 'category_id');
+        return $this->hasOne(category::class, "id", 'category_id');
     }
 }
