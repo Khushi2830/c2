@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddressController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
@@ -13,44 +14,45 @@ use App\Http\Controllers\WeddingController;
 use App\Models\wedding;
 use Illuminate\Support\Facades\Route;
 
-Route::get("/",[HomeController::class, "home"])->name("home");
+Route::get("/", [HomeController::class, "home"])->name("home");
 
-Route::get("/aboutUs",[HomeController::class, "about"])->name("abuout");
+Route::get("/aboutUs", [HomeController::class, "about"])->name("abuout");
 Route::match(['get', 'post'], '/register', [HomeController::class, 'register'])->name('register');
 Route::match(['get', 'post'], '/login', [HomeController::class, 'login'])->name('login');
 
-Route::get("/histroy",[HomeController::class, "histroy"])->name("histroy");
-Route::get("/blog1",[HomeController::class, "blog1"])->name("blog1");
+Route::get("/histroy", [HomeController::class, "histroy"])->name("histroy");
+Route::get("/blog1", [HomeController::class, "blog1"])->name("blog1");
 
-Route::middleware("index:auth")->group(function(){
-    
-    Route::prefix("index")->group(function(){
-        Route::get("/page",[HomeController::class, "index"])->name("index");
-   });
-    route::get("/filtercategory/{id}", [HomeController::class, "filter"])->name("filtercategory");
-    route::get("/view/{id}", [HomeController::class, "viewProduct"])->name("view");
-    Route::get('/product/{id}', [HomeController::class, 'viewProduct'])->name('viewProduct');
-    Route::post('/add-to-cart/{id}', [HomeController::class, 'addToCart'])->name('add.to.cart');
-    Route::get('/cart', [HomeController::class, 'showCart'])->name('show.cart');
+Route::middleware("index:auth")->group(function () {
 
+  Route::prefix("index")->group(function () {
+    Route::get("/page", [HomeController::class, "index"])->name("index");
+  });
+  route::get("/filtercategory/{id}", [HomeController::class, "filter"])->name("filtercategory");
+  route::get("/view/{id}", [HomeController::class, "viewProduct"])->name("view");
+  Route::get('/product/{id}', [HomeController::class, 'viewProduct'])->name('viewProduct');
+  Route::post('/add-to-cart/{id}', [HomeController::class, 'addToCart'])->name('add.to.cart');
+  Route::get('/cart', [HomeController::class, 'showCart'])->name('show.cart');
+  Route::post('/cart', [AddressController::class, 'store'])->name('address.store');
 
 
 });
 
 
 
-Route::middleware("admin:auth")->group(function(){
+Route::middleware("admin:auth")->group(function () {
 
-   Route::prefix("admin")->group(function(){
-   
+  Route::prefix("admin")->group(function () {
+
     Route::get("/", [AdminController::class, "index"])->name("dashboard");
-       Route::get("/dashboard", [AdminController::class, "index"])->name("dashboard");
-       Route::get("/user", [AdminController::class, "manageUser"])->name("manageUser");
-       Route::resource("/product",ProductController::class, );
-       Route::resource("/category", CategoryController::class, );
-       Route::resource("/blog", BlogController::class, );
-       
-   });
+    Route::get("/dashboard", [AdminController::class, "index"])->name("dashboard");
+    Route::get("/user", [AdminController::class, "manageUser"])->name("manageUser");
+    Route::resource("/product", ProductController::class, );
+    Route::resource("/category", CategoryController::class, );
+    Route::resource("/blog", BlogController::class, );
+    Route::get("/manageAddress", [AddressController::class, "index"])->name("manageAddress");
+    route::delete("/address/delete/{id}", [AddressController::class, "destroy"])->name("address.delete");
+  });
 });
 
 
@@ -63,25 +65,25 @@ Route::post('/admin/cake/confirm/{wedding}', [AdminController::class, 'approveca
 
 
 
-  route::get("/admin/logout", [AdminController::class, "Adminlogout"])->name("admin.logout");
-
-  
+route::get("/admin/logout", [AdminController::class, "Adminlogout"])->name("admin.logout");
 
 
-  Route::prefix("/employee")->group(function(){
-       Route::get('/register', [EmployeeController::class, 'showRegisterForm'])->name('registerForm');
-       Route::post('/register', [EmployeeController::class, 'register'])->name('employeregister');
-       Route::get('/login', [EmployeeController::class, 'showLoginForm'])->name('loginForm');
-       Route::post('/login', [EmployeeController::class, 'login'])->name('.login');
-       Route::post('/logout', [EmployeeController::class, 'logout'])->name('logout');
 
-        
-  });
-  
-Route::middleware(['auth:employee'])->group(function () {
-    Route::get('/pos', [PosController::class, 'index'])->name('pos');
+
+Route::prefix("/employee")->group(function () {
+  Route::get('/register', [EmployeeController::class, 'showRegisterForm'])->name('registerForm');
+  Route::post('/register', [EmployeeController::class, 'register'])->name('employeregister');
+  Route::get('/login', [EmployeeController::class, 'showLoginForm'])->name('loginForm');
+  Route::post('/login', [EmployeeController::class, 'login'])->name('.login');
+  Route::post('/logout', [EmployeeController::class, 'logout'])->name('logout');
+
+
 });
- 
+
+Route::middleware(['auth:employee'])->group(function () {
+  Route::get('/pos', [PosController::class, 'index'])->name('pos');
+});
+
 
 
 
@@ -90,4 +92,4 @@ Route::get('/admin/applications', [AdminController::class, 'manageApplication'])
 Route::get('/admin/employees', [AdminController::class, 'manageEmploye'])->name('manageEmploye');
 Route::post('/admin/employee/approve/{employee}', [AdminController::class, 'approveEmployee'])->name('admin.approveEmployee');
 
-  route::get("/index/logout", [HomeController::class, "Indexlogout"])->name("index.logout");
+route::get("/index/logout", [HomeController::class, "Indexlogout"])->name("index.logout");

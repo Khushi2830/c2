@@ -767,8 +767,44 @@
       object-fit: cover;
     }
   </style>
- 
-
+   <style>
+    .nav-tabs .nav-link.active {
+      border: none;
+      border-bottom: 2px solid #b435d7;
+      color: #b435d7;
+      font-weight: 500;
+    }
+    .nav-tabs .nav-link {
+      border: none;
+      color: #555;
+    }
+    .tab-content ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .tab-content ul li::before {
+      content: "●";
+      color: #d1d1d1;
+      font-size: 12px;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    .tab-content ul li {
+      margin-bottom: 8px;
+    }
+    h4 {
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+  </style>
+<style>
+  .custom-form input {
+    border-radius: 0.4rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ccc;
+}
+</style>
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
