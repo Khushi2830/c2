@@ -692,7 +692,7 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body style=" overflow-x: hidden; height: 100%;  scroll-behavior: smooth;"  >
   <div class="header tt d-flex align-items-center justify-content-between" style="background-color: #e4c8f4;">
 
     <div class="d-flex align-items-center gap-3">

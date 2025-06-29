@@ -218,7 +218,7 @@
 
 </head>
 
-<body>
+<body  style=" overflow-x: hidden; height: 100%;  scroll-behavior: smooth;" >
 
   <div class="header">
     <div class="d-flex align-items-center">
