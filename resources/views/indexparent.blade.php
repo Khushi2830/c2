@@ -705,12 +705,7 @@
 
 
 
-    <div class="flex-grow-1 mx-4 ">
-      <div class="d-flex align-items-center search-bar bg-white px-2" >
-        <input type="text" class="search-input" placeholder="Search for cakes, pastries, savories, etc.">
-        <i class="fas fa-search search-icon" style=" color: #6f42c1;" ></i>
-      </div>
-    </div>
+   
     <div class="d-flex align-items-center gap-3 icon-group">
 
 
