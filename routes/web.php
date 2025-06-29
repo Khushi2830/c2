@@ -40,7 +40,7 @@ Route::middleware("index:auth")->group(function () {
   Route::post('/cart/decrease/{id}', [HomeController::class, 'decrease'])->name('cart.decrease');
   Route::post('/cart/remove/{id}', [HomeController::class, 'remove'])->name('cart.remove');
   Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
-
+  Route::get('/search', [HomeController::class, 'search'])->name('filter.search');
 
 });
 
@@ -88,12 +88,15 @@ Route::prefix("/employee")->group(function () {
 
 Route::middleware(['auth:employee'])->group(function () {
   Route::get('/pos', [PosController::class, 'index'])->name('pos');
+  Route::get('/pos/category/{id?}', [PosController::class, 'index'])->name('filter');
+ Route::get('/pos/search', [PosController::class, 'search'])->name('pos.search');
+
+
 });
 
 
 
 
-//employee routes--------------------------------------------
 Route::get('/admin/applications', [AdminController::class, 'manageApplication'])->name('manageApplication');
 Route::get('/admin/employees', [AdminController::class, 'manageEmploye'])->name('manageEmploye');
 Route::post('/admin/employee/approve/{employee}', [AdminController::class, 'approveEmployee'])->name('admin.approveEmployee');

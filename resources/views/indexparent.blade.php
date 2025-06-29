@@ -705,18 +705,10 @@
     </div>
 
 
-    <div class="flex-grow-1 mx-4 ">
-      <div class="d-flex align-items-center search-bar bg-white px-2">
-        <input type="text" class="search-input" placeholder="Search for cakes, pastries, savories, etc.">
-        <i class="fas fa-search search-icon"></i>
-      </div>
-    </div>
-
-
     <div class="d-flex align-items-center gap-3 icon-group">
 
 
-      <a href="{{ route("wedding") }}"><i class="fas fa-birthday-cake fs-5"></i></a>
+      <a href="{{ route("wedding") }}"><i class="fas fa-birthday-cake fs-5"  style="color: #6f42c1;"></i></a>
 
 
       <div class="">
@@ -736,7 +728,7 @@
           </li>
         </ul>
       </div>
-      <a href="{{ route("show.cart") }}"><i class="fas fa-shopping-cart fs-5"></i></a>
+      <a href="{{ route("show.cart") }}"><i class="fas fa-shopping-cart fs-5"  style="color: #6f42c1;"></i></a>
 
 
 

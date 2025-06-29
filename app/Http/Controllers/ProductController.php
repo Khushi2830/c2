@@ -37,7 +37,7 @@ class ProductController extends Controller
             'descount_price' => 'nullable|numeric|min:0',
             'category_id' => 'required|exists:categories,id',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'kg' => 'required|string',
+            'kg' => 'nullable|string',
             'veg' => 'required|string',
             'description' => 'nullable|string',
 

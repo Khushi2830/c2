@@ -10,6 +10,27 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+    .search-box {
+      max-width: 500px;
+      flex-grow: 1;
+      margin: 0 20px;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 10px 40px 10px 15px;
+      border-radius: 6px;
+      border: 1px solid #5369c0;
+    }
+
+    .search-box i {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: gray;
+    }
     .xx {
       font-family: Arial, sans-serif;
       background-color: #fff;
@@ -821,25 +842,21 @@
       <a href="{{ route("index") }}">
         <div class="logo"><img src="{{ asset("logo.png") }}" width="200px" alt=""></div>
       </a>
+    </div>
 
-
+    
+     <div class="search-box">
+      <form action="{{ route("filter.search") }}" method="GET" >
+        <input type="text" class="form-control" value="{{ request('search') }}" placeholder="Search for cakes, pastries, savories, etc.">
+        <i class="fas fa-search"></i>
+     </form?>
     </div>
 
 
-    <div class="flex-grow-1 mx-4 ">
-      <div class="d-flex align-items-center search-bar bg-white px-2">
-        <input type="text" class="search-input" placeholder="Search for cakes, pastries, savories, etc.">
-        <i class="fas fa-search search-icon"></i>
-      </div>
-    </div>
 
 
     <div class="d-flex align-items-center gap-3 icon-group">
-
-
-      <a href="{{ route("wedding") }}"><i class="fas fa-birthday-cake fs-5"></i></a>
-
-
+      <a href="{{ route("wedding") }}"><i class="fas fa-birthday-cake fs-5" style="color: #6f42c1;"></i></a>
       <div class="">
         <a class="" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
           style="text-decoration: none; outline: none;">
@@ -857,7 +874,7 @@
           </li>
         </ul>
       </div>
-      <a href="{{ route("show.cart") }}"><i class="fas fa-shopping-cart fs-5"></i></a>
+      <a href="{{ route("show.cart") }}"><i class="fas fa-shopping-cart fs-5" style="color: #6f42c1;"></i></a>
 
 
 
