@@ -55,8 +55,7 @@
                                     <td>
                                         <form action="{{ route('admin.approvecake', $wd->id) }}" method="POST" class="d-inline">
                                             @csrf
-
-                                            <button type="submit" class="btn btn-success btn-sm">Approve</button>
+                                            <button type="submit" class="btn btn-success btn-sm">Confirm</button>
                                         </form>
                                         <form action="" method="POST" class="d-inline">
                                             @csrf

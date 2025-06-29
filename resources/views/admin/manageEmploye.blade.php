@@ -49,11 +49,6 @@
                                     <td>
                                         <form action="" method="POST" class="d-inline">
                                             @csrf
-
-                                            <button type="submit" class="btn btn-success btn-sm">Approve</button>
-                                        </form>
-                                        <form action="" method="POST" class="d-inline">
-                                            @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                                         </form>

@@ -1,7 +1,7 @@
 @extends('admin.parent')
 
 @section('title')
-    Manage Franchise
+    Manage Application
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@
             </div>
             <div class="col-lg-9 col-md-8 content-column mt-5 ">
                 <div class="dashboard-header d-flex justify-content-between align-items-center mb-4">
-                    <h2 class="page-title mb-0 fw-bold " style="color: #6f42c1;">Manage Franchise</h2>
+                    <h2 class="page-title mb-0 fw-bold " style="color: #6f42c1;">Manage Application </h2>
                 </div>
                 @session('msg')
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
