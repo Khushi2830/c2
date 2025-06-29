@@ -63,7 +63,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $categories = Category::all();
+        return view('admin.editproduct', compact('product', 'categories'));
     }
 
     /**
@@ -71,7 +72,24 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $data = $request->validate([
+            'title' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0',
+            'descount_price' => 'nullable|numeric|min:0',
+            'category_id' => 'required|exists:categories,id',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'kg' => 'required|string',
+            'veg' => 'required|string',
+            'description' => 'required|string',
+        ]);
+        
+
+        if ($request->hasFile('image')) {
+            $data["image"] = $request->file("image")->store("product_images", "public");
+        }
+
+        $product->update($data);
+        return redirect()->route('product.index')->with('msg', 'Product updated successfully.');
     }
 
     /**

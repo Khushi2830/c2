@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
+  public function store (){
+    return view('storelocation');
+  }
   public function home()
   {
     return view('home');

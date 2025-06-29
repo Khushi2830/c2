@@ -749,6 +749,123 @@
   }
 </style>
 
+<style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .timeline {
+      position: relative;
+      margin: 2rem auto;
+      padding: 2rem 0;
+      max-width: 1000px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      background: #782fc2;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 1rem 2rem;
+    }
+
+    .timeline-item.left {
+      left: 0;
+    }
+
+    .timeline-item.right {
+      left: 50%;
+    }
+
+    .timeline-item .content {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .timeline-item.left .content::after,
+    .timeline-item.right .content::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+
+    .timeline-item.left .content::after {
+      right: -15px;
+      border-width: 10px 0 10px 15px;
+      border-color: transparent transparent transparent white;
+    }
+
+    .timeline-item.right .content::after {
+      left: -15px;
+      border-width: 10px 15px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+
+    .timeline-icon {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #782fc2;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .year {
+      font-weight: bold;
+      color: #782fc2;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: 8px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        padding-left: 2rem;
+        padding-right: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .timeline-item.right {
+        left: 0;
+      }
+
+      .timeline-item.left .content::after,
+      .timeline-item.right .content::after {
+        left: -15px;
+        border-width: 10px 15px 10px 0;
+        border-color: transparent white transparent transparent;
+      }
+
+      .timeline-icon {
+        left: 0;
+        transform: none;
+      }
+    }
+  </style>
+
 <body class="m-0 p-0">
   <nav class="navbar navbar-expand-lg shadow-sm  ">
     <div class="container ">

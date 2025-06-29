@@ -18,7 +18,7 @@
       <div class="row">
       <div class="col-md-6 ">
         <img src="{{ asset("banner1.png") }}" width="600px" alt="Order Online" class="img-fluid rounded">
-        <button class="btn btn-monginis mt-3" style=" background-color: #5f3dc4;">Visit Our Nearest Store</button>
+        <a  href="{{ route("storelocation") }}" class="btn btn-monginis mt-3" style=" background-color: #5f3dc4;">Visit Our Nearest Store</a>
       </div>
       <div class="col-md-6">
         <img src="{{ asset("banner2.jpg") }}" width="600px" alt="Visit Store" class="img-fluid rounded">

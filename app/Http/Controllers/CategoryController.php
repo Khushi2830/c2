@@ -68,7 +68,8 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        $categories = Category::paginate(5);
+        return view('admin.editCategory',compact('category', 'categories'));
     }
 
     /**
@@ -76,7 +77,14 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+         $data= $request->validate([
+            "cat_title"=> "required",
+            "cat_description"=> "required",
+            "category_id"=> "nullable|exists:categories,id",
+        ]);
+
+        $category->update($data);
+        return redirect()->route('category.index');
     }
 
     /**

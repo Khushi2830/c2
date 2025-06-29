@@ -67,7 +67,7 @@ class BlogController extends Controller
      */
     public function edit(blog $blog)
     {
-        //
+        return view('admin.editblog', compact('blog'));
     }
 
     /**
@@ -75,7 +75,26 @@ class BlogController extends Controller
      */
     public function update(Request $request, blog $blog)
     {
-        //
+        $request->validate([
+            'title' => 'required|unique:blogs,title,' . $blog->id,
+            'author' => 'required|unique:blogs,author,' . $blog->id,
+            'content' => 'nullable',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $blog->title = $request->title;
+        $blog->author = $request->author;
+        $blog->content = $request->content;
+
+        if ($request->hasFile('image')) {
+            $imageName = time() . '.' . $request->image->extension();
+            $request->file("image")->storeAs("blog_images", $imageName, "public");
+            $blog->image = 'blog_images/' . $imageName;
+        }
+
+        $blog->save();
+
+        return redirect()->route('blog.index')->with('msg', 'Blog updated successfully.');
     }
 
     /**
