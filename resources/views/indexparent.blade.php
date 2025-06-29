@@ -704,17 +704,13 @@
     </div>
 
 
-<<<<<<< HEAD
+
     <div class="flex-grow-1 mx-4 ">
       <div class="d-flex align-items-center search-bar bg-white px-2" >
         <input type="text" class="search-input" placeholder="Search for cakes, pastries, savories, etc.">
         <i class="fas fa-search search-icon" style=" color: #6f42c1;" ></i>
       </div>
     </div>
-
-
-=======
->>>>>>> 88ab5d27c3e44c5c56b554b917e6886a22597432
     <div class="d-flex align-items-center gap-3 icon-group">
 
 
