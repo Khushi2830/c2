@@ -12,7 +12,7 @@
         @foreach ($categories as $category)
 
             <div class="sidebar-item">
-                <a href="{{ route("filtercategory", $category->id) }}">
+                <a href="{{ route("filtercategory", $category->id) }}" style="text-decoration: none; color: inherit;">
                     <img src="{{ asset('storage/' . $category->cover_image) }}" alt="Pastries">
                     <div style="text-decoration: none;">{{ $category->cat_title }}</div>
                 </a>
@@ -22,30 +22,28 @@
     </div>
 
     <div class="content">
-        <div class="category-title" style="color: #6f42c1">Cakes</div>
-
        <div class="row g-4">
-    @foreach ($products as $product)
-        <div class="col-md-4">
-            <div class="card shadow-sm border-0 h-100 rounded-4 overflow-hidden">
+           @foreach ($products as $product)
+           <div class="col-md-3">
+            <div class="card shadow-sm border-4 h-100 rounded-4 overflow-hidden">
                 <div class="position-relative">
                     <img src="{{ asset("storage/" . $product->image) }}" class="card-img-top object-fit-cover" alt="Cake" style="height: 220px; object-fit: cover;">
-                    <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-1 rounded-pill fs-6">₹{{ $product->descount_price }}</span>
+                    <span class="badge position-absolute top-0 end-0 m-2 px-2 py-1 rounded-pill fs-6" style="background-color:#5936a8;">{{$product->category->cat_title}}</span>
                 </div>
 
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div>
-                        <h5 class="card-title fw-semibold">{{ $product->title }}</h5>
-                        <p class="text-muted small">{{ Str::limit($product->description, 40) }}</p>
+                        <h5 class="card-title fw-semibold mt-0">{{ $product->title }}</h5>
+                        <p class="text-muted small">{{ Str::limit($product->description, 50) }}</p>
 
-                        <p class="d-flex align-items-center text-success mb-2">
+                        <p class="d-flex align-items-center text-success mb-0">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Indian_vegetarian_mark.svg/2048px-Indian_vegetarian_mark.svg.png"
                                 class="veg-icon me-2" alt="Veg Icon" style="width: 18px; height: 18px;">
                             100% {{ $product->veg }}
                         </p>
 
                         <p class="mb-2">
-                            <span class="text-muted text-decoration-line-through me-2">₹{{ $product->price }}</span>
+                            <span class="text-muted text-decoration-line-through">₹{{ $product->price }}</span>
                             <span class="text-primary fw-bold">₹{{ $product->descount_price }}</span>
                         </p>
                     </div>
@@ -54,8 +52,8 @@
                 </div>
             </div>
         </div>
-    @endforeach
-</div>
+        @endforeach
+    </div>
 
         <div class="footer mt-2">
             <div class="row text-center text-md-start">

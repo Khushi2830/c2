@@ -704,6 +704,7 @@
     </div>
 
 
+<<<<<<< HEAD
     <div class="flex-grow-1 mx-4 ">
       <div class="d-flex align-items-center search-bar bg-white px-2" >
         <input type="text" class="search-input" placeholder="Search for cakes, pastries, savories, etc.">
@@ -712,10 +713,12 @@
     </div>
 
 
+=======
+>>>>>>> 88ab5d27c3e44c5c56b554b917e6886a22597432
     <div class="d-flex align-items-center gap-3 icon-group">
 
 
-      <a href="{{ route("wedding") }}"><i class="fas fa-birthday-cake fs-5"></i></a>
+      <a href="{{ route("wedding") }}"><i class="fas fa-birthday-cake fs-5"  style="color: #6f42c1;"></i></a>
 
 
       <div class="">
@@ -735,7 +738,7 @@
           </li>
         </ul>
       </div>
-      <a href="{{ route("show.cart") }}"><i class="fas fa-shopping-cart fs-5"></i></a>
+      <a href="{{ route("show.cart") }}"><i class="fas fa-shopping-cart fs-5"  style="color: #6f42c1;"></i></a>
 
 
 

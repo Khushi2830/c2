@@ -71,7 +71,6 @@ class HomeController extends Controller
       }
     }
     return view("login")->with("msg", "Invalid email or password.");
-    ;
   }
 
   public function index()
@@ -80,6 +79,7 @@ class HomeController extends Controller
     $products = Product::all();
     return view("index", compact("categories", "products"));
   }
+
 
   public function Indexlogout(Request $request)
   {
@@ -94,11 +94,15 @@ class HomeController extends Controller
     return view("filtercategory", compact("categories", "products"));
   }
 
-  // // public function search(Request $request){
-// //   $search = $request->input('search');
-// //   $products = Product::where('name', 'LIKE', "%{$search}%")->paginate(5);
-// //   return view("search", compact("products"));
-// }
+  public function search(Request $request){
+       $categories = Category::all();
+       $searchTerm = $request->input('search');
+       $products = $searchTerm
+    ? Product::where('title', 'like', '%' . $searchTerm . '%')->paginate(5)
+    : Product::paginate(5);
+
+       return view('filtercategory', compact('products', 'categories'));
+   }
 
   public function viewProduct($id)
   {

@@ -64,6 +64,9 @@
                                 <select name="kg" id="kg" class="form-select form-control-lg rounded-3" required>
                                     <option value="">Select quantity</option>
                                     <option value="1kg" {{ old('kg') == '1kg' ? 'selected' : '' }}>1kg</option>
+                                    <option value="1" {{ old('kg') == '1' ? 'selected' : '' }}>1</option>
+                                    <option value="2" {{ old('kg') == '2' ? 'selected' : '' }}>2</option>
+                                    <option value="3" {{ old('kg') == '3' ? 'selected' : '' }}>3</option>
                                     <option value="2kg" {{ old('kg') == '2kg' ? 'selected' : '' }}>2kg</option>
                                     <option value="4kg" {{ old('kg') == '4kg' ? 'selected' : '' }}>4kg</option>
                                 </select>

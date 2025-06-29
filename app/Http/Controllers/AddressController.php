@@ -35,10 +35,8 @@ class AddressController extends Controller
     }
     public function destroy($id)
     {
-      
         $address = Address::findOrFail($id);
         $address->delete();
-
         return back()->with('msg', 'Address deleted successfully!');
     }
 }
