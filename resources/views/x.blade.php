@@ -847,9 +847,9 @@
     
      <div class="search-box">
       <form action="{{ route("filter.search") }}" method="GET" >
-        <input type="text" class="form-control" value="{{ request('search') }}" placeholder="Search for cakes, pastries, savories, etc.">
+        <input type="search" name="search" class="form-control" value="{{ request('search') }}" placeholder="Search for cakes, pastries, savories, etc.">
         <i class="fas fa-search"></i>
-     </form?>
+     </form>
     </div>
 
 
