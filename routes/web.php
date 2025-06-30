@@ -33,14 +33,15 @@ Route::middleware("index:auth")->group(function () {
   route::get("/filtercategory/{id}", [HomeController::class, "filter"])->name("filtercategory");
   route::get("/view/{id}", [HomeController::class, "viewProduct"])->name("view");
   Route::get('/product/{id}', [HomeController::class, 'viewProduct'])->name('viewProduct');
-  Route::post('/add-to-cart/{id}', [HomeController::class, 'addToCart'])->name('add.to.cart');
-  Route::get('/cart', [HomeController::class, 'showCart'])->name('show.cart');
+  Route::put('/add-to-cart/{id}', [OrderController::class, 'addToCart'])->name('cart.add');
+  Route::get('/cart', [OrderController::class, 'showCart'])->name('cart.show');
   Route::post('/cart', [AddressController::class, 'store'])->name('address.store');
-  Route::post('/place-order', [OrderController::class, 'storeOrder'])->name('placeOrder');
+  Route::get('/checkout', [OrderController::class, 'checkout'])->name('checkout');
+  Route::get('/checkout-success', function () {return view('checkout'); })->name('checkout.success');
+
   Route::post('/cart/increase/{id}', [HomeController::class, 'increase'])->name('cart.increase');
   Route::post('/cart/decrease/{id}', [HomeController::class, 'decrease'])->name('cart.decrease');
   Route::post('/cart/remove/{id}', [HomeController::class, 'remove'])->name('cart.remove');
-  Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
   Route::get('/search', [HomeController::class, 'search'])->name('filter.search');
 
 });
@@ -59,7 +60,7 @@ Route::middleware("admin:auth")->group(function () {
     Route::resource("/blog", BlogController::class, );
     Route::get("/manageAddress", [AddressController::class, "index"])->name("manageAddress");
     route::delete("/address/delete/{id}", [AddressController::class, "destroy"])->name("address.delete");
-    
+
   });
 });
 
@@ -91,7 +92,7 @@ Route::prefix("/employee")->group(function () {
 Route::middleware(['auth:employee'])->group(function () {
   Route::get('/pos', [PosController::class, 'index'])->name('pos');
   Route::get('/pos/category/{id?}', [PosController::class, 'index'])->name('filter');
- Route::get('/pos/search', [PosController::class, 'search'])->name('pos.search');
+  Route::get('/pos/search', [PosController::class, 'search'])->name('pos.search');
 
 
 });

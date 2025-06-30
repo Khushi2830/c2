@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\blog;
 use App\Models\category;
+use App\Models\Order;
+use App\Models\OrderItems;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -11,7 +13,8 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-  public function store (){
+  public function store()
+  {
     return view('storelocation');
   }
   public function home()
@@ -94,109 +97,88 @@ class HomeController extends Controller
     return view("filtercategory", compact("categories", "products"));
   }
 
-  public function search(Request $request){
-       $categories = Category::all();
-       $searchTerm = $request->input('search');
-       $products = $searchTerm
-    ? Product::where('title', 'like', '%' . $searchTerm . '%')->paginate(5)
-    : Product::paginate(5);
+  public function search(Request $request)
+  {
+    $categories = Category::all();
+    $searchTerm = $request->input('search');
+    $products = $searchTerm
+      ? Product::where('title', 'like', '%' . $searchTerm . '%')->paginate(5)
+      : Product::paginate(5);
 
-       return view('filtercategory', compact('products', 'categories'));
-   }
+    return view('filtercategory', compact('products', 'categories'));
+  }
 
   public function viewProduct($id)
   {
     $product = Product::findOrFail($id);
     $relatedProducts = Product::where('category_id', $product->category_id)
       ->where('id', '!=', $id)
-      ->take(4) 
+      ->take(4)
       ->get();
     return view("view", compact("product", "relatedProducts"));
   }
-
-  // public function addToCart(Request $request, $id)
-  // {
-  //   $product = Product::findOrFail($id);
-
-  //   $cart = session()->get('cart', []);
-  //   if (isset($cart[$id])) {
-  //     $cart[$id]['quantity']++;
-  //   } else {
-
-  //     $cart[$id] = [
-  //       "title" => $product->title,
-  //       "quantity" => 1,
-  //       "price" => $product->descount_price,
-  //       "image" => $product->image
-  //     ];
-  //   }
-  //   session()->put('cart', $cart);
-  //   return redirect()->back()->with('success', 'Product added to cart!');
-  // }
-
-  public function showCart()
+  public function increase($productId)
   {
-    $cart = session()->get('cart', []);
     $user = Auth::user();
-    $address = $user?->address;
 
-    return view('cart', compact('cart', 'address'));
-  }
+    $order = Order::firstOrCreate([
+      'user_id' => $user->id,
+      'status' => 'pending',
+    ]);
 
-  
-  
-  
-  
-  public function increase($id)
-  {
-    $cart = session()->get('cart', []);
+    $item = OrderItems::where('order_id', $order->id)
+      ->where('product_id', $productId)
+      ->first();
 
-    if (isset($cart[$id])) {
-      $cart[$id]['quantity'] += 1;
-      session()->put('cart', $cart);
+    if ($item) {
+      $item->quantity += 1;
+      $item->save();
     }
 
     return redirect()->back();
   }
-
-  
-  public function decrease($id)
+  public function decrease($productId)
   {
-    $cart = session()->get('cart', []);
+    $user = Auth::user();
 
-    if (isset($cart[$id])) {
-      if ($cart[$id]['quantity'] > 1) {
-        $cart[$id]['quantity'] -= 1;
+    $order = Order::where('user_id', $user->id)
+      ->where('status', 'pending')
+      ->first();
+
+    if (!$order)
+      return redirect()->back();
+
+    $item = OrderItems::where('order_id', $order->id)
+      ->where('product_id', $productId)
+      ->first();
+
+    if ($item) {
+      if ($item->quantity > 1) {
+        $item->quantity -= 1;
+        $item->save();
       } else {
-        unset($cart[$id]);
+        $item->delete();
       }
-      session()->put('cart', $cart);
     }
 
     return redirect()->back();
   }
-
- 
-  public function remove($id)
+  public function remove($productId)
   {
-    $cart = session()->get('cart', []);
+    $user = Auth::user();
 
-    if (isset($cart[$id])) {
-      unset($cart[$id]);
-      session()->put('cart', $cart);
+    $order = Order::where('user_id', $user->id)
+      ->where('status', 'pending')
+      ->first();
+
+    if ($order) {
+      OrderItems::where('order_id', $order->id)
+        ->where('product_id', $productId)
+        ->delete();
     }
 
     return redirect()->back()->with('msg', 'Item removed from cart.');
   }
-  public function checkout()
-  {
-    $cart = session()->get('cart', []);
 
-    if (empty($cart)) {
-      return redirect()->back()->with('msg', 'Your cart is empty.');
-    }
-
-    return view('checkout', compact('cart'));
-  }
 
 }

@@ -79,15 +79,16 @@
 
 
     <div class="bottom-bar mt-2 d-flex gap-2 ">
-    <!-- <form action="{{ route('add.to.cart', $product->id) }}" method="POST" class=" btn   w-50 "
-      style=" background-color: #b435d7;">
+    <form action="{{ route('cart.add', $product->id) }}" method="POST" class=" btn   w-50 " style=" background-color: #b435d7;">
       @csrf
-    </form> -->
-     <button type="submit" class="btn px-3 py-3 w-50 fw-bold" style="background-color: #b435d7; color:white;">ADD TO CART</button>
-    <!-- <form action="" method="POST" class=" btn w-50">
+        @method('PUT')
+         <button type="submit" class="btn px-3 py-3 w-50 fw-bold" style="background-color: #b435d7; color:white;">ADD TO CART</button>
+    </form>
+     
+    <form action="" method="POST" class=" btn w-50">
       @csrf
-    </form> -->
-    <button type="submit" class="btn w-100 btn-purple px-4 py-3" style="background-color: #350243; color:white;">PROCEED TO CHECKOUT</button>
+          <button type="submit" class="btn w-100 btn-purple px-4 py-3" style="background-color: #350243; color:white;">PROCEED TO CHECKOUT</button>
+    </form>
     </div>
 
 
