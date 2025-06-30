@@ -874,8 +874,11 @@
           </li>
         </ul>
       </div>
-      <a href="{{ route("show.cart") }}"><i class="fas fa-shopping-cart fs-5" style="color: #6f42c1;"></i></a>
-
+       <a href="{{ route("show.cart") }}"><i class="fas fa-shopping-cart fs-5"  style="color: #6f42c1;"></i> 
+      <sup>
+        {{ count(request()->session()->get('cart', [])) }}
+      </sup>
+      </a>
 
 
     </div>
