@@ -64,56 +64,7 @@
     </div>
   </div>
 
-  <script>
-    let cart = {};
-
-    function addToCart(productName, price) {
-      price = parseFloat(price); // Convert ₹ string to number
-      if (cart[productName]) {
-        cart[productName].qty += 1;
-      } else {
-        cart[productName] = { price: price, qty: 1 };
-      }
-      renderCart();
-    }
-
-    function updateQty(productName, change) {
-      if (cart[productName]) {
-        cart[productName].qty += change;
-        if (cart[productName].qty <= 0) delete cart[productName];
-      }
-      renderCart();
-    }
-
-    function renderCart() {
-      const cartBody = document.getElementById("cart-body");
-      const cartTotal = document.getElementById("cart-total");
-      cartBody.innerHTML = "";
-      let total = 0;
-
-      for (let product in cart) {
-        const { price, qty } = cart[product];
-        const itemTotal = price * qty;
-        total += itemTotal;
-
-        cartBody.innerHTML += `
-      <tr>
-        <td>${product}</td>
-        <td>
-          <div class="d-flex align-items-center">
-            <button class="btn btn-sm btn-danger qty-btn" onclick="updateQty('${product}', -1)">-</button>
-            <span class="mx-2">${qty}</span>
-            <button class="btn btn-sm btn-success qty-btn" onclick="updateQty('${product}', 1)">+</button>
-          </div>
-        </td>
-        <td>₹${price.toFixed(2)}</td>
-        <td>₹${itemTotal.toFixed(2)}</td>
-      </tr>`;
-      }
-
-      cartTotal.innerText = "₹" + total.toFixed(2);
-    }
-  </script>
+ 
 
 </body>
 

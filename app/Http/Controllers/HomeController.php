@@ -114,25 +114,25 @@ class HomeController extends Controller
     return view("view", compact("product", "relatedProducts"));
   }
 
-  public function addToCart(Request $request, $id)
-  {
-    $product = Product::findOrFail($id);
+  // public function addToCart(Request $request, $id)
+  // {
+  //   $product = Product::findOrFail($id);
 
-    $cart = session()->get('cart', []);
-    if (isset($cart[$id])) {
-      $cart[$id]['quantity']++;
-    } else {
+  //   $cart = session()->get('cart', []);
+  //   if (isset($cart[$id])) {
+  //     $cart[$id]['quantity']++;
+  //   } else {
 
-      $cart[$id] = [
-        "title" => $product->title,
-        "quantity" => 1,
-        "price" => $product->descount_price,
-        "image" => $product->image
-      ];
-    }
-    session()->put('cart', $cart);
-    return redirect()->back()->with('success', 'Product added to cart!');
-  }
+  //     $cart[$id] = [
+  //       "title" => $product->title,
+  //       "quantity" => 1,
+  //       "price" => $product->descount_price,
+  //       "image" => $product->image
+  //     ];
+  //   }
+  //   session()->put('cart', $cart);
+  //   return redirect()->back()->with('success', 'Product added to cart!');
+  // }
 
   public function showCart()
   {
@@ -143,6 +143,10 @@ class HomeController extends Controller
     return view('cart', compact('cart', 'address'));
   }
 
+  
+  
+  
+  
   public function increase($id)
   {
     $cart = session()->get('cart', []);
