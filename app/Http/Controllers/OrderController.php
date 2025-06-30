@@ -34,7 +34,7 @@ public function addToCart(Request $request, $id)
             'order_id' => $order->id,
             'product_id' => $id,
             'quantity' => 1,
-            'price' => $product->descount_price ?? $product->price,
+            'price' => $product->descount_price ?? $product->price
         ]);
     }
     return redirect()->back()->with('success', 'Product added to cart!');
