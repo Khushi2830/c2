@@ -224,12 +224,6 @@
     <div class="d-flex align-items-center">
       <div class="logo"><img src="{{ asset("logo.png") }}" width="150px" alt="">| Admin Pannel</div>
     </div>
-
-    <div class="search-box">
-      <input type="text" placeholder="Search for cakes, pastries, savories, etc.">
-      <i class="fas fa-search"></i>
-    </div>
-
     <div class="icons d-flex align-items-center" width="">
       <div class="profile lg w-100 h-100 p-2 m-2 " style="background-color:  #6845c7 ;">
         {{ Auth::user()->name ?? 'student' }}</div>
