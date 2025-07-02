@@ -21,8 +21,8 @@
                         <thead class="table-primary text-center">
                             <tr>
                                 <th>ID</th>
-                                <th>o_id</th>
-                                <th>p_id</th>
+                                <th>Order_id</th>
+                                <th>Payment_id</th>
                                 <th>quantity</th>
                                 <th>price</th> 
                             </tr>

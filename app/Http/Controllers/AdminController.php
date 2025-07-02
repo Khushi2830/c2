@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Employee;
 use App\Models\Order;
 use App\Models\OrderItems;
+use App\Models\Payment;
 use App\Models\Product;
 use App\Models\provider;
 use App\Models\User;
@@ -31,11 +32,19 @@ class AdminController extends Controller
         return view("admin.manageUser", compact("users"));
     }
     public function manageOrder()
-{
-    $orderitems = OrderItems::with(['order.user', 'product'])->paginate(6);
+    {
+       $orderitems = OrderItems::with(['order.user', 'product'])->paginate(6);
+     return view("admin.manageOrder", compact("orderitems"));
+    }
 
-    return view("admin.manageOrder", compact("orderitems"));
+    // Controller
+public function managePayment()
+{
+    $payments = Payment::where("status", 'paid')->paginate(6);
+    return view("admin.managePayment", compact("payments"));
 }
+
+
 
 
     public function Adminlogout(Request $request)

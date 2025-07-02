@@ -46,14 +46,14 @@ Route::middleware("index:auth")->group(function () {
   Route::post('/cart/decrease/{id}', [HomeController::class, 'decrease'])->name('cart.decrease');
   Route::post('/cart/remove/{id}', [HomeController::class, 'remove'])->name('cart.remove');
   Route::get('/search', [HomeController::class, 'search'])->name('filter.search');
-
+  route::get('/success', [HomeController::class, 'success'])->name('success');
   Route::get("/profile", [HomeController::class, 'profile'])->name('profile');
   Route::put('/user/update/{user}', [HomeController::class, 'update'])->name('user.update');
   Route::get('/user/edit/{user}', [HomeController::class, 'edit'])->name('user.edit');
 
   Route::get('/razorpay/{orderId}', [RazorpayController::class, 'pay'])->name('razorpay.pay');
   Route::post('/razorpay/payment', [RazorpayController::class, 'handlePayment'])->name('razorpay.payment');
-  Route::get('/razorpay/success', [RazorpayController::class, 'success'])->name('razorpay.success');
+  // Route::get('/razorpay/success', [RazorpayController::class, 'success'])->name('razorpay.success');
   Route::get('/razorpay/failed', [RazorpayController::class, 'failed'])->name('razorpay.failed');
 });
 
@@ -66,6 +66,7 @@ Route::middleware("admin:auth")->group(function () {
     Route::get("/dashboard", [AdminController::class, "index"])->name("dashboard");
     Route::get("/user", [AdminController::class, "manageUser"])->name("manageUser");
     Route::get("/order", [AdminController::class, "manageOrder"])->name("manageOrder");
+    Route::get("/Payment", [AdminController::class, "managePayment"])->name("managePayment");
     Route::resource("/product", ProductController::class,);
     Route::resource("/category", CategoryController::class,);
     Route::resource("/blog", BlogController::class,);

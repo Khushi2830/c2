@@ -70,18 +70,33 @@
         }
     </style>
 
-    <div class="container my-5">
+    <div class="container my-4">
         <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6">
+            <div class="col-md-8 col-lg-5">
                 <div class="payment-card">
                     <div class="payment-header">
-                        <h3>Secure Razorpay Checkout</h3>
+                        <h6>Secure Razorpay Checkout</h6>
                     </div>
                     <div class="payment-details">
-                        <h5>🧾 Order ID: <span>#{{ $order->id }}</span></h5>
+                      <h6>
+                         @if(Auth::check())
+                           <p><strong>Name:</strong> {{ Auth::user()->name }}</p>
+                           <p><strong>Email:</strong> {{ Auth::user()->email }}</p>
+                           <p><strong>Phone:</strong> {{ Auth::user()->phone ?? 'Not Provided' }}</p>
+                         @endif
+                      </h6>
+                        <h6>🧾 Order ID: <span>#{{ $order->id }}</span></h6>
                         <h5>📅 Date & Time:
-                            <span class="text-info">{{ now()->format('d M Y, h:i A') }}</span>
+                            <span class="text-dark">{{ now()->format('d M Y, h:i A') }}</span>
                         </h5>
+                        <h6>
+                    @if(Auth::check() && Auth::user()->address)
+                        <p><strong>Street:</strong> {{ Auth::user()->address->address }}</p>
+                        <p><strong>City:</strong> {{ Auth::user()->address->city }}</p>
+                        <p><strong>State:</strong> {{ Auth::user()->address->state }}</p>
+                        <p><strong>Pincode:</strong> {{ Auth::user()->address->pincode }}</p>
+                    @endif
+                        </h6>
                         <h5>💰 Total Amount:
                             <span class="text-success">
                                 ₹{{ $order->orderItems->sum(fn($item) => $item->price * $item->quantity) }}
@@ -93,7 +108,7 @@
                             <input type="hidden" name="razorpay_payment_id" id="razorpay_payment_id">
                             <input type="hidden" name="order_id" value="{{ $order->id }}">
                             <div class="text-center mt-4">
-                                <button type="button" id="pay-button" class="razorpay-payment-button">
+                                <button type="button" id="pay-button" class="razorpay-payment-button btn">
                                     <i class="fas fa-lock me-2"></i> Pay
                                     ₹{{ $order->orderItems->sum(fn($item) => $item->price * $item->quantity) }}
                                 </button>

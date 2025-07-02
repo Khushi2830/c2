@@ -42,14 +42,10 @@ class RazorpayController extends Controller
             // Optionally update order status
             Order::where('id', $request->order_id)->update(['status' => 1]);
 
-            return redirect()->route('razorpay.success');
+            return redirect()->route('success', ['order_id' => $request->order_id]);
         }
 
         return redirect()->route('razorpay.failed');
-    }
-
-    public function success() {
-        return view('razorpay.success');
     }
 
     public function failed() {

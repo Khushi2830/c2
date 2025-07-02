@@ -208,4 +208,13 @@ public function update(Request $request, User $user){
       return view("profile");
     }
 
+    public function success(Request $request)
+{
+    $orderId = $request->input('order_id'); // Or get from session if needed
+    $order = Order::with('orderItems')->findOrFail($orderId);
+
+    return view("success", compact('order'));
+}
+
+
 }
