@@ -775,13 +775,13 @@
         <div class="dropdown">
           <button class="btn btn-light rounded-circle dropdown-toggle p-2" type="button" id="profileDropdown"
             data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #6f42c1; color: white;">
-            <strong> {{ Auth::user()->name ?? 'student' }}</strong>
+            <strong> {{ Auth::user()->name ?? 'user' }}</strong>
           </button>
 
           <ul class="dropdown-menu dropdown-menu-end profile-dropdown" aria-labelledby="profileDropdown">
             <li class="px-3 ">
-              <div class="fw-bold"> <p> <strong>{{ Auth::user()->name }} {{ Auth::user()->lastname }}</strong></p></span></div>
-              <div class="text-muted" style="font-size: 0.9rem;"><p><strong>{{ Auth::user()->email }}</strong> </p></div>
+              <div class="fw-bold"> <p> <strong>{{ Auth::user()->name ?? 'user' }} {{ Auth::user()->lastname ?? 'user'}}</strong></p></span></div>
+              <div class="text-muted" style="font-size: 0.9rem;"><p><strong>{{ Auth::user()->email?? 'user' }}</strong> </p></div>
                
             </li>
             <li>
