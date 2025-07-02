@@ -150,7 +150,7 @@
 
 
                 <div class="card shadow p-3 text-center">
-                    <a href="{{ route("checkout") }}" class="btn btn-success w-100">Proceed to Checkout</a>
+                    <a href="{{ route("razorpay.pay", $order->id) }}" class="btn btn-success w-100">Proceed to Checkout</a>
                 </div>
             </div>
         </div>
