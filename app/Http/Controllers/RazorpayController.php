@@ -26,17 +26,18 @@ class RazorpayController extends Controller
         if ($payment->status === 'authorized') {
             $payment->capture(['amount' => $payment->amount]);
 
-            Payment::create([
-                'payment_id' => $payment->id,
-                'user_id'    => Auth::id(),
-                'order_id'   => $request->order_id,
-                'amount'     => $payment->amount / 100,
-                'currency'   => $payment->currency,
-                'status'     => $payment->status,
-                'method'     => $payment->method,
-                'email'      => $payment->email,
-                'contact'    => $payment->contact,
-            ]);
+           
+        Payment::create([
+            'payment_id' => $payment->id,
+            'user_id'    => Auth::id(),
+            'order_id'   => $request->order_id,
+            'amount'     => $payment->amount / 100,
+            'currency'   => $payment->currency,
+            'status'     => $payment->status,
+            'method'     => $payment->method,
+            'email'      => $payment->email,
+            'contact'    => $payment->contact,
+        ]);
 
             // Optionally update order status
             Order::where('id', $request->order_id)->update(['status' => 1]);
