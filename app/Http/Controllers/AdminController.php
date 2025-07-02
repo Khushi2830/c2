@@ -36,17 +36,11 @@ class AdminController extends Controller
        $orderitems = OrderItems::with(['order.user', 'product'])->paginate(6);
      return view("admin.manageOrder", compact("orderitems"));
     }
-
-    // Controller
 public function managePayment()
 {
-    $payments = Payment::where("status", 'paid')->paginate(6);
+    $payments = Payment::where("status", 'authorized')->paginate(6);
     return view("admin.managePayment", compact("payments"));
 }
-
-
-
-
     public function Adminlogout(Request $request)
     {
         auth()->logout();
