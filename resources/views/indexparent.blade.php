@@ -817,9 +817,7 @@
   <div class="row g-0 mt-5">
     <div class="col-md-6 top-section d-flex flex-column justify-content-center">
       <h2>Visit & Experience Our Service In Your City</h2>
-      <button class="btn btn-dark find-stores-btn">
-        FIND STORES <i class="fas fa-arrow-circle-right ms-2"></i>
-      </button>
+     
     </div>
     <div class="col-md-6">
       <img src="https://d1f3aa6ifduais.cloudfront.net/assets/images/products/1621947382796_62.jpg" alt="Cake"
@@ -831,7 +829,7 @@
   <div class="footer">
     <div class="row text-center text-md-start">
       <div class="col-md-3 mb-3">
-        <div class="logo">CREAMER</div>
+        <div class="logo" style=" color: #6610f2;" >CREAMER</div>
         <div>Magic every time</div>
       </div>
 
@@ -854,8 +852,8 @@
         <h5>Contact Us</h5>
         <p><i class="fas fa-phone-alt"></i> 7838587043</p>
         <p><i class="fas fa-phone-alt"></i> 8419992244</p>
-        <p><i class="fas fa-envelope"></i> support@monginis.net</p>
-        <p><i class="fas fa-envelope"></i> customercare@monginis.net</p>
+        <p><i class="fas fa-envelope"></i> creamer@creamer.net</p>
+        <p><i class="fas fa-envelope"></i> customercare@creamer.net</p>
       </div>
     </div>
 

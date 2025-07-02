@@ -81,8 +81,8 @@
                     <h5>Contact Us</h5>
                     <p><i class="fas fa-phone-alt"></i> 7838587043</p>
                     <p><i class="fas fa-phone-alt"></i> 8419992244</p>
-                    <p><i class="fas fa-envelope"></i> support@monginis.net</p>
-                    <p><i class="fas fa-envelope"></i> customercare@monginis.net</p>
+                    <p><i class="fas fa-envelope"></i> support@creamer.net</p>
+                    <p><i class="fas fa-envelope"></i> customercare@creamer.net</p>
                 </div>
             </div>
 

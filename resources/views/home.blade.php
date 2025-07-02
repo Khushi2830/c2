@@ -298,7 +298,7 @@
 
 
   <div class="bg-light text-center py-4">
-    <strong>MOST SEARCHED FOR ON MONGINIS :</strong>
+    <strong style=" color: #5f3dc4;" >MOST SEARCHED FOR ON CREAMER :</strong>
     <br>
     <small style="font-size:13px;">
     Cakes | 3D & 5D Cakes | Pastries | Savories | Baker Wears | Cakes | Chocolates | Cake Deals <br>

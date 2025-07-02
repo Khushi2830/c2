@@ -980,8 +980,8 @@
 
       <div class="row text-center pt-4 border-top">
         <div class="col-12">
-          <small>Copyright © Monginis. All rights reserved</small><br>
-          <small>Designed & Developed by <a href="#">QPSIT</a></small>
+          <small>Copyright © CREAMER. All rights reserved</small><br>
+          <small>Designed & Developed by <a href="#">AASHI</a></small>
         </div>
       </div>
     </div>
