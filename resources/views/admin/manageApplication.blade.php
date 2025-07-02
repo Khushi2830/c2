@@ -14,18 +14,19 @@
                 <div class="dashboard-header d-flex justify-content-between align-items-center mb-4">
                     <h2 class="page-title mb-0 fw-bold " style="color: #6f42c1;">Manage Application </h2>
                 </div>
-                @session('msg')
+                @if(session('msg'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         <strong>Success!</strong> {{ session('msg') }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
-                @endsession
-                @session('maseg')
+                @endif
+                 @if (session('maseg'))
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <strong>Delete!</strong> {{ session('msg') }}
+                        <strong>Delete!</strong> {{ session('maseg') }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
-                @endsession
+                @endif
+
 
                 <div class="table-responsive shadow rounded-4 bg-white p-3">
                     <table class="table table-striped align-middle table-hover mb-0">
@@ -50,13 +51,16 @@
                                         <form action="{{ route('admin.approveEmployee', $employee->id) }}" method="POST"
                                             class="d-inline">
                                             @csrf
-
-                                            <button type="submit" class="btn btn-success btn-sm">Approve</button>
+                                            <button type="submit" class="btn btn-success btn-sm" style="background-color: #6f42c1";><i class="bi bi-check2-circle"></i></button>
                                         </form>
-                                        <form action="" method="POST" class="d-inline">
+                                        <form action="{{route("application.delete", $employee->id)}}" method="POST" class="d-inline">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                            <button type="submit" class="btn btn-danger  btn-sm" style="background-color: #6f42c1;"><i class="bi bi-trash"></i></button>
+                                        </form>
+                                        <form action="{{route("view.application", $employee->id)}}" method="POST" class="d-inline">
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger  btn-sm" style="background-color: #6f42c1;"><i class="bi bi-eye"></i></button>
                                         </form>
                                     </td>
                                 </tr>

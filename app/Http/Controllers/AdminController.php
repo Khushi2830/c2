@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Employee;
+use App\Models\Order;
+use App\Models\OrderItems;
 use App\Models\Product;
 use App\Models\provider;
 use App\Models\User;
@@ -19,7 +21,8 @@ class AdminController extends Controller
         $countProduct = Product::where("status", false)->count();
         $countUser = User::where("status", false)->count();
         $countEmployee = Employee::where("status", true)->count();
-        return view("admin.dashboard", compact("countCategory", "countProduct", "countUser", "countEmployee"));
+        $countOrder = Order::where("status", true)->count();
+        return view("admin.dashboard", compact("countCategory", "countProduct", "countUser", "countEmployee","countOrder"));
     }
 
     public function manageUser()
@@ -27,6 +30,14 @@ class AdminController extends Controller
         $users = User::paginate(10);
         return view("admin.manageUser", compact("users"));
     }
+    public function manageOrder()
+{
+    $orderitems = OrderItems::with(['order.user', 'product'])->paginate(6);
+
+    return view("admin.manageOrder", compact("orderitems"));
+}
+
+
     public function Adminlogout(Request $request)
     {
         auth()->logout();
@@ -54,6 +65,18 @@ class AdminController extends Controller
         return back()->with('msg', 'Already approved.');
     }
 
+
+public function viewCake($id)
+{
+    $wedding = wedding::findOrFail($id);
+    return view("admin.viewCake", compact("wedding"));
+}
+public function viewApplication($id)
+    {
+        $employee = Employee::findOrFail($id);
+        return view("admin.viewApplication", compact("employee"));
+    }
+
     public function customiseCake()
     {
         $wedding = wedding::where("status", false)->get();
@@ -73,4 +96,17 @@ class AdminController extends Controller
         }
         return back()->with('msg', 'Already confirmed.');
     }
-}
+    public function distroy($id){
+        $wedding =Wedding::findOrFail($id);
+        $wedding->delete();
+        return redirect()->back()->with('msg', 'Wedding deleted successfully.');
+    }
+
+    public function delete($id)
+    {
+      $employee = Employee::findOrFail($id);
+      $employee->delete();
+      return redirect()->back()->with('maseg', 'Application deleted successfully.');
+    }
+
+ }

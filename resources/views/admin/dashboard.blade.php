@@ -7,8 +7,6 @@
             <div class="col-md-3">
                 @include("admin.sidebar")
             </div>
-
-
             <div class="col-9">
                 <div class="container py-5">
                     <div class="row g-4">
@@ -57,8 +55,8 @@
                         <div class="col-md-4">
                             <div class="stat-card">
                                 <div class="icon-box"><i class="fas fa-shopping-bag"></i></div>
-                                <small>Total Order</small>
-                                <h5>187,13</h5>
+                                <small>Total Online Order</small>
+                                <h5>{{$countOrder}}</h5>
                                 <div class="chart-bg"></div>
                             </div>
                         </div>

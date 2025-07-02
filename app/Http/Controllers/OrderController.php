@@ -53,23 +53,20 @@ public function checkout()
 {
     $user = Auth::user();
 
-    // Get the user's pending order
     $order = Order::where('user_id', $user->id)
                   ->where('status', 'pending')
-                  ->with('items.product') // optional: for summary view
+                  ->with('items.product') 
                   ->first();
 
-    // No order to checkout
     if (!$order || $order->items->isEmpty()) {
         return redirect()->back()->with('msg', 'Your cart is empty.');
     }
 
-    // Check for address
+    
     if (!$user->address) {
         return redirect()->back()->with('msg', 'Please add a shipping address before checkout.');
     }
 
-    // Mark order as confirmed
     $order->status = 1;
     $order->save();
 
