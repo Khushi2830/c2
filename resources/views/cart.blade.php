@@ -104,7 +104,14 @@
 
                 <!-- Address Summary -->
                 <div class="card shadow p-3 mb-3">
-                    <h5 class="fw-bold mb-3">📍 Shipping Address</h5>
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h5 class="mb-0">
+                            <span>📍</span> <strong>Shipping Address</strong>
+                        </h5>
+                        <a href="#" class="text-primary" title="Edit">
+                            <i class="fas fa-pen"></i> <!-- Font Awesome icon -->
+                        </a>
+                    </div>
                     @if(Auth::check() && Auth::user()->address)
                         <p><strong>Street:</strong> {{ Auth::user()->address->address }}</p>
                         <p><strong>City:</strong> {{ Auth::user()->address->city }}</p>
@@ -115,7 +122,7 @@
                     @endif
                 </div>
 
-               
+
                 <div class="card shadow p-3 mb-3">
                     <h5 class="fw-bold mb-3">💰 Summary</h5>
                     @php
@@ -141,7 +148,7 @@
 
                 </div>
 
-                
+
                 <div class="card shadow p-3 text-center">
                     <a href="{{ route("razorpay.pay", $order->id) }}" class="btn btn-success w-100">Proceed to Checkout</a>
                 </div>

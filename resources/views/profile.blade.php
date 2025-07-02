@@ -140,7 +140,7 @@
             <a href="#" class="nav-link"><i class="fas fa-box"></i> My Orders</a>
             <a href="#" class="nav-link"><i class="fas fa-map-marker-alt"></i> My Address</a>
             <a href="#" class="nav-link"><i class="fas fa-cog"></i> Settings</a>
-            <a href="{{ route('logout') }}" class="nav-link logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            <a href="{{ route('index.logout') }}" class="nav-link logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </div>
 
         <!-- Main Content -->
