@@ -934,7 +934,11 @@
         </div>
       </div>
      
-      
+      <a href="{{ route('cart.show') }}" class="cart-icon position-relative d-inline-block">
+    <i class="fas fa-shopping-cart fs-4" style="color: #5e2590;"></i>
+
+  
+</a>
 
     </div>
   </div>
