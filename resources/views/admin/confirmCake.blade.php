@@ -38,7 +38,7 @@
                                 <th>date</th>
                                 <th>city</th>
                                 <th>notes</th>
-                                <th>Action</th>
+                                
                             </tr>
                         </thead>
 
@@ -52,13 +52,7 @@
                                     <td>{{ $wd->date }}</td>
                                     <td>{{ $wd->city }}</td>
                                     <td>{{ $wd->description }}</td>
-                                    <td>
-                                        <form action="" method="POST" class="d-inline">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                                        </form>
-                                    </td>
+                                   
                                 </tr>
                             @endforeach
 

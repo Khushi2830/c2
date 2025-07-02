@@ -43,6 +43,7 @@ Route::middleware("index:auth")->group(function () {
   Route::post('/cart/decrease/{id}', [HomeController::class, 'decrease'])->name('cart.decrease');
   Route::post('/cart/remove/{id}', [HomeController::class, 'remove'])->name('cart.remove');
   Route::get('/search', [HomeController::class, 'search'])->name('filter.search');
+  
 
 });
 
@@ -51,20 +52,22 @@ Route::middleware("index:auth")->group(function () {
 Route::middleware("admin:auth")->group(function () {
 
   Route::prefix("admin")->group(function () {
-
     Route::get("/", [AdminController::class, "index"])->name("dashboard");
     Route::get("/dashboard", [AdminController::class, "index"])->name("dashboard");
     Route::get("/user", [AdminController::class, "manageUser"])->name("manageUser");
+    Route::get("/order", [AdminController::class, "manageOrder"])->name("manageOrder");
     Route::resource("/product", ProductController::class, );
     Route::resource("/category", CategoryController::class, );
     Route::resource("/blog", BlogController::class, );
     Route::get("/manageAddress", [AddressController::class, "index"])->name("manageAddress");
     route::delete("/address/delete/{id}", [AddressController::class, "destroy"])->name("address.delete");
-
+    Route::delete("/employee/delete/{id}", [AdminController::class, "delete"])->name("application.delete");
+    Route::delete("/user/delete/{id}", [HomeController::class, "delete"])->name("user.delete");
+    Route::delete("/wedding/delete/{id}", [AdminController::class, "distroy"])->name("wedding.delete");
+    Route::get("/application/view/{id}", [AdminController::class, "viewApplication"])->name("view.application");
+    Route::get("/cakeorder/view/{id}", [AdminController::class, "viewCake"])->name("view.cake");
   });
 });
-
-
 Route::get("/wedding", [WeddingController::class, "index"])->name("wedding");
 Route::get("/insertwedding", [WeddingController::class, "showWeddingForm"])->name("weddingform");
 Route::post("/insertwedding", [WeddingController::class, "register"])->name("weddingregister");

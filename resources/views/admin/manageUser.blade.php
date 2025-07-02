@@ -14,7 +14,12 @@
                 <div class="dashboard-header d-flex justify-content-between align-items-center mb-4">
                     <h2 class="page-title mb-0 fw-bold " style="color: #6f42c1;">Manage User</h2>
                 </div>
-
+                     @session('msg')
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Delete!</strong> {{ session('msg') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    @endsession('msg')
                 <div class="table-responsive shadow rounded-4 bg-white p-3">
                     <table class="table table-striped align-middle table-hover mb-0">
                         <thead class="table-primary text-center">
@@ -39,7 +44,7 @@
                                     <td>{{$user->date}}</td>
                                     <td class="">
                                         <div class="action-buttons d-flex gap-2 ">
-                                            <form method="post" action="" class="delete-form">
+                                            <form method="post" action="{{route('user.delete', $user->id)}}" class="delete-form">
                                                 @csrf
                                                 @method("delete")
                                                 <button type="submit" class="btn btn-sm"

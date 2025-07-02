@@ -76,6 +76,13 @@ class HomeController extends Controller
     return view("login")->with("msg", "Invalid email or password.");
   }
 
+     public function delete($id)
+    {
+           $user = User::findOrFail($id); 
+           $user->delete();               
+         return back()->with('msg', ' deleted successfully!');
+    }
+
   public function index()
   {
     $categories = category::all();

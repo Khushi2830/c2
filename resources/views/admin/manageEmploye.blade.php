@@ -35,7 +35,7 @@
                                 <th>1stname</th>
                                 <th>email</th>
                                 <th>phone</th>
-                                <th>Action</th>
+                               
                             </tr>
                         </thead>
 
@@ -46,13 +46,7 @@
                                     <td>{{ $employee->name }}</td>
                                     <td>{{ $employee->email }}</td>
                                     <td>{{ $employee->phone }}</td>
-                                    <td>
-                                        <form action="" method="POST" class="d-inline">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                                        </form>
-                                    </td>
+                                
                                 </tr>
                             @endforeach
 

@@ -10,10 +10,10 @@
       <img src="{{ asset('storage/' . $product->image) }}" 
            alt="{{ $product->title }}" 
            class="img-fluid rounded product-image shadow">
-    </div>
+     </div>
 
 
-    <div class="col-md-6">
+     <div class="col-md-6">
 
 
 
