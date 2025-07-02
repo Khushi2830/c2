@@ -50,6 +50,7 @@ Route::middleware("index:auth")->group(function () {
   Route::get("/profile", [HomeController::class, 'profile'])->name('profile');
   Route::put('/user/update/{user}', [HomeController::class, 'update'])->name('user.update');
   Route::get('/user/edit/{user}', [HomeController::class, 'edit'])->name('user.edit');
+  Route::get('/order/details',[HomeController::class, 'Details'])->name('order');
 
   Route::get('/razorpay/{orderId}', [RazorpayController::class, 'pay'])->name('razorpay.pay');
   Route::post('/razorpay/payment', [RazorpayController::class, 'handlePayment'])->name('razorpay.payment');

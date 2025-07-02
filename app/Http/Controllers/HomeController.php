@@ -215,6 +215,10 @@ public function update(Request $request, User $user){
 
     return view("success", compact('order'));
 }
-
-
+public function Details()
+{
+    $user = Auth::user();
+    $order = Order::where('user_id', $user->id)->get(); // 👈 returns a collection
+    return view("Orderdetail", compact("order"));
+}
 }
