@@ -43,7 +43,9 @@ Route::middleware("index:auth")->group(function () {
   Route::post('/cart/decrease/{id}', [HomeController::class, 'decrease'])->name('cart.decrease');
   Route::post('/cart/remove/{id}', [HomeController::class, 'remove'])->name('cart.remove');
   Route::get('/search', [HomeController::class, 'search'])->name('filter.search');
-
+  Route::get("/profile",[HomeController::class,'profile'])->name('profile');
+  Route::put('/user/update/{user}', [HomeController::class, 'update'])->name('user.update');
+  Route::get('/user/edit/{user}', [HomeController::class, 'edit'])->name('user.edit');
 });
 
 

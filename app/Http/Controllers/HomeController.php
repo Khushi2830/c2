@@ -76,6 +76,24 @@ class HomeController extends Controller
     return view("login")->with("msg", "Invalid email or password.");
   }
 
+  
+ public function edit(User $user){
+    $users = User::paginate(5);
+    return view('profile', compact('user','user'));
+}
+
+public function update(Request $request, User $user){
+    $data = $request->validate([
+        'name' => 'required|string',
+        'date' => 'required|date',
+        'email' => 'required|email|unique:users,email,' . $user->id,
+        'phone' => 'required|unique:users,phone,' . $user->id,
+    ]);
+
+    $user->update($data);
+
+    return redirect()->route('user.edit', $user)->with('success', 'Profile updated successfully.');
+}
   public function index()
   {
     $categories = category::all();
@@ -179,6 +197,8 @@ class HomeController extends Controller
 
     return redirect()->back()->with('msg', 'Item removed from cart.');
   }
-
+    public function profile(){
+      return view("profile");
+    }
 
 }

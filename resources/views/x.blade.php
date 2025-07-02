@@ -831,7 +831,52 @@
       border: 1px solid #ccc;
     }
   </style>
+ <style>
+    .profile-dropdown {
+      background-color: #e4c8f4;
+      /* green shade */
+      border-radius: 10px;
+      width: 220px;
+      font-family: 'Segoe UI', sans-serif;
+    }
 
+    .profile-dropdown .dropdown-item {
+      color: #6f42c1;
+      font-weight: 500;
+    }
+
+    .profile-dropdown .dropdown-item:hover {
+      background-color: #6f42c1;
+      color: #4e2c91;
+    }
+
+    .profile-dropdown .dropdown-divider {
+      border-top: 1px solid #aad39a;
+    }
+  </style>
+  <style>
+    .cart-icon {
+        padding: 2px;
+    }
+
+    .cart-icon i {
+        transition: transform 0.2s ease;
+    }
+
+    .cart-icon:hover i {
+        transform: scale(1.2);
+    }
+
+    .cart-count {
+        background-color: #6610f2;
+        color: white;
+        font-size: 0.75rem;
+        padding: 5px 7px;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+        border: 2px solid #fff;
+    }
+</style>
+  
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
@@ -857,28 +902,42 @@
 
     <div class="d-flex align-items-center gap-3 icon-group">
       <a href="{{ route("wedding") }}"><i class="fas fa-birthday-cake fs-5" style="color: #6f42c1;"></i></a>
-      <div class="">
-        <a class="" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-          style="text-decoration: none; outline: none;">
-          <div class="">
-            <div class="profile p-2 m-2 text-white" style="background-color: #6f42c1; border-radius: 50%;">
-              {{ Auth::user()->name ?? 'student' }}
-            </div>
-          </div>
-        </a>
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-          <li>
-            <a class="dropdown-item" style="color: #6f42c1  ;" href="{{ route('index.logout') }}">
-              <i class="fas fa-sign-out-alt me-2" style="color: #6f42c1  ;"></i> Logout
-            </a>
-          </li>
-        </ul>
+            <div class="">
+
+        <div class="dropdown">
+          <button class="btn btn-light rounded-circle dropdown-toggle p-2" type="button" id="profileDropdown"
+            data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #6f42c1; color: white;">
+            <strong> {{ Auth::user()->name ?? 'student' }}</strong>
+          </button>
+
+           <ul class="dropdown-menu dropdown-menu-end profile-dropdown" aria-labelledby="profileDropdown">
+            <li class="px-3 py-0 ">
+              <div class="fw-bold "> <p> <strong>{{ Auth::user()->name }} {{ Auth::user()->lastname }}</strong></p></span></div>
+              <div class="text-muted mt-0"><strong>{{ Auth::user()->email }}</strong> </p></div>
+               
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="{{ route("profile") }}"><i class="fas fa-user me-2"></i> View Profile</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fas fa-question-circle me-2"></i> Help</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i> Settings</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <a class="dropdown-item text-danger" href="{{ route('index.logout') }}">
+                <i class="fas fa-sign-out-alt me-2 text-danger"></i> Logout
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-       <a href="{{ route("cart.show") }}"><i class="fas fa-shopping-cart fs-5"  style="color: #6f42c1;"></i> 
-      <sup>
-        {{ count(request()->session()->get('cart', [])) }}
-      </sup>
-      </a>
+     <a href="{{ route('cart.show') }}" class="cart-icon position-relative d-inline-block">
+    <i class="fas fa-shopping-cart fs-4" style="color: #5e2590;"></i>
+
+   
+</a>
 
 
     </div>
