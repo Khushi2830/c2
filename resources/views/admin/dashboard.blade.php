@@ -65,7 +65,7 @@
                             <div class="stat-card">
                                 <div class="icon-box"><i class="fas fa-dollar-sign"></i></div>
                                 <small>Total Payment</small>
-                                <h5>₹187,13</h5>
+                                <h5>{{ $countPayment}}</h5>
                                 <div class="chart-bg"></div>
                             </div>
                         </div>

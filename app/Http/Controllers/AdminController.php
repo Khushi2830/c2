@@ -23,7 +23,8 @@ class AdminController extends Controller
         $countUser = User::where("status", false)->count();
         $countEmployee = Employee::where("status", true)->count();
         $countOrder = Order::where("status", true)->count();
-        return view("admin.dashboard", compact("countCategory", "countProduct", "countUser", "countEmployee","countOrder"));
+        $countPayment = Payment::where("status", 'authorized')->count();
+        return view("admin.dashboard", compact("countCategory", "countProduct", "countUser", "countEmployee","countOrder", "countPayment"));
     }
 
     public function manageUser()
