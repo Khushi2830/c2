@@ -30,20 +30,21 @@
                                 <th>Method</th> 
                             </tr>
                         </thead>
-                        <tbody>
-                               @foreach ($payments as $payment) 
-    <tr>
-        <td>{{ $payment->id }}</td>
-        <td>{{ $payment->payment_id }}</td>
-       <td>{{ $payment->user->name ?? 'Guest' }}</td>
-        <td>{{ $payment->order_id }}</td>
-        <td>{{ $payment->email }}</td>
-        <td>{{ $payment->created_at->format('d M Y') }}</td>
-        <td>₹{{ number_format($payment->amount, 2) }}</td>
-        <td>{{ ucfirst($payment->method ?? 'N/A') }}</td>
-    </tr>
-@endforeach
-                         </tbody>
+                      <tbody>
+    @foreach ($payments as $payment) 
+        <tr>
+            <td>{{ $payment->id }}</td>
+            <td>{{ $payment->payment_id }}</td>
+            <td>{{ $payment->user->name ?? 'Guest' }}</td>
+            <td>{{ $payment->order_id }}</td>
+            <td>{{ $payment->email }}</td>
+            <td>{{ $payment->created_at->format('d M Y') }}</td>
+            <td>₹{{ number_format($payment->amount, 2) }}</td>
+            <td>{{ ucfirst($payment->method ?? 'N/A') }}</td>
+        </tr>
+    @endforeach
+</tbody>
+
                    </table>
 
 
