@@ -57,7 +57,7 @@
                     <h3 class="mb-0">Secure Razorpay Checkout</h3>
                 </div>
 
-                <div class="card-body p-4 payment-details">
+                <div class="card-body p-3 payment-details">
                     <h5 class="mb-3">Order ID: <span>#{{ $order->id }}</span></h5>
                     <h5 class="mb-4">Total Amount: 
                         <span class="text-success">₹{{ $order->orderItems->sum(fn($item) => $item->price * $item->quantity) }}</span>

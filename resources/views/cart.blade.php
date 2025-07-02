@@ -162,7 +162,7 @@
         }
 
         .btn-pink:hover {
-            background-color: #5f2aa0;
+            background-color: #632aa8;
         }
     </style>
 @endsection
