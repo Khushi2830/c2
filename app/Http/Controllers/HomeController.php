@@ -221,4 +221,15 @@ public function Details()
     $order = Order::where('user_id', $user->id)->get(); // 👈 returns a collection
     return view("Orderdetail", compact("order"));
 }
+public function show()
+{
+    $order = Order::where('user_id', auth()->id())
+                  ->where('status', 'pending')
+                  ->with('items.product') // eager-load product data too
+                  ->first();
+
+    $cartItems = $order ? $order->items : collect(); // prevent null error
+
+    return view('cart', compact('order', 'cartItems'));
+}
 }

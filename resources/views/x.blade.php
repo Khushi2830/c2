@@ -934,10 +934,24 @@
         </div>
       </div>
      
-      <a href="{{ route('cart.show') }}" class="cart-icon position-relative d-inline-block">
+       <a href="{{ route('cart.show') }}" class="cart-icon position-relative d-inline-block">
     <i class="fas fa-shopping-cart fs-4" style="color: #5e2590;"></i>
 
-  
+    @php
+        $order = \App\Models\Order::where('user_id', auth()->id())
+                    ->where('status', 'pending')
+                    ->with('items')
+                    ->first();
+
+        $cartCount = $order ? $order->items->count() : 0;
+    @endphp
+
+    @if($cartCount > 0)
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger text-white"
+              style="font-size: 0.7rem;">
+            {{ $cartCount }}
+        </span>
+    @endif
 </a>
 
     </div>

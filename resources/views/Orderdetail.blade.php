@@ -121,8 +121,48 @@
         }
     }
 </style>
+<style>
+    .sidebar {
+    background-color: #7a2dc5;
+    color: white;
+    height: calc(100vh - 70px); /* adjust height to exclude header */
+    position: fixed;
+    top: 70px; /* offset from header */
+    left: 0;
+    padding: 30px 20px;
+    width: 300px;
+    overflow-y: auto;
+    z-index: 999;
+}
 
-<div class="container-fluid">
+.main-content {
+    margin-left: 300px; /* equal to sidebar width */
+    margin-top: 70px;   /* offset for header */
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+    padding: 40px 30px;
+    background-color: #e4c8f4;
+}
+
+/* Responsive Fix */
+@media (max-width: 767px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        top: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-top: 0;
+        padding: 20px;
+        height: auto;
+    }
+}
+</style>
+
+<div class="container-fluid" style="overflow-y: hidden;"  >
     <div class="row">
         <!-- Sidebar -->
         <div class="col-md-3  col-12 sidebar d-flex flex-column" style=" background-color: #7a2dc5;" >
@@ -142,7 +182,7 @@
             <a href="#" class="nav-link"><i class="fas fa-cog"></i> Settings</a>
             <a href="{{ route('index.logout') }}" class="nav-link logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </div>
-     <div class="col-md-9 col-12 main-content">
+     <div class="col-md-9 col-12 main-content" >
     <h4 class="mb-4 fw-bold">🧾 My Orders</h4>
 
     @forelse($order as $singleOrder)
