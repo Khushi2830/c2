@@ -125,7 +125,7 @@
 <div class="container-fluid">
     <div class="row">
         <!-- Sidebar -->
-        <div class="col-md-3 col-12 sidebar d-flex flex-column" style=" background-color: #7a2dc5;" >
+        <div class="col-md-3  col-12 sidebar d-flex flex-column" style=" background-color: #7a2dc5;" >
             <div class="avatar" style=" background-color: #e4c8f4;">
                 {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
             </div>
@@ -142,54 +142,50 @@
             <a href="#" class="nav-link"><i class="fas fa-cog"></i> Settings</a>
             <a href="{{ route('index.logout') }}" class="nav-link logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </div>
+     <div class="col-md-9 col-12 main-content">
+    <h4 class="mb-4 fw-bold">🧾 My Orders</h4>
 
-        <!-- Main Content -->
-        <div class="col-md-9 col-12 main-content">
-            <h3 class="mb-4">Edit Details</h3>
-
-            <div class="profile-card">
-                <div class="text-center">
-                    <div class="profile-avatar" style=" background-color: #e4c8f4;" >
-                        {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
-                    </div>
-                </div>
-
-                <form action="{{ route('user.update', Auth::user()) }}" method="POST">
-                    @csrf
-                    @method('PUT')
-                    <div class="row mb-3">
-                        <div class="col-md-6">
-                            <label class="form-label">Full Name</label>
-                            <input type="text" name="name" class="form-control" value="{{ Auth::user()->name }}">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">Email</label>
-                            <input type="email" name="email" class="form-control" value="{{ Auth::user()->email }}">
-                        </div>
-                    </div>
-
-                    <div class="row mb-4">
-                        <div class="col-md-6">
-                            <label class="form-label">Contact</label>
-                            <input type="text" name="phone" class="form-control"
-                                value="{{ Auth::user()->phone ?? '' }}">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">Contact</label>
-                            <input type="date" name="date" class="form-control"
-                                value="{{  Auth::user()->date ?? '' }}">
-                        </div>
-                    </div>
-
-                    <div class="text-center">
-                       <button type="submit" class="btn btn-save">Save Changes</button>
-                       
-                    </div>
-                </form>
+    @forelse($order as $singleOrder)
+        <div class="mb-3 p-3 rounded-4 shadow-sm bg-white border" style="font-size: 0.92rem;">
+            <div class="row mb-2">
+                <div class="col-6"><strong>Order ID:</strong> #{{ $singleOrder->id }}</div>
+                <div class="col-6 text-end"><strong>Date:</strong> {{ $singleOrder->created_at->format('d M Y, h:i A') }}</div>
             </div>
 
+            @if(Auth::check())
+                <div class="row mb-2">
+                    <div class="col-6"><strong>Name:</strong> {{ Auth::user()->name }}</div>
+                    <div class="col-6"><strong>Email:</strong> {{ Auth::user()->email }}</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-6"><strong>Phone:</strong> {{ Auth::user()->phone ?? 'Not Provided' }}</div>
+                </div>
+            @endif
+
+            @if(Auth::check() && Auth::user()->address)
+                <div class="row mb-2">
+                    <div class="col-6"><strong>Street:</strong> {{ Auth::user()->address->address }}</div>
+                    <div class="col-6"><strong>City:</strong> {{ Auth::user()->address->city }}</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-6"><strong>State:</strong> {{ Auth::user()->address->state }}</div>
+                    <div class="col-6"><strong>Pincode:</strong> {{ Auth::user()->address->pincode }}</div>
+                </div>
+            @endif
+
+            <div class="text-end mt-2">
+                <strong>Total:</strong>
+                <span class="text-success fs-5">
+                    ₹{{ $singleOrder->orderItems->sum(fn($item) => $item->price * $item->quantity) }}
+                </span>
+            </div>
         </div>
-    </div>
+    @empty
+        <div class="alert alert-info text-center">No orders found.</div>
+    @endforelse
 </div>
 
+
+    </div>
+</div>
 @endsection
