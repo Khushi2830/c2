@@ -775,7 +775,7 @@
         <div class="dropdown">
           <button class="btn btn-light rounded-circle dropdown-toggle p-2" type="button" id="profileDropdown"
             data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #6f42c1; color: white;">
-            <strong> {{ Auth::user()->name ?? 'user' }}</strong>
+            <strong> {{ strtoupper(substr(Auth::user()->name ?? 'user', 0, 1)) }}</strong>
           </button>
 
           <ul class="dropdown-menu dropdown-menu-end profile-dropdown" aria-labelledby="profileDropdown">
