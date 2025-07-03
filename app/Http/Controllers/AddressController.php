@@ -39,23 +39,11 @@ class AddressController extends Controller
         $address->delete();
         return back()->with('msg', 'Address deleted successfully!');
     }
-  public function edit(Address $address){
-    $addresses = Address::paginate(5);
-    return view('cart', compact('address','addresses'));
-}
-  public function update(Request $request, Address $address)
-{
-    $validated = $request->validate([
-       'address' => 'required|string|max:255',
-            'city' => 'required|string|max:100',
-            'state' => 'required|string|max:100',
-            'pincode' => 'required|digits:6',
-    ]);
-
-    $address->update($validated);
-
-  return redirect()->route('cart.show')->with('msg', 'Address updated successfully.');
-}
-
-}
+    public function delete($id)
+    {
+        $address = Address::findOrFail($id);
+        $address->delete();
+        return back()->with('msg', 'Address deleted successfully!');
+    }
+ }
 
