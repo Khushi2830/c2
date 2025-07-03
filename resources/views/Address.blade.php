@@ -8,6 +8,7 @@
         background-color: #e4c8f4;
         font-family: 'Segoe UI', sans-serif;
     }
+
     .sidebar {
         background-color: #6610f2;
         color: white;
@@ -19,6 +20,7 @@
         width: 100%;
         max-width: 300px; /* Increased sidebar width */
     }
+
     .sidebar .avatar {
         width: 100px;
         height: 100px;
@@ -179,49 +181,30 @@
             <a href="#" class="nav-link"><i class="fas fa-cog"></i> Settings</a>
             <a href="{{ route('index.logout') }}" class="nav-link logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </div>
-    <div class="col-md-9 col-12 main-content">
-    <h5 class="mb-3 fw-bold text-dark">🧾 My Orders</h5>
+  <div class="col-md-9 col-12 main-content">
+    <h4 class="mb-4 fw-bold text-dark">📍 My Address</h4>
 
-    @forelse($order as $singleOrder)
-        <div class="mb-2 p-2 rounded-3 shadow-sm bg-white border" style="font-size: 0.85rem;">
-            <div class="row mb-1">
-                <div class="col-6"><strong>Order ID:</strong> #{{ $singleOrder->id }}</div>
-                <div class="col-6 text-end"><strong>Date:</strong> {{ $singleOrder->created_at->format('d M Y, h:i A') }}</div>
-            </div>
-
-            @if(Auth::check())
-                <div class="row mb-1">
-                    <div class="col-6"><strong>Name:</strong> {{ Auth::user()->name }}</div>
-                    <div class="col-6"><strong>Email:</strong> {{ Auth::user()->email }}</div>
-                </div>
-                <div class="row mb-1">
-                    <div class="col-12"><strong>Phone:</strong> {{ Auth::user()->phone ?? 'Not Provided' }}</div>
-                </div>
-            @endif
-
+    <div class="card shadow-lg rounded-4 border-0 mb-4 px-4 py-4" style="font-size: 1.05rem;">
+        <div class="card-body">
             @if(Auth::user()->address)
-                <div class="row mb-1">
-                    <div class="col-6"><strong>Street:</strong> {{ Auth::user()->address->address }}</div>
-                    <div class="col-6"><strong>City:</strong> {{ Auth::user()->address->city }}</div>
-                </div>
-                <div class="row mb-1">
-                    <div class="col-6"><strong>State:</strong> {{ Auth::user()->address->state }}</div>
-                    <div class="col-6"><strong>Pincode:</strong> {{ Auth::user()->address->pincode }}</div>
-                </div>
+                <div class="d-flex flex-column gap-3">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-home text-primary me-3 fs-5"></i>
+                        <strong class="me-2">Street:</strong>
+                        <span>{{ Auth::user()->address->address }}</span>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-city text-primary me-3 fs-5"></i>
+                        <strong class="me-2">City:</strong>
+                        <span>{{ Auth::user()->address->city }}</span>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-flag text-primary me-3 fs-5"></i>
+                        <strong class="me-2">State:</strong>
+                        <span>{{ Auth::user()->address->state }}</span>
             @endif
-
-            <div class="text-end mt-1">
-                <strong>Total:</strong>
-                <span class="text-success fw-semibold">
-                    ₹{{ $singleOrder->orderItems->sum(fn($item) => $item->price * $item->quantity) }}
-                </span>
-            </div>
-        </div>
-    @empty
-        <div class="alert alert-info text-center small">No orders found.</div>
-    @endforelse
-</div>
-
 
 
     </div>

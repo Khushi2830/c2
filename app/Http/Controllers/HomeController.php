@@ -218,8 +218,14 @@ public function update(Request $request, User $user){
 public function Details()
 {
     $user = Auth::user();
-    $order = Order::where('user_id', $user->id)->get(); // 👈 returns a collection
+    $order = Order::where('user_id', $user->id)->get(); 
     return view("Orderdetail", compact("order"));
+}
+
+public function Address(){
+    $user = Auth::user();
+    $order = Order::where('user_id', $user->id)->get(); 
+    return view("Address", compact("order"));
 }
 public function show()
 {

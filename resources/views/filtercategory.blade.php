@@ -37,8 +37,7 @@
                         <p class="text-muted small">{{ Str::limit($product->description, 50) }}</p>
 
                         <p class="d-flex align-items-center text-success mb-0">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Indian_vegetarian_mark.svg/2048px-Indian_vegetarian_mark.svg.png"
-                                class="veg-icon me-2" alt="Veg Icon" style="width: 18px; height: 18px;">
+                             <img src="https://cdn-icons-png.flaticon.com/512/3480/3480301.png" class="veg-icon" style="width: 14px;" alt="">
                             100% {{ $product->veg }}
                         </p>
 

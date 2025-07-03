@@ -10,9 +10,9 @@
   <h4 class="category {{ request()->route('id') == null ? 'active' : '' }}">All categories</h4>
   </a>
   @foreach ($categories as $category)
-    <a href="{{ route('filter', $category->id) }}" style="text-decoration:none; color:inherit;">
+    <a href="{{route('filter', $category->id)}}" style="text-decoration:none; color:inherit;">
       <div class="category {{ request()->route('id') == $category->id ? 'active' : '' }}">
-        {{ $category->cat_title }}
+        {{$category->cat_title}}
       </div>
     </a>
   @endforeach
@@ -55,8 +55,7 @@
           <span id="cart-total">$0.00</span>
         </div>
         <div class="mt-3">
-          <button class="btn  w-100 mb-2 btn-checkout" style="background-color: #6f42c1; color: white; ">💵 Fast
-            Cash</button>
+          <button class="btn  w-100 mb-2 btn-checkout" style="background-color: #6f42c1; color: white; ">💵 Fast Cash</button>
           <button class="btn  w-100 btn-checkout" style="background-color: #6f42c1; color: white; ">✅ Check Out</button>
         </div>
       </div>

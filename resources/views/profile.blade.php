@@ -138,7 +138,7 @@
 
             <a href="{{ route("profile") }}" class="nav-link"><i class="fas fa-pen"></i> Edit Details</a>
             <a href="{{route('order')}}" class="nav-link"><i class="fas fa-box"></i> My Orders</a>
-            <a href="#" class="nav-link"><i class="fas fa-map-marker-alt"></i> My Address</a>
+            <a href="{{route('address')}}" class="nav-link"><i class="fas fa-map-marker-alt"></i> My Address</a>
             <a href="#" class="nav-link"><i class="fas fa-cog"></i> Settings</a>
             <a href="{{ route('index.logout') }}" class="nav-link logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </div>
