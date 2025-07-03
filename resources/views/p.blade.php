@@ -90,6 +90,54 @@
       font-size: 14px;
     }
   </style>
+  <style>
+  body {
+    overflow: hidden; /* prevent full-page scroll */
+  }
+
+  .sidebar,
+  .cart-section {
+    height: calc(100vh - 100px); /* adjust based on navbar height */
+    overflow: hidden;
+  }
+
+  .product-section {
+    height: calc(100vh - 180px); /* adjust as needed */
+    overflow-y: auto;
+    padding-right: 10px;
+  }
+
+  .product-card {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .product-card:hover {
+    background-color: #f3f3f3;
+  }
+
+  .product-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .category {
+    padding: 10px;
+    background-color: #f1f1f1;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .category.active {
+    background-color: #6f42c1;
+    color: white;
+    font-weight: bold;
+  }
+</style>
 </head>
 
 <body>
