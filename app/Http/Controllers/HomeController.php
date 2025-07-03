@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Address;
 use App\Models\blog;
 use App\Models\category;
 use App\Models\Order;
@@ -235,7 +236,8 @@ public function show()
                   ->first();
 
     $cartItems = $order ? $order->items : collect(); // prevent null error
+      $addresses = Address::where('user_id', auth()->id())->paginate(5);
 
-    return view('cart', compact('order', 'cartItems'));
+    return view('cart', compact('order', 'cartItems','addresses'));
 }
 }

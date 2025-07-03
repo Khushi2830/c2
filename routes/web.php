@@ -56,7 +56,12 @@ Route::middleware("index:auth")->group(function () {
   Route::post('/razorpay/payment', [RazorpayController::class, 'handlePayment'])->name('razorpay.payment');
   // Route::get('/razorpay/success', [RazorpayController::class, 'success'])->name('razorpay.success');
   Route::get('/razorpay/failed', [RazorpayController::class, 'failed'])->name('razorpay.failed');
-  Route::get('/cart', [HomeController::class, 'show'])->name('cart.show');
+ Route::get('/cart', [HomeController::class, 'show'])->name('cart.show');
+Route::get('/address/{id}/edit', [AddressController::class, 'edit'])->name('address.edit');
+Route::put('/address/{id}', [AddressController::class, 'update'])->name('address.update');
+Route::get('/address', [AddressController::class, 'index1'])->name('address.index'); 
+
+
 });
 
 

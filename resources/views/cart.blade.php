@@ -5,6 +5,58 @@
 @section('content3')
     <div class="container py-4">
         <h3 class="fw-bold mb-4" style="color: #782fc2;">🛒 My Cart</h3>
+           <!-- Modal -->
+          @foreach ($addresses as $addres)
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="editModal">
+          Edit {{ $addres->address ?? 'Shipping' }} Address
+        </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+          <div class="card-body">
+            <form action="{{ route('address.update', $addres->id) }}" method="POST">
+              @csrf
+              @method('PUT')
+              <h6 class="mb-3 fw-bold">Address</h6>
+
+              <div class="mb-3">
+                <label>Street Address</label>
+                <input type="text" name="address" class="form-control" value="{{ $addres->address }}">
+                @error('address') <small class="text-danger">{{ $message }}</small> @enderror
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label>City</label>
+                  <input type="text" name="city" class="form-control" value="{{ $addres->city }}">
+                  @error('city') <small class="text-danger">{{ $message }}</small> @enderror
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label>State</label>
+                  <input type="text" name="state" class="form-control" value="{{ $addres->state }}">
+                  @error('state') <small class="text-danger">{{ $message }}</small> @enderror
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label>Pincode</label>
+                  <input type="text" name="pincode" class="form-control" value="{{ $addres->pincode }}">
+                  @error('pincode') <small class="text-danger">{{ $message }}</small> @enderror
+                </div>
+              </div>
+
+              <button class="btn text-white w-100 mt-3" style="background-color: #782fc2;">Edit Address</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+@endforeach
 
 
 
@@ -12,7 +64,9 @@
             <!-- Left: Cart + Address -->
             <div class="col-lg-8">
                 <div class="card shadow p-4 mb-4">
+                    
                     @foreach($cartItems as $item)
+                    
                         @php
                             $product = $item->product;
                             $subtotal = $item->quantity * $item->price;
@@ -61,30 +115,34 @@
 
                         <div class="mb-3">
                             <label>Street Address</label>
-                            <input type="text" name="address" class="form-control">
+                            <input type="text" name="address" class="form-control" value="{{ old("address") }}"  >
                             @error('address') <small class="text-danger">{{ $message }}</small> @enderror
                         </div>
 
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label>City</label>
-                                <input type="text" name="city" class="form-control">
+                                <input type="text" name="city" class="form-control"  value="{{ old("city") }}">
                                 @error('city') <small class="text-danger">{{ $message }}</small> @enderror
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label>State</label>
-                                <input type="text" name="state" class="form-control">
+                                <input type="text" name="state" class="form-control" value="{{ old("state") }}"  >
                                 @error('state') <small class="text-danger">{{ $message }}</small> @enderror
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label>Pincode</label>
-                                <input type="text" name="pincode" class="form-control">
+                                <input type="text" name="pincode" class="form-control"  value="{{ old("pincode") }}"  >
                                 @error('pincode') <small class="text-danger">{{ $message }}</small> @enderror
                             </div>
                         </div>
 
                         <button class="btn text-white w-100 mt-3" style="background-color: #782fc2;">Save Address</button>
                     </form>
+
+                     
+
+
                 </div>
             </div>
 
@@ -108,18 +166,23 @@
                         <h5 class="mb-0">
                             <span>📍</span> <strong>Shipping Address</strong>
                         </h5>
-                        <a href="#" class="text-primary" title="Edit">
+                        <a href="{{ route("address.edit",Auth::user()->address->id ?? '') }}" data-bs-toggle="modal" data-bs-target="#editModal" class="text-primary" title="Edit">
                             <i class="fas fa-pen"></i> <!-- Font Awesome icon -->
                         </a>
                     </div>
+                    
+                    @foreach ($addresses as $address )
+                    
+                    
                     @if(Auth::check() && Auth::user()->address)
-                        <p><strong>Street:</strong> {{ Auth::user()->address->address }}</p>
-                        <p><strong>City:</strong> {{ Auth::user()->address->city }}</p>
-                        <p><strong>State:</strong> {{ Auth::user()->address->state }}</p>
-                        <p><strong>Pincode:</strong> {{ Auth::user()->address->pincode }}</p>
+                        <p><strong>Street:</strong> {{$address->address }}</p>
+                        <p><strong>City:</strong> {{ $address->city }}</p>
+                        <p><strong>State:</strong> {{ $address->state }}</p>
+                        <p><strong>Pincode:</strong> {{ $address->pincode }}</p>
                     @else
                         <p class="text-danger">Please fill your address before checkout.</p>
                     @endif
+                    @endforeach
                 </div>
 
 
