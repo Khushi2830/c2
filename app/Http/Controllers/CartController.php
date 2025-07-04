@@ -92,5 +92,10 @@ public function print($id)
     return view('bill', compact('cash'));
 }
 
+public function show()
+{
+    return view('posorder');
+}
+
 
 }

@@ -91,7 +91,8 @@ Route::post("/insertwedding", [WeddingController::class, "register"])->name("wed
 Route::get('/admin/customise', [AdminController::class, 'customiseCake'])->name('manageCustomiseCake');
 Route::get('/admin/confirm', [AdminController::class, 'manageCake'])->name('managecake');
 Route::post('/admin/cake/confirm/{wedding}', [AdminController::class, 'approvecake'])->name('admin.approvecake');
-
+Route::get('/admin/posorder', [AdminController::class, 'managePosorder'])->name('managePosorder');
+Route::get('/admin/pospayment', [AdminController::class, 'managePospayment'])->name('managePospayment');
 
 
 route::get("/admin/logout", [AdminController::class, "Adminlogout"])->name("admin.logout");
@@ -116,7 +117,9 @@ Route::post('/increase/{item}', [CartController::class, 'increase'])->name('incr
 Route::post('/decrease/{item}', [CartController::class, 'decrease'])->name('decrease');
 Route::post('/remove/{item}', [CartController::class, 'remove'])->name('remove');
 Route::post('checkout', [CartController::class, 'checkout'])->name('checkout');
-Route::get('bill/print/{id}', [CartController::class, 'print'])->name('bill.print');
+Route::get('/bill/print/{id}', [CartController::class, 'print'])->name('bill.print');
+Route::get('/save/order', [CartController::class, 'show'])->name('posorder');
+
 
 });
 

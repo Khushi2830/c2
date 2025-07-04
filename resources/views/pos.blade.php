@@ -120,7 +120,7 @@
 <form method="POST" action="{{ route('checkout') }}">
   @csrf
   <input type="hidden" name="method" value="online">
-  <input type="hidden" name="payment_id" value="TXN12345"> {{-- Optional --}}
+  <input type="hidden" name="payment_id" value="TXN12345"> 
   <button class="btn btn-info w-100">💳 Online</button>
 </form>
       </div>

@@ -117,7 +117,7 @@
     }
 
     .sidebar .menu-item {
-      padding: 10px 20px;
+      padding: 8.5px 10px;
       color: white;
       text-decoration: none;
       display: flex;
