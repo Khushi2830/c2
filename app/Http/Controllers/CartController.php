@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Cartitem;
+use Illuminate\Support\Facades\DB;
+use App\Models\Cash;
 use App\Models\Employee;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -55,4 +57,40 @@ public function remove(CartItem $item)
     $item->delete();
     return back()->with('success', 'Item removed from cart.');
 }
+public function checkout(Request $request)
+{
+    $employeeId = auth('employee')->id();
+    $cart = Cart::with('items')->where('employee_id', $employeeId)->first();
+
+    if (!$cart || $cart->items->isEmpty()) {
+        return back()->with('error', 'Cart is empty.');
+    }
+
+    DB::beginTransaction();
+
+    try {
+        $totalAmount = $cart->items->sum(fn($item) => $item->price * $item->quantity);
+
+        $cash = Cash::create([
+            'employee_id' => $employeeId,
+            'cart_id' => $cart->id,
+            'method' => $request->method, // 'cash' or 'online'
+            'amount' => $totalAmount,
+            'payment_id' => $request->payment_id ?? null, // Optional
+        ]);
+
+        DB::commit();
+        return redirect()->route('bill.print', $cash->id);
+    } catch (\Exception $e) {
+        DB::rollBack();
+        return back()->with('error', 'Checkout failed.');
+    }
+}
+public function print($id)
+{
+    $cash = Cash::with(['employee', 'cart.items.product'])->findOrFail($id);
+    return view('bill', compact('cash'));
+}
+
+
 }

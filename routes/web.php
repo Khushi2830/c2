@@ -115,6 +115,9 @@ Route::middleware(['auth:employee'])->group(function () {
 Route::post('/increase/{item}', [CartController::class, 'increase'])->name('increase');
 Route::post('/decrease/{item}', [CartController::class, 'decrease'])->name('decrease');
 Route::post('/remove/{item}', [CartController::class, 'remove'])->name('remove');
+Route::post('checkout', [CartController::class, 'checkout'])->name('checkout');
+Route::get('bill/print/{id}', [CartController::class, 'print'])->name('bill.print');
+
 });
 
 

@@ -43,5 +43,7 @@ return view('pos', compact('categories', 'products', 'cart'));
 
        return view('pos', compact('products', 'categories'));
    }
+ 
 
+   
 }

@@ -111,8 +111,18 @@
       </div>
 
       <div class="mt-3">
-        <button class="btn w-100 mb-2 btn-checkout" style="background-color: #6f42c1; color: white;">💵 Fast Cash</button>
-        <button class="btn w-100 btn-checkout" style="background-color: #6f42c1; color: white;">✅ Check Out</button>
+        <form method="POST" action="{{ route('checkout') }}">
+  @csrf
+  <input type="hidden" name="method" value="cash">
+  <button class="btn btn-success w-100 mb-2">💵 Cash</button>
+</form>
+
+<form method="POST" action="{{ route('checkout') }}">
+  @csrf
+  <input type="hidden" name="method" value="online">
+  <input type="hidden" name="payment_id" value="TXN12345"> {{-- Optional --}}
+  <button class="btn btn-info w-100">💳 Online</button>
+</form>
       </div>
     </div>
 
