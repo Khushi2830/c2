@@ -6,7 +6,7 @@
 <div class="container-fluid mt-5 p-3">
   <div class="row mt-4">
 
-    <!-- Sidebar: Category List (Not Scrollable) -->
+    
     <div class="col-2 sidebar">
       <a href="{{ route('filter') }}" style="text-decoration:none; color:inherit;">
         <h4 class="category {{ request()->route('id') == null ? 'active' : '' }}">All categories</h4>
@@ -20,7 +20,7 @@
       @endforeach
     </div>
 
-    <!-- Product Section (Scrollable Only This) -->
+   
     <div class="col-7 p-2">
       <form action="{{ route('pos.search') }}" method="GET" class="mb-3">
         <input type="text" name="search" class="form-control" value="{{ request('search') }}" placeholder="Search Product...">
@@ -36,6 +36,10 @@
                 <img src="{{ asset('storage/' . $product->image) }}" class="product-img" alt="{{ $product->title }}">
                 <div>{{ $product->title }}</div>
                 <div><del>₹{{ $product->price }}</del> ₹{{ $product->descount_price }}</div>
+                <div class="text-muted">
+                  
+                  <a href="{{route('add', $product->id)}}" class="btn btn-primary btn-sm" onclick="addToCart('{{ $product->title }}', {{ $product->descount_price }})">Add to Cart</a>
+                </div>
               </div>
             </div>
           @endforeach
@@ -53,14 +57,57 @@
             <th>Qty</th>
             <th>Price</th>
             <th>Total</th>
+            <th>Action</th>
           </tr>
         </thead>
-        <tbody id="cart-body"></tbody>
+        <tbody id="cart-body">
+    @if($cart && $cart->items->count())
+        @foreach($cart->items as $item)
+            <tr>
+                <td class="align-middle fw-semibold">{{ $item->product->title }}</td>
+
+                <td class="align-middle">
+                    <div class="d-flex align-items-center justify-content-start gap-2">
+                        <form method="POST" action="{{ route('decrease', $item->id) }}">
+                            @csrf
+                            <button class="btn btn-sm btn-outline-danger" type="submit">−</button>
+                        </form>
+
+                        <span class="fw-bold">{{ $item->quantity }}</span>
+
+                        <form method="POST" action="{{ route('increase', $item->id) }}">
+                            @csrf
+                            <button class="btn btn-sm btn-outline-success" type="submit">+</button>
+                        </form>
+                    </div>
+                </td>
+
+                <td class="align-middle">₹{{ number_format($item->price, 2) }}</td>
+                <td class="align-middle text-success fw-semibold">₹{{ number_format($item->price * $item->quantity, 2) }}</td>
+
+                <td class="align-middle">
+                    <form method="POST" action="{{ route('remove', $item->id) }}">
+                        @csrf
+                        <button class="btn btn-sm btn-outline-secondary" type="submit">
+                            <i class="fas fa-trash-alt me-1"></i> Remove
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        @endforeach
+    @else
+        <tr>
+            <td colspan="5" class="text-center text-muted py-4">🛒 Cart is empty.</td>
+        </tr>
+    @endif
+</tbody>
+
       </table>
 
       <div class="cart-summary d-flex justify-content-between">
         <span>Total:</span>
-        <span id="cart-total">₹0.00</span>
+        
+        <span id="cart-total">₹{{ number_format($item->price * $item->quantity, 2) }}</span>
       </div>
 
       <div class="mt-3">
@@ -72,14 +119,12 @@
   </div>
 </div>
 
-<script>
-  function addToCart(name, price) {
-    alert(`${name} added to cart at ₹${price}`);
-  }
-</script>
-
- 
+<style>
+  table tr td {
+    font-size: 0.88rem;
+    vertical-align: middle;
+}
+  </style>
 
 </body>
-
 </html>

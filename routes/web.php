@@ -3,6 +3,7 @@
 use App\Http\Controllers\AddressController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EnployController;
@@ -110,6 +111,10 @@ Route::middleware(['auth:employee'])->group(function () {
   Route::get('/pos', [PosController::class, 'index'])->name('pos');
   Route::get('/pos/category/{id?}', [PosController::class, 'index'])->name('filter');
   Route::get('/pos/search', [PosController::class, 'search'])->name('pos.search');
+  Route::get('/cart/add/{product}', [CartController::class, 'add'])->name('add');
+Route::post('/increase/{item}', [CartController::class, 'increase'])->name('increase');
+Route::post('/decrease/{item}', [CartController::class, 'decrease'])->name('decrease');
+Route::post('/remove/{item}', [CartController::class, 'remove'])->name('remove');
 });
 
 
