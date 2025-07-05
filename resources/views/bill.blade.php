@@ -16,8 +16,7 @@
   <p><strong>Date:</strong> {{ $cash->created_at->format('d M Y, h:i A') }}</p>
   <p><strong>Payment Mode:</strong> {{ ucfirst($cash->method) }}</p>
   <p><strong>Amount Paid:</strong> ₹{{ number_format($cash->amount, 2) }}</p>
-
-  {{-- <table>
+<table>
     <thead>
       <tr>
         <th>Product</th>
@@ -36,7 +35,7 @@
         </tr>
       @endforeach
     </tbody>
-  </table> --}}
+  </table> 
 
   <h4 class="text-end mt-4">Grand Total: ₹{{ number_format($cash->amount, 2) }}</h4>
 </body>
