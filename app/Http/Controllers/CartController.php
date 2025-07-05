@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Cartitem;
+use App\Models\category;
 use Illuminate\Support\Facades\DB;
 use App\Models\Cash;
 use App\Models\Employee;
@@ -94,8 +95,11 @@ public function print($id)
 
 public function show()
 {
-    return view('posorder');
+    $categories = category::all();
+     $cartitems = Cartitem::with(['cart.employee', 'product'])->paginate(6);
+    return view('posorder',compact("cartitems","categories"));
 }
+
 
 
 }

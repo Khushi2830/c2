@@ -2,37 +2,69 @@
 @section('title', 'pos Page')
 
 @section('content4')
-    
-   <div>
-      <h2 class="text-center">Sales Invoice</h2>
+  <div class="container-fluid mt-5 p-3">
+    <div class="row mt-4">
 
-  <p><strong>Employee:</strong> {{ $cash->employee->name }}</p>
-  <p><strong>Date:</strong> {{ $cash->created_at->format('d M Y, h:i A') }}</p>
-  <p><strong>Payment Mode:</strong> {{ ucfirst($cash->method) }}</p>
-  <p><strong>Amount Paid:</strong> ₹{{ number_format($cash->amount, 2) }}</p>
+      <div class="clo-2"></div>
+    <!-- Main Content Area -->
+   @extends('p')
+@section('title', 'POS Page')
 
-  <table>
-    <thead>
-      <tr>
-        <th>Product</th>
-        <th>Qty</th>
-        <th>Price</th>
-        <th>Total</th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach($cash->cart->items as $item)
-        <tr>
-          <td>{{ $item->product->title }}</td>
-          <td>{{ $item->quantity }}</td>
-          <td>₹{{ number_format($item->price, 2) }}</td>
-          <td>₹{{ number_format($item->price * $item->quantity, 2) }}</td>
-        </tr>
-      @endforeach
-    </tbody>
-  </table>
+@section('content4')
+<div class="container-fluid mt-5 p-3">
+  <div class="row mt-4">
 
-  <h4 class="text-end mt-4">Grand Total: ₹{{ number_format($cash->amount, 2) }}</h4>
-   </div>
+    <!-- Left spacing column -->
+    <div class="col-2"></div>
 
+    <!-- Main Content Area -->
+    <div class="col-8">
+      <div class="dashboard-header d-flex justify-content-between align-items-center mb-4">
+        <h2 class="page-title mb-0 fw-bold" style="color: #6f42c1;">Manage POS Orders</h2>
+      </div>
+
+      <div class="table-responsive shadow rounded-4 bg-white p-3">
+        <table class="table table-striped align-middle table-hover mb-0">
+          <thead class="table-primary text-center">
+            <tr>
+              <th>ID</th>
+              <th>Employee Name</th>
+              <th>Product Name</th>
+              <th>Quantity</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            @forelse($cartitems as $item)
+              <tr>
+                <td>{{ $item->id }}</td>
+                <td>{{ $item->cart->employee->name ?? 'N/A' }}</td>
+                <td>{{ $item->product->title ?? 'Deleted Product' }}</td>
+                <td>{{ $item->quantity }}</td>
+                <td>₹{{ number_format($item->price, 2) }}</td>
+              </tr>
+            @empty
+              <tr>
+                <td colspan="5" class="text-center">No POS orders found.</td>
+              </tr>
+            @endforelse
+          </tbody>
+        </table>
+
+        <div class="mt-3">
+          {{ $cartitems->links() }}
+        </div>
+      </div>
+    </div>
+
+    <!-- Right spacing column -->
+    <div class="col-2"></div>
+
+  </div>
+</div>
+@endsection
+
+ <div class="clo-2"></div>
+    </div>
+  </div>
 @endsection

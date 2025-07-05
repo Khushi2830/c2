@@ -118,7 +118,7 @@ Route::post('/decrease/{item}', [CartController::class, 'decrease'])->name('decr
 Route::post('/remove/{item}', [CartController::class, 'remove'])->name('remove');
 Route::post('checkout', [CartController::class, 'checkout'])->name('checkout');
 Route::get('/bill/print/{id}', [CartController::class, 'print'])->name('bill.print');
-Route::get('/save/order', [CartController::class, 'show'])->name('posorder');
+Route::get('/pos/posorder', [CartController::class, 'show'])->name('posorder');
 
 
 });

@@ -143,7 +143,7 @@
 <body>
 
   <div class="header tt d-flex align-items-center justify-content-between" style="background-color:#e4e0f4;">
-    <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+    <a class="navbar-brand d-flex align-items-center" href="{{ route("pos")}}">
       <img src="{{ asset('logo.png') }}" alt="Creamer Logo" height="40" class="me-2">
     </a>
 

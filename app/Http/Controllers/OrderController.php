@@ -73,4 +73,5 @@ public function checkout()
     return redirect()->route('checkout.success')->with('msg', 'Order placed successfully!');
 }
 
+
 }

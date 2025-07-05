@@ -18,6 +18,8 @@
           </div>
         </a>
       @endforeach
+      
+    <a href="{{route("posorder")}}" class="menu-item"><i class="fas fa-receipt"></i>Manage Pos Order</a>
     </div>
 
    
