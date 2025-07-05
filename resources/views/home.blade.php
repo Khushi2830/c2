@@ -3,26 +3,33 @@
 
 @section('content1')
   <section class="father-banner text-center m-4 p-4">
-    <div class="container-fluid">
-    <div class="row justify-content-center">
-      <!-- Banner Carousel -->
-<div id="cakeBannerCarousel" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="1000">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQer9YW6EmjdGFKVIbn3DYUdPa74nxgJh4X5w&s" class="d-block w-100" alt="Banner 1">
-    </div>
-    <div class="carousel-item" data-bs-interval="1000">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQer9YW6EmjdGFKVIbn3DYUdPa74nxgJh4X5w&s" class="d-block w-100" alt="Banner 2">
-    </div>
-    <div class="carousel-item" data-bs-interval="1000">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQer9YW6EmjdGFKVIbn3DYUdPa74nxgJh4X5w&s" class="d-block w-100" alt="Banner 3">
+    <div class="container-fluid p-0">
+  <div class="row">
+    <!-- Banner Carousel -->
+    <div id="cakeBannerCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="3000">
+          <img src="{{ asset('banner11.png') }}" class="d-block w-100 banner-img" alt="Banner 1">
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="{{ asset('banner12.png') }}" class="d-block w-100 banner-img" alt="Banner 2">
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="{{ asset('banner0.png') }}" class="d-block w-100 banner-img" alt="Banner 3">
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
+<style>
+  .banner-img {
+    max-height: 500px;
+    object-fit: cover;
+    width: 100%;
+  }
+</style>
 
-    </div>
-    </div>
 
     <div class="container text-center my-5">
     <h2>Bring A Box Of <span class="highlight" style="color: #5f3dc4;">Happiness Today</span></h2>

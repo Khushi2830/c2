@@ -3,13 +3,32 @@
 
 @section('content2')
 
-<div class="container-fluid m-0 mt-2 p-0">
-  <div class="row justify-content-center">
-    <div class="col-md-12">
-      <img src="{{ asset("banner10.png") }}" class="img-fluid w-100 rounded shadow" alt="Happy Father's Day Family" />
+ <div class="container-fluid p-0">
+  <div class="row">
+    <!-- Banner Carousel -->
+    <div id="cakeBannerCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="3000">
+          <img src="{{ asset('banner11.png') }}" class="d-block w-100 banner-img" alt="Banner 1">
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="{{ asset('banner12.png') }}" class="d-block w-100 banner-img" alt="Banner 2">
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="{{ asset('banner0.png') }}" class="d-block w-100 banner-img" alt="Banner 3">
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+<style>
+  .banner-img {
+    max-height: 500px;
+    object-fit: cover;
+    width: 100%;
+  }
+</style>
 <div class="container p-0 mt-5">
   <h2 class="section-title text-center mb-4 fw-bold" style="color: #7b2dc3;">Our Categories</h2>
   <div class="row g-4">
