@@ -95,9 +95,15 @@ public function print($id)
 
 public function show()
 {
-    $categories = category::all();
-     $cartitems = Cartitem::with(['cart.employee', 'product'])->paginate(6);
-    return view('posorder',compact("cartitems","categories"));
+    $employeeId = auth('employee')->id();
+
+    $cartitems = Cartitem::with(['cart.employee', 'product'])
+        ->whereHas('cart', function ($query) use ($employeeId) {
+            $query->where('employee_id', $employeeId);
+        })
+        ->paginate(6);
+
+    return view('posorder', compact("employeeId", "cartitems"));
 }
 
 

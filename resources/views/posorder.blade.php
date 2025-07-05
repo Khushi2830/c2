@@ -1,7 +1,7 @@
 @extends('p')
 @section('title', 'pos Page')
 
-@section('content4')
+@section('content 4')
   <div class="container-fluid mt-5 p-3">
     <div class="row mt-4">
 

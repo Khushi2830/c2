@@ -108,8 +108,14 @@
 
       <div class="cart-summary d-flex justify-content-between">
         <span>Total:</span>
-        
-        <span id="cart-total">₹{{ number_format($item->price * $item->quantity, 2) }}</span>
+       @php
+    $total = $cart->items->sum(function($item) {
+        return $item->price * $item->quantity;
+    });
+@endphp
+
+<span id="cart-total">₹{{ number_format($total, 2) }}</span>
+
       </div>
 
       <div class="mt-3">
