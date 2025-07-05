@@ -7,20 +7,40 @@
   <div class="row mt-4">
 
     
-    <div class="col-2 sidebar m-0 " style=" background-color: #e4e0f4;" >
-      <a href="{{ route('filter') }}" style="text-decoration:none; color:inherit;">
-        <h4 class="category {{ request()->route('id') == null ? 'active' : '' }}">All categories</h4>
-      </a>
-      @foreach ($categories as $category)
-        <a href="{{ route('filter', $category->id) }}" style="text-decoration:none; color:inherit;">
-          <div class="category {{ request()->route('id') == $category->id ? 'active' : '' }}">
-            {{ $category->cat_title }}
-          </div>
-        </a>
-      @endforeach
-      
-    <a href="{{route("posorder")}}" class="menu-item"><i class="fas fa-receipt"></i>Manage Pos Order</a>
-    </div>
+  <div class="col-2 sidebar m-0 p-3 border-end border-3 border-purple rounded-start" 
+     style="background-color: #e4e0f4; min-height: 100vh; border-right: 3px solid #6f42c1;">
+  
+  <!-- All Categories -->
+  <a href="{{ route('filter') }}" class="text-decoration-none text-dark">
+    <h5 class="category py-2 px-3 mb-3 rounded border border-purple 
+               {{ request()->route('id') == null ? 'bg-purple text-white' : 'bg-white text-dark' }}">
+      🗂 All Categories
+    </h5>
+  </a>
+
+  <!-- Dynamic Categories -->
+  @foreach ($categories as $category)
+    <a href="{{ route('filter', $category->id) }}" class="text-decoration-none text-dark">
+      <div class="category py-2 px-3 rounded mb-2 border 
+                  {{ request()->route('id') == $category->id 
+                      ? 'bg-purple text-white border-purple' 
+                      : 'bg-white border-secondary' }}">
+        {{ $category->cat_title }}
+      </div>
+    </a>
+  @endforeach
+
+  <!-- Manage POS Orders -->
+  <div class="mt-4">
+    <a href="{{ route('posorder') }}" 
+       class="btn w-100 fw-semibold shadow-sm border border-purple rounded-pill" 
+       style="background-color: #6f42c1; color: white;">
+      <i class="fas fa-receipt me-2"></i> Manage POS Orders
+    </a>
+  </div>
+</div>
+
+
 
    
     <div class="col-7 p-2">
@@ -143,6 +163,43 @@
     vertical-align: middle;
 }
   </style>
+  <style>
+  .bg-purple {
+    background-color: #6f42c1 !important;
+  }
+  .category:hover {
+    background-color: #d8c4f1;
+    cursor: pointer;
+  }
+  .sidebar a:hover .category {
+    background-color: #d8c4f1;
+  }
+</style>
+<style>
+  .bg-purple {
+    background-color: #6f42c1 !important;
+  }
+
+  .border-purple {
+    border-color: #6f42c1 !important;
+  }
+
+  .category:hover {
+    background-color: #d8c4f1;
+    cursor: pointer;
+    border-color: #6f42c1;
+  }
+
+  .sidebar a:hover .category {
+    background-color: #d8c4f1;
+    border-color: #6f42c1;
+  }
+
+  .btn:hover {
+    opacity: 0.9;
+  }
+</style>
+
 
 </body>
 </html>
