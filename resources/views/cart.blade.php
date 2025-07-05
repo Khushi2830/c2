@@ -170,7 +170,12 @@
 
 
                 <div class="card shadow p-3 text-center">
-                    <a href="{{ route("razorpay.pay", $order->id) }}" class="btn btn-success w-100">Proceed to Checkout</a>
+                    @if ($order)
+    <a href="{{ route("razorpay.pay", $order->id) }}" class="btn btn-success w-100">Proceed to Checkout</a>
+@else
+    <p class="text-danger">No order found. Please add items to cart.</p>
+@endif
+
                 </div>
             </div>
         </div>
