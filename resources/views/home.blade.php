@@ -5,10 +5,22 @@
   <section class="father-banner text-center m-4 p-4">
     <div class="container-fluid">
     <div class="row justify-content-center">
-      <div class="col-md-12">
-      <img src="https://d1f3aa6ifduais.cloudfront.net/assets/images/top-banners/banner2.jpg" width="2000px"
-        alt="Happy Father's Day Family" class="img-fluid mx-auto d-block" />
-      </div>
+      <!-- Banner Carousel -->
+<div id="cakeBannerCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="1000">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQer9YW6EmjdGFKVIbn3DYUdPa74nxgJh4X5w&s" class="d-block w-100" alt="Banner 1">
+    </div>
+    <div class="carousel-item" data-bs-interval="1000">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQer9YW6EmjdGFKVIbn3DYUdPa74nxgJh4X5w&s" class="d-block w-100" alt="Banner 2">
+    </div>
+    <div class="carousel-item" data-bs-interval="1000">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQer9YW6EmjdGFKVIbn3DYUdPa74nxgJh4X5w&s" class="d-block w-100" alt="Banner 3">
+    </div>
+  </div>
+</div>
+
+
     </div>
     </div>
 
@@ -306,5 +318,5 @@
     SAVORIES: Namkeen | Rusk | Pizza Slices | Veg Rolls | Veg Paneer Patty | Breads | Tea Time Snacks
     </small>
   </div>
-
+  
 @endsection
