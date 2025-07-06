@@ -55,8 +55,8 @@
                         <div class="col-md-4">
                             <div class="stat-card">
                                 <div class="icon-box"><i class="fas fa-shopping-bag"></i></div>
-                                <small>Total Online Order</small>
-                                <h5>{{$countOrder}}</h5>
+                                <small>Total Online Order | Pos Order</small>
+                                <h5>{{$countOrder}} | {{ $countcartitem}}</h5>
                                 <div class="chart-bg"></div>
                             </div>
                         </div>
@@ -64,8 +64,8 @@
                         <div class="col-md-4">
                             <div class="stat-card">
                                 <div class="icon-box"><i class="fas fa-dollar-sign"></i></div>
-                                <small>Total Payment</small>
-                                <h5>{{ $countPayment}}</h5>
+                                <small>Total Payment | Pos Payment</small>
+                                <h5>{{ $countPayment}} | {{$countcash}}</h5>
                                 <div class="chart-bg"></div>
                             </div>
                         </div>

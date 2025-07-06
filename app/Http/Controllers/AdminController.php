@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Cartitem;
 use App\Models\Cash;
 use App\Models\Category;
@@ -25,8 +26,10 @@ class AdminController extends Controller
         $countUser = User::where("status", false)->count();
         $countEmployee = Employee::where("status", true)->count();
         $countOrder = Order::where("status", true)->count();
+        $countcartitem = Cartitem::where("status", false)->count();
+        $countcash = Cash::all()->count();
         $countPayment = Payment::where("status", 'authorized')->count();
-        return view("admin.dashboard", compact("countCategory", "countProduct", "countUser", "countEmployee","countOrder", "countPayment"));
+        return view("admin.dashboard", compact("countCategory", "countProduct", "countUser", "countEmployee","countOrder", "countPayment","countcartitem","countcash"));
     }
 
     public function managePosorder()
