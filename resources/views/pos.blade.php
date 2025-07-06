@@ -9,7 +9,7 @@
     <div class="col-2 sidebar p-3 border-end bg-light-purple rounded-start">
       <a href="{{ route('filter') }}" class="text-decoration-none text-dark">
         <h5 class="category py-2 px-3 mb-3 rounded border {{ request()->route('id') == null ? 'bg-purple text-white border-purple' : 'bg-white text-dark border-light' }}">
-          📂 All Categories
+         All Categories
         </h5>
       </a>
 
