@@ -15,7 +15,7 @@
   </section>
   <section class="why-choose-us py-5 text-center">
     <div class="container">
-    <h2 class="fw-bold text-pink">Why Choose Us ?</h2>
+    <h2 class="fw-bold" style="color: blueviolet">Why Choose Us ?</h2>
     <p class="fs-4 fw-semibold mb-5">You Dream it, We bake it</p>
 
     <div class="row text-start justify-content-center gx-5 gy-4">
@@ -51,6 +51,11 @@
         </div>
       </div>
       </div>
+      <style>
+        .purple-icon {
+  filter: hue-rotate(270deg) saturate(200%);
+}
+      </style>
 
       <!-- Right Column -->
       <div class="col-md-6">
@@ -80,7 +85,7 @@
   <section class="cake-showcase py-5 text-center">
     <div class="container">
 
-    <h2 class="fw-bold mb-5 title-heading">
+    <h2 class="fw-bold mb-5 title-heading" style="color: blueviolet">
       Celebrate with a Cake as <span class="text-purple">Unique as Your Love</span>
     </h2>
 
@@ -94,10 +99,10 @@
         class="card-img-top" alt="Asymmetrical Motion Cake">
         <div class="card-body">
         <h5 class="card-title">Asymetrical Motion Cake</h5>
-        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100">ENQUIRE NOW</a>
+        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100" style="background-color: blueviolet">ENQUIRE NOW</a>
         </div>
       </div>
-      </div>
+      </div> 
 
 
       <div class="col">
@@ -107,7 +112,7 @@
         class="card-img-top" alt="Bride & Groom Cake">
         <div class="card-body">
         <h5 class="card-title">Bride & Groom Cake</h5>
-        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100">ENQUIRE NOW</a>
+        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100" style="background-color: blueviolet">ENQUIRE NOW</a>
         </div>
       </div>
       </div>
@@ -120,7 +125,7 @@
         class="card-img-top" alt="Dholki Cake">
         <div class="card-body">
         <h5 class="card-title">Dholki Cake</h5>
-        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100">ENQUIRE NOW</a>
+        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100" style="background-color: blueviolet">ENQUIRE NOW</a>
         </div>
       </div>
       </div>
@@ -133,7 +138,7 @@
         class="card-img-top" alt="Geometry Wedding Cake">
         <div class="card-body">
         <h5 class="card-title">Geometry Wedding Cake</h5>
-        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100">ENQUIRE NOW</a>
+        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100" style="background-color: blueviolet">ENQUIRE NOW</a>
         </div>
       </div>
       </div>
@@ -144,7 +149,7 @@
         class="card-img-top" alt="Asymmetrical Motion Cake">
         <div class="card-body">
         <h5 class="card-title">Asymetrical Motion Cake</h5>
-        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100">ENQUIRE NOW</a>
+        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100" style="background-color: blueviolet">ENQUIRE NOW</a>
         </div>
       </div>
       </div>
@@ -157,7 +162,7 @@
         class="card-img-top" alt="Bride & Groom Cake">
         <div class="card-body">
         <h5 class="card-title">Bride & Groom Cake</h5>
-        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100">ENQUIRE NOW</a>
+        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100" style="background-color: blueviolet">ENQUIRE NOW</a>
         </div>
       </div>
       </div>
@@ -169,7 +174,7 @@
         class="card-img-top" alt="Dholki Cake">
         <div class="card-body">
         <h5 class="card-title">Dholki Cake</h5>
-        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100">ENQUIRE NOW</a>
+        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100" style="background-color: blueviolet">ENQUIRE NOW</a>
         </div>
       </div>
       </div>
@@ -182,7 +187,7 @@
         class="card-img-top" alt="Geometry Wedding Cake">
         <div class="card-body">
         <h5 class="card-title">Geometry Wedding Cake</h5>
-        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100">ENQUIRE NOW</a>
+        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100" style="background-color: blueviolet">ENQUIRE NOW</a>
         </div>
       </div>
       </div>
@@ -193,7 +198,7 @@
         class="card-img-top" alt="Asymmetrical Motion Cake">
         <div class="card-body">
         <h5 class="card-title">Asymetrical Motion Cake</h5>
-        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100">ENQUIRE NOW</a>
+        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100" style="background-color: blueviolet">ENQUIRE NOW</a>
         </div>
       </div>
       </div>
@@ -206,7 +211,7 @@
         class="card-img-top" alt="Bride & Groom Cake">
         <div class="card-body">
         <h5 class="card-title">Bride & Groom Cake</h5>
-        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100">ENQUIRE NOW</a>
+        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100" style="background-color: blueviolet">ENQUIRE NOW</a>
         </div>
       </div>
       </div>
@@ -218,7 +223,7 @@
         class="card-img-top" alt="Dholki Cake">
         <div class="card-body">
         <h5 class="card-title">Dholki Cake</h5>
-        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100">ENQUIRE NOW</a>
+        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100" style="background-color: blueviolet">ENQUIRE NOW</a>
         </div>
       </div>
       </div>
@@ -230,7 +235,7 @@
         class="card-img-top" alt="Geometry Wedding Cake">
         <div class="card-body">
         <h5 class="card-title">Geometry Wedding Cake</h5>
-        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100">ENQUIRE NOW</a>
+        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100" style="background-color: blueviolet">ENQUIRE NOW</a>
         </div>
       </div>
       </div>
@@ -241,7 +246,7 @@
         class="card-img-top" alt="Asymmetrical Motion Cake">
         <div class="card-body">
         <h5 class="card-title">Asymetrical Motion Cake</h5>
-        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100">ENQUIRE NOW</a>
+        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100" style="background-color: blueviolet">ENQUIRE NOW</a>
         </div>
       </div>
       </div>
@@ -253,7 +258,7 @@
         class="card-img-top" alt="Bride & Groom Cake">
         <div class="card-body">
         <h5 class="card-title">Bride & Groom Cake</h5>
-        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100">ENQUIRE NOW</a>
+        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100" style="background-color: blueviolet">ENQUIRE NOW</a>
         </div>
       </div>
       </div>
@@ -265,7 +270,7 @@
         class="card-img-top" alt="Dholki Cake">
         <div class="card-body">
         <h5 class="card-title">Dholki Cake</h5>
-        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100">ENQUIRE NOW</a>
+        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100" style="background-color: blueviolet">ENQUIRE NOW</a>
         </div>
       </div>
       </div>
@@ -278,7 +283,7 @@
         class="card-img-top" alt="Geometry Wedding Cake">
         <div class="card-body">
         <h5 class="card-title">Geometry Wedding Cake</h5>
-        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100">ENQUIRE NOW</a>
+        <a href="{{ route("weddingform") }}" class="btn btn-pink w-100" style="background-color: blueviolet">ENQUIRE NOW</a>
         </div>
       </div>
       </div>
@@ -286,27 +291,13 @@
     </div>
   </section>
 
-  <div class="testimonial-section mt-3 ">
-    <h1>Couples Love Monginis !</h1>
-  </div>
-
-  <div class="testimonial-box">
-    <img src="https://cakesonline.monginis.net/_next/image?url=%2Fassets%2Fimages%2Flanding-page%2Fwedding.png&w=384&q=75"
-    alt="Happy Couple" class="testimonial-image">
-
-
-    <div class="testimonial-content">
-    <div>
-      <span class="quote">“</span>
-      <h4>Happy Couple</h4>
-    </div>
-    <p>Our wedding cake was a showstopper! Thank you, Monginis.</p>
-    <p class="author"> Pooja & Aman</p>
-    </div>
+ 
+  
+    
   </div>
   <div class="xx">
-    <div class="faq-section">
-    <h1>Frequently Asked Questions</h1>
+    <div class="faq-section" style="color: blueviolet">
+    <h1 style="color: blueviolet">Frequently Asked Questions</h1>
 
     <div class="faq-item">
       <p class="faq-number">1. Can I customize my wedding cake design?</p>
