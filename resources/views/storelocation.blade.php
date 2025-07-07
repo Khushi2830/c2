@@ -42,7 +42,7 @@
 
             <!-- Banner Image -->
             <div class="col-md-6 ">
-                <img src="{{ asset("banner1.png") }}" width="600px" alt="Order Online" class="img-fluid rounded">
+                <img src="{{ asset('p.png') }}" width="600px" alt="Order Online" class="img-fluid rounded">
 
             </div>
         </div>
