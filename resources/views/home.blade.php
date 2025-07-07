@@ -294,27 +294,28 @@
   </div>
 
 
-  <div class="container text-center my-5">
-    <h4>Our <span class="highlight" style="color: #5f3dc4;">Speciality</span></h4>
-    <div class="row mt-4">
+<div class="container text-center my-5">
+  <h4>Our <span class="highlight" style="color: #5f3dc4;">Speciality</span></h4>
+  <div class="row mt-4">
     <div class="col-md-3 col-6 mb-4">
-      <img src="https://www.monginis.net/wp-content/uploads/2022/06/1.png" alt="Safe Bakery" width="50"><br>
+      <img src="{{ asset('c.png') }}" alt="Safe Bakery" class="speciality-img"><br>
       <small>Safe & Hygienic Bakery</small>
     </div>
     <div class="col-md-3 col-6 mb-4">
-      <img src="https://www.monginis.net/wp-content/uploads/2022/06/2-1.png" alt="Delivery" width="50"><br>
+      <img src="{{ asset('a.png') }}" alt="Delivery" class="speciality-img"><br>
       <small>Delivery in 700+ Cities</small>
     </div>
     <div class="col-md-3 col-6 mb-4">
-      <img src="https://www.monginis.net/wp-content/uploads/2022/06/3-1.png" alt="Trusted" width="50"><br>
+      <img src="{{ asset('b.png') }}" alt="Trusted" class="speciality-img"><br>
       <small>Trusted by 20 Million</small>
     </div>
     <div class="col-md-3 col-6 mb-4">
-      <img src="https://www.monginis.net/wp-content/uploads/2022/06/4-1.png" alt="Pin" width="50"><br>
+      <img src="{{ asset('b.png') }}" alt="Pin" class="speciality-img"><br>
       <small>Services in 18000+ pincodes</small>
     </div>
-    </div>
   </div>
+</div>
+
 
 
   <div class="bg-light text-center py-4">
@@ -326,5 +327,11 @@
     SAVORIES: Namkeen | Rusk | Pizza Slices | Veg Rolls | Veg Paneer Patty | Breads | Tea Time Snacks
     </small>
   </div>
+  <style>
+  .speciality-img {
+    width: 80px; /* Increase to desired size */
+    height: auto;
+  }
+</style>
 
 @endsection
