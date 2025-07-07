@@ -14,74 +14,103 @@
     </div>
   </section>
   <section class="why-choose-us py-5 text-center">
-    <div class="container">
-    <h2 class="fw-bold" style="color: blueviolet">Why Choose Us ?</h2>
+  <div class="container">
+    <h2 class="fw-bold" style="color: #6f42c1">Why Choose Us ?</h2>
     <p class="fs-4 fw-semibold mb-5">You Dream it, We bake it</p>
 
     <div class="row text-start justify-content-center gx-5 gy-4">
       <!-- Left Column -->
       <div class="col-md-6">
-      <div class="d-flex mb-4 align-items-start">
-        <img
-        src="https://cakesonline.monginis.net/_next/image?url=%2Fassets%2Fimages%2Flanding-page%2Fcake.png&w=256&q=75"
-        alt="Cake Icon" class="icon me-3" />
-        <div>
-        <h6 class="fw-bold">Fully Personalized Designs:</h6>
-        <p>Choose from a variety of designs, sizes, and flavors, all customized to fit your style.</p>
+        <div class="d-flex mb-4 align-items-start">
+          <div class="icon-wrapper">
+            <img
+              src="https://cakesonline.monginis.net/_next/image?url=%2Fassets%2Fimages%2Flanding-page%2Fcake.png&w=256&q=75"
+              alt="Cake Icon"
+              class="icon  me-3" style=" color: #6f42c1; background-color: #6f42c1;"
+            />
+          </div>
+          <div>
+            <h6 class="fw-bold">Fully Personalized Designs:</h6>
+            <p>Choose from a variety of designs, sizes, and flavors, all customized to fit your style.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="d-flex mb-4 align-items-start">
-        <img
-        src="https://cakesonline.monginis.net/_next/image?url=%2Fassets%2Fimages%2Flanding-page%2Fcake.png&w=256&q=75"
-        alt="Cake Icon" class="icon me-3" />
-        <div>
-        <h6 class="fw-bold">Fresh & Flavorful:</h6>
-        <p>No preservatives, only the freshest ingredients for a delectable experience</p>
+        <div class="d-flex mb-4 align-items-start">
+          <div class="icon-wrapper">
+            <img
+              src="https://cakesonline.monginis.net/_next/image?url=%2Fassets%2Fimages%2Flanding-page%2Fcake.png&w=256&q=75"
+              alt="Cake Icon"
+              class="icon  me-3" style=" color: #6f42c1; background-color: #6f42c1;"
+            />
+          </div>
+          <div>
+            <h6 class="fw-bold">Fresh & Flavorful:</h6>
+            <p>No preservatives, only the freshest ingredients for a delectable experience</p>
+          </div>
         </div>
-      </div>
 
-      <div class="d-flex align-items-start">
-        <img
-        src="https://cakesonline.monginis.net/_next/image?url=%2Fassets%2Fimages%2Flanding-page%2Fcake.png&w=256&q=75"
-        alt="Cake Icon" class="icon me-3" />
-        <div>
-        <h6 class="fw-bold">On-Time Delivery:</h6>
-        <p>We deliver directly to your venue at the perfect moment, hassle-free.</p>
+        <div class="d-flex align-items-start">
+          <div class="icon-wrapper">
+            <img
+              src="https://cakesonline.monginis.net/_next/image?url=%2Fassets%2Fimages%2Flanding-page%2Fcake.png&w=256&q=75"
+              alt="Cake Icon"
+              class="icon  me-3" style=" color: #6f42c1; background-color: #6f42c1;"
+            />
+          </div>
+          <div>
+            <h6 class="fw-bold">On-Time Delivery:</h6>
+            <p>We deliver directly to your venue at the perfect moment, hassle-free.</p>
+          </div>
         </div>
       </div>
-      </div>
-      <style>
-        .purple-icon {
-  filter: hue-rotate(270deg) saturate(200%);
-}
-      </style>
 
       <!-- Right Column -->
       <div class="col-md-6">
-      <div class="d-flex mb-4 align-items-start">
-        <img
-        src="https://cakesonline.monginis.net/_next/image?url=%2Fassets%2Fimages%2Flanding-page%2Fcake.png&w=256&q=75"
-        alt="Cake Icon" class="icon me-3" />
-        <div>
-        <h6 class="fw-bold">Finest Quality, Rich Taste:</h6>
-        <p>We only use the finest ingredients to ensure your cake is as delicious as it is stunning</p>
+        <div class="d-flex mb-4 align-items-start">
+          <div class="icon-wrapper">
+            <img
+              src="https://cakesonline.monginis.net/_next/image?url=%2Fassets%2Fimages%2Flanding-page%2Fcake.png&w=256&q=75"
+              alt="Cake Icon"
+              class="icon  me-3" style=" color: #6f42c1; background-color: #6f42c1;"
+            />
+          </div>
+          <div>
+            <h6 class="fw-bold">Finest Quality, Rich Taste:</h6>
+            <p>We only use the finest ingredients to ensure your cake is as delicious as it is stunning</p>
+          </div>
         </div>
-      </div>
 
-      <div class="d-flex align-items-start">
-        <img
-        src="https://cakesonline.monginis.net/_next/image?url=%2Fassets%2Fimages%2Flanding-page%2Fcake.png&w=256&q=75"
-        alt="Cake Icon" class="icon me-3" />
-        <div>
-        <h6 class="fw-bold">Crafted by Experts:</h6>
-        <p>Decades of cake artistry ensure your wedding cake is a masterpiece.</p>
+        <div class="d-flex align-items-start">
+          <div class="icon-wrapper">
+            <img
+              src="https://cakesonline.monginis.net/_next/image?url=%2Fassets%2Fimages%2Flanding-page%2Fcake.png&w=256&q=75"
+              alt="Cake Icon"
+              class="icon me-3" style=" color: #6f42c1; background-color: #6f42c1;"
+            />
+          </div>
+          <div>
+            <h6 class="fw-bold">Crafted by Experts:</h6>
+            <p>Decades of cake artistry ensure your wedding cake is a masterpiece.</p>
+          </div>
         </div>
       </div>
-      </div>
     </div>
-    </div>
-  </section>
+  </div>
+</section>
+
+<!-- Styling -->
+<style>
+  .purple-icon {
+    filter: hue-rotate(270deg) saturate(300%) brightness(1.1);
+  }
+
+  .icon-wrapper {
+    
+    padding: 8px;
+    border-radius: 8px;
+  }
+</style>
+
   <section class="cake-showcase py-5 text-center">
     <div class="container">
 
