@@ -29,7 +29,7 @@ class AdminController extends Controller
         $countcartitem = Cartitem::where("status", false)->count();
         $countcash = Cash::all()->count();
         $countPayment = Payment::where("status", 'authorized')->count();
-        return view("admin.dashboard", compact("countCategory", "countProduct", "countUser", "countEmployee","countOrder", "countPayment","countcartitem","countcash"));
+        return view("admin.dashboard", compact("countCategory", "countProduct", "countUser", "countEmployee", "countOrder", "countPayment", "countcartitem", "countcash"));
     }
 
     public function managePosorder()
@@ -51,14 +51,14 @@ class AdminController extends Controller
     }
     public function manageOrder()
     {
-       $orderitems = OrderItems::with(['order.user', 'product'])->paginate(6);
-     return view("admin.manageOrder", compact("orderitems"));
+        $orderitems = OrderItems::with(['order.user', 'product'])->paginate(6);
+        return view("admin.manageOrder", compact("orderitems"));
     }
-public function managePayment()
-{
-    $payments = Payment::where("status", 'authorized')->paginate(6);
-    return view("admin.managePayment", compact("payments"));
-}
+    public function managePayment()
+    {
+        $payments = Payment::where("status", 'authorized')->paginate(6);
+        return view("admin.managePayment", compact("payments"));
+    }
     public function Adminlogout(Request $request)
     {
         auth()->logout();
@@ -87,12 +87,12 @@ public function managePayment()
     }
 
 
-public function viewCake($id)
-{
-    $wedding = wedding::findOrFail($id);
-    return view("admin.viewCake", compact("wedding"));
-}
-public function viewApplication($id)
+    public function viewCake($id)
+    {
+        $wedding = wedding::findOrFail($id);
+        return view("admin.viewCake", compact("wedding"));
+    }
+    public function viewApplication($id)
     {
         $employee = Employee::findOrFail($id);
         return view("admin.viewApplication", compact("employee"));
@@ -117,17 +117,18 @@ public function viewApplication($id)
         }
         return back()->with('msg', 'Already confirmed.');
     }
-    public function distroy($id){
-        $wedding =Wedding::findOrFail($id);
+    public function distroy($id)
+    {
+        $wedding = Wedding::findOrFail($id);
         $wedding->delete();
         return redirect()->back()->with('msg', 'Wedding deleted successfully.');
     }
 
     public function delete($id)
     {
-      $employee = Employee::findOrFail($id);
-      $employee->delete();
-      return redirect()->back()->with('maseg', 'Application deleted successfully.');
+        $employee = Employee::findOrFail($id);
+        $employee->delete();
+        return redirect()->back()->with('maseg', 'Application deleted successfully.');
     }
 
- }
+}

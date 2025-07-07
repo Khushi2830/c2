@@ -4,31 +4,31 @@
 @section('content1')
   <section class="father-banner text-center m-4 p-4">
     <div class="container-fluid p-0">
-  <div class="row">
-    <!-- Banner Carousel -->
-    <div id="cakeBannerCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="row">
+      <!-- Banner Carousel -->
+      <div id="cakeBannerCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="3000">
-          <img src="{{ asset('banner11.png') }}" class="d-block w-100 banner-img" alt="Banner 1">
+        <img src="{{ asset('banner11.png') }}" class="d-block w-100 banner-img" alt="Banner 1">
         </div>
         <div class="carousel-item" data-bs-interval="3000">
-          <img src="{{ asset('banner12.png') }}" class="d-block w-100 banner-img" alt="Banner 2">
+        <img src="{{ asset('banner12.png') }}" class="d-block w-100 banner-img" alt="Banner 2">
         </div>
         <div class="carousel-item" data-bs-interval="3000">
-          <img src="{{ asset('banner0.png') }}" class="d-block w-100 banner-img" alt="Banner 3">
+        <img src="{{ asset('banner0.png') }}" class="d-block w-100 banner-img" alt="Banner 3">
         </div>
       </div>
+      </div>
     </div>
-  </div>
-</div>
+    </div>
 
-<style>
-  .banner-img {
-    max-height: 500px;
-    object-fit: cover;
-    width: 100%;
-  }
-</style>
+    <style>
+    .banner-img {
+      max-height: 500px;
+      object-fit: cover;
+      width: 100%;
+    }
+    </style>
 
 
     <div class="container text-center my-5">
@@ -37,7 +37,8 @@
       <div class="row">
       <div class="col-md-6 ">
         <img src="{{ asset("banner1.png") }}" width="600px" alt="Order Online" class="img-fluid rounded">
-        <a  href="{{ route("storelocation") }}" class="btn btn-monginis mt-3" style=" background-color: #5f3dc4;">Visit Our Nearest Store</a>
+        <a href="{{ route("storelocation") }}" class="btn btn-monginis mt-3" style=" background-color: #5f3dc4;">Visit
+        Our Nearest Store</a>
       </div>
       <div class="col-md-6">
         <img src="{{ asset("banner2.jpg") }}" width="600px" alt="Visit Store" class="img-fluid rounded">
@@ -49,13 +50,13 @@
     </div>
     </div>
 
-   
+
     <div class="section-purple text-center py-5">
     <h3>Shop By <span class="highlight" style="color:#5f3dc4;">Bestseller Categories</span></h3>
     <div class="container mt-4">
       <div class="row g-4 justify-content-center">
 
-      
+
       <div class="col-md-6">
         <div class="d-flex align-items-center bg-white rounded shadow-sm p-3 h-100">
         <img
@@ -86,7 +87,7 @@
     </div>
     </div>
 
-  
+
     <div class="container py-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
       <h2 class="fw-bold">Shop By <span style=" color: #5f3dc4;">Cake</span></h2>
@@ -317,7 +318,7 @@
 
 
   <div class="bg-light text-center py-4">
-    <strong style=" color: #5f3dc4;" >MOST SEARCHED FOR ON CREAMER :</strong>
+    <strong style=" color: #5f3dc4;">MOST SEARCHED FOR ON CREAMER :</strong>
     <br>
     <small style="font-size:13px;">
     Cakes | 3D & 5D Cakes | Pastries | Savories | Baker Wears | Cakes | Chocolates | Cake Deals <br>
@@ -325,5 +326,5 @@
     SAVORIES: Namkeen | Rusk | Pizza Slices | Veg Rolls | Veg Paneer Patty | Breads | Tea Time Snacks
     </small>
   </div>
-  
+
 @endsection

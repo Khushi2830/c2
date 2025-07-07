@@ -78,24 +78,24 @@
                         <h6>Secure Razorpay Checkout</h6>
                     </div>
                     <div class="payment-details">
-                      <h6>
-                         @if(Auth::check())
-                           <p><strong>Name:</strong> {{ Auth::user()->name }}</p>
-                           <p><strong>Email:</strong> {{ Auth::user()->email }}</p>
-                           <p><strong>Phone:</strong> {{ Auth::user()->phone ?? 'Not Provided' }}</p>
-                         @endif
-                      </h6>
+                        <h6>
+                            @if(Auth::check())
+                                <p><strong>Name:</strong> {{ Auth::user()->name }}</p>
+                                <p><strong>Email:</strong> {{ Auth::user()->email }}</p>
+                                <p><strong>Phone:</strong> {{ Auth::user()->phone ?? 'Not Provided' }}</p>
+                            @endif
+                        </h6>
                         <h6>🧾 Order ID: <span>#{{ $order->id }}</span></h6>
                         <h5>📅 Date & Time:
                             <span class="text-dark">{{ now()->format('d M Y, h:i A') }}</span>
                         </h5>
                         <h6>
-                    @if(Auth::check() && Auth::user()->address)
-                        <p><strong>Street:</strong> {{ Auth::user()->address->address }}</p>
-                        <p><strong>City:</strong> {{ Auth::user()->address->city }}</p>
-                        <p><strong>State:</strong> {{ Auth::user()->address->state }}</p>
-                        <p><strong>Pincode:</strong> {{ Auth::user()->address->pincode }}</p>
-                    @endif
+                            @if(Auth::check() && Auth::user()->address)
+                                <p><strong>Street:</strong> {{ Auth::user()->address->address }}</p>
+                                <p><strong>City:</strong> {{ Auth::user()->address->city }}</p>
+                                <p><strong>State:</strong> {{ Auth::user()->address->state }}</p>
+                                <p><strong>Pincode:</strong> {{ Auth::user()->address->pincode }}</p>
+                            @endif
                         </h6>
                         <h5>💰 Total Amount:
                             <span class="text-success">

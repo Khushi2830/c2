@@ -26,10 +26,10 @@
                 </div>
 
                 <div class="form-container p-4 bg-white shadow rounded-4">
-                    <form action="{{ route('blog.update',$blog) }}" method="POST" class="custom-form"
+                    <form action="{{ route('blog.update', $blog) }}" method="POST" class="custom-form"
                         enctype="multipart/form-data">
                         @csrf
-                         @method("put")
+                        @method("put")
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <div class="form-group mb-3">

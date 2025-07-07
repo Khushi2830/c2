@@ -10,7 +10,7 @@ class AddressController extends Controller
 
     public function store(Request $request)
     {
- 
+
         $validated = $request->validate([
             'address' => 'required|string|max:255',
             'city' => 'required|string|max:100',
@@ -29,7 +29,7 @@ class AddressController extends Controller
 
     public function index()
     {
-        
+
         $addresses = Address::paginate(5);
         return view('admin.manageAddress', compact('addresses'))->with('msg', 'Address details retrieved successfully!');
     }
@@ -45,5 +45,5 @@ class AddressController extends Controller
         $address->delete();
         return back()->with('msg', 'Address deleted successfully!');
     }
- }
+}
 

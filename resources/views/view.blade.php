@@ -1,19 +1,18 @@
 @extends('x')
-@section('title', 'index Page')
+@section('title', 'view')
 
 @section('content3')
 
   <div class="container">
     <div class="row g-4">
     @if($product)
-     <div class="col-md-6 text-center mt-4 ">
-      <img src="{{ asset('storage/' . $product->image) }}" 
-           alt="{{ $product->title }}" 
-           class="img-fluid rounded product-image shadow">
-     </div>
+    <div class="col-md-6 text-center mt-4 ">
+      <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}"
+      class="img-fluid rounded product-image shadow">
+    </div>
 
 
-     <div class="col-md-6">
+    <div class="col-md-6">
 
 
 
@@ -79,15 +78,18 @@
 
 
     <div class="bottom-bar mt-2 d-flex gap-2 ">
-    <form action="{{ route('cart.add', $product->id) }}" method="POST" class=" btn   w-50 " style=" background-color: #b435d7;">
+    <form action="{{ route('cart.add', $product->id) }}" method="POST" class=" btn   w-50 "
+      style=" background-color: #b435d7;">
       @csrf
-        @method('PUT')
-         <button type="submit" class="btn px-3 py-3 w-50 fw-bold" style="background-color: #b435d7; color:white;">ADD TO CART</button>
+      @method('PUT')
+      <button type="submit" class="btn px-3 py-3 w-50 fw-bold" style="background-color: #b435d7; color:white;">ADD TO
+      CART</button>
     </form>
-     
+
     <form action="" method="POST" class=" btn w-50">
       @csrf
-          <button type="submit" class="btn w-100 btn-purple px-4 py-3" style="background-color: #350243; color:white;">PROCEED TO CHECKOUT</button>
+      <button type="submit" class="btn w-100 btn-purple px-4 py-3"
+      style="background-color: #350243; color:white;">PROCEED TO CHECKOUT</button>
     </form>
     </div>
 
@@ -118,15 +120,14 @@
     </div>
   </div>
 
- <style>
-  
-.product-image {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-  border-radius: 0rem;
-}
- </style>
+  <style>
+    .product-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 0rem;
+    }
+  </style>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 @endsection

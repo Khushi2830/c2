@@ -35,7 +35,7 @@
                                 <th>1stname</th>
                                 <th>email</th>
                                 <th>phone</th>
-                               
+
                             </tr>
                         </thead>
 
@@ -46,7 +46,7 @@
                                     <td>{{ $employee->name }}</td>
                                     <td>{{ $employee->email }}</td>
                                     <td>{{ $employee->phone }}</td>
-                                
+
                                 </tr>
                             @endforeach
 

@@ -746,72 +746,114 @@
 
   body {
     padding-top: 80px;
-  
+
   }
 </style>
 
 <style>
-    body {
-      background-color: #f8f9fa;
-      font-family: 'Segoe UI', sans-serif;
-    }
+  body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', sans-serif;
+  }
 
-    .timeline {
-      position: relative;
-      margin: 2rem auto;
-      padding: 2rem 0;
-      max-width: 1000px;
-    }
+  .timeline {
+    position: relative;
+    margin: 2rem auto;
+    padding: 2rem 0;
+    max-width: 1000px;
+  }
 
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: #782fc2;
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 1rem 2rem;
+  }
+
+  .timeline-item.left {
+    left: 0;
+  }
+
+  .timeline-item.right {
+    left: 50%;
+  }
+
+  .timeline-item .content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+
+  .timeline-item.left .content::after,
+  .timeline-item.right .content::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+
+  .timeline-item.left .content::after {
+    right: -15px;
+    border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent white;
+  }
+
+  .timeline-item.right .content::after {
+    left: -15px;
+    border-width: 10px 15px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  .timeline-icon {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #782fc2;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .year {
+    font-weight: bold;
+    color: #782fc2;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 768px) {
     .timeline::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      width: 4px;
-      background: #782fc2;
-      transform: translateX(-50%);
+      left: 8px;
     }
 
     .timeline-item {
-      position: relative;
-      width: 50%;
-      padding: 1rem 2rem;
-    }
-
-    .timeline-item.left {
-      left: 0;
+      width: 100%;
+      padding-left: 2rem;
+      padding-right: 1rem;
+      margin-bottom: 2rem;
     }
 
     .timeline-item.right {
-      left: 50%;
-    }
-
-    .timeline-item .content {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      position: relative;
+      left: 0;
     }
 
     .timeline-item.left .content::after,
-    .timeline-item.right .content::after {
-      content: '';
-      position: absolute;
-      top: 20px;
-      width: 0;
-      height: 0;
-      border-style: solid;
-    }
-
-    .timeline-item.left .content::after {
-      right: -15px;
-      border-width: 10px 0 10px 15px;
-      border-color: transparent transparent transparent white;
-    }
-
     .timeline-item.right .content::after {
       left: -15px;
       border-width: 10px 15px 10px 0;
@@ -819,53 +861,60 @@
     }
 
     .timeline-icon {
-      position: absolute;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #782fc2;
-      color: white;
-      padding: 10px;
-      border-radius: 50%;
-      z-index: 1;
+      left: 0;
+      transform: none;
     }
+  }
+</style>
+<style>
+  h2 {
+    color: #772fbf;
+    font-weight: 700;
+  }
 
-    .year {
-      font-weight: bold;
-      color: #782fc2;
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
+  .team-card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
 
-    @media (max-width: 768px) {
-      .timeline::before {
-        left: 8px;
-      }
+  .team-card:hover {
+    transform: translateY(-10px);
+  }
 
-      .timeline-item {
-        width: 100%;
-        padding-left: 2rem;
-        padding-right: 1rem;
-        margin-bottom: 2rem;
-      }
+  .team-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #772fbf;
+    margin-bottom: 15px;
+  }
 
-      .timeline-item.right {
-        left: 0;
-      }
+  .team-card h5 {
+    color: #772fbf;
+    font-weight: 600;
+  }
 
-      .timeline-item.left .content::after,
-      .timeline-item.right .content::after {
-        left: -15px;
-        border-width: 10px 15px 10px 0;
-        border-color: transparent white transparent transparent;
-      }
+  .team-card p {
+    font-size: 14px;
+    color: #666;
+  }
 
-      .timeline-icon {
-        left: 0;
-        transform: none;
-      }
-    }
-  </style>
+  .social-icons i {
+    font-size: 16px;
+    margin: 0 8px;
+    color: #772fbf;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons i:hover {
+    color: #5e23a8;
+  }
+</style>
 
 <body class="m-0 p-0">
   <nav class="navbar navbar-expand-lg shadow-sm  ">
@@ -928,18 +977,18 @@
   <footer class=" border-top pt-5 pb-3 mt-5" style="background-color: #e4e0f4;">
     <div class="container">
       <div class="row text-center text-md-start">
-       
+
         <div class="col-md-3 mb-4">
           <img src="{{ asset("logo.png") }}" alt="Monginis Logo" width="130">
           <p class="mt-3">
-            <a href="#">Contact Us</a><br>
-            <a href="#">About Us</a><br>
-            <a href="#">Become Franchise</a><br>
-            <a href="#">Become Vendor</a>
+            <a href="{{ route("team") }}">Meet out Team</a><br>
+            <a href="{{ Route("blog1") }}">Blog</a><br>
+            <a href="{{ route("abuout") }}">About Us</a><br>
+            <a href="{{ route("registerForm") }}">Become Franchise</a><br>
           </p>
         </div>
 
-     
+
         <div class="col-md-3 mb-4">
           <h6 class="fw-bold" style="color: #5a66a0;">Products</h6>
           <p>
@@ -961,7 +1010,7 @@
           </p>
         </div>
 
-        
+
         <div class="col-md-3 mb-4">
           <h6 class="fw-bold" style="color: #5a66a0;">Connect with us</h6>
           <div class="d-flex gap-2 justify-content-md-start justify-content-center">
@@ -972,8 +1021,6 @@
                 alt="Instagram"></a>
           </div>
           <p class="mt-3">
-            <a href="#">Refund Policy</a><br>
-            <a href="#">Privacy Policy</a><br>
             <a href="#">Terms & Conditions</a>
           </p>
         </div>
@@ -987,8 +1034,8 @@
       </div>
     </div>
   </footer>
- 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 
 </body>

@@ -82,7 +82,7 @@ class ProductController extends Controller
             'veg' => 'required|string',
             'description' => 'required|string',
         ]);
-        
+
 
         if ($request->hasFile('image')) {
             $data["image"] = $request->file("image")->store("product_images", "public");

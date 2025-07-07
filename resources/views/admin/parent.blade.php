@@ -219,7 +219,7 @@
 
 </head>
 
-<body  style=" overflow-x: hidden; height: 100%;  scroll-behavior: smooth;" >
+<body style=" overflow-x: hidden; height: 100%;  scroll-behavior: smooth;">
 
   <div class="header">
     <div class="d-flex align-items-center">
@@ -227,7 +227,8 @@
     </div>
     <div class="icons d-flex align-items-center" width="">
       <div class="profile lg w-100 h-100 p-2 m-2 " style="background-color:  #6845c7 ;">
-        {{ Auth::user()->name ?? 'student' }}</div>
+        {{ Auth::user()->name ?? 'student' }}
+      </div>
     </div>
   </div>
   @section('content')

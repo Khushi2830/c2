@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Creamer Index</title>
+  <title>Creamer</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     .xx {
@@ -726,28 +726,28 @@
       border: 2px solid #fff;
     }
   </style>
-    <style>
+  <style>
     .cart-icon {
-        padding: 2px;
+      padding: 2px;
     }
 
     .cart-icon i {
-        transition: transform 0.2s ease;
+      transition: transform 0.2s ease;
     }
 
     .cart-icon:hover i {
-        transform: scale(1.2);
+      transform: scale(1.2);
     }
 
     .cart-count {
-        background-color: #6610f2;
-        color: white;
-        font-size: 0.75rem;
-        padding: 5px 7px;
-        box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-        border: 2px solid #fff;
+      background-color: #6610f2;
+      color: white;
+      font-size: 0.75rem;
+      padding: 5px 7px;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+      border: 2px solid #fff;
     }
-</style>
+  </style>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
@@ -781,14 +781,19 @@
 
           <ul class="dropdown-menu dropdown-menu-end profile-dropdown" aria-labelledby="profileDropdown">
             <li class="px-3 ">
-              <div class="fw-bold"> <p> <strong>{{ Auth::user()->name ?? 'user' }} {{ Auth::user()->lastname ?? 'user'}}</strong></p></span></div>
-              <div class="text-muted" style="font-size: 0.9rem;"><p><strong>{{ Auth::user()->email?? 'user' }}</strong> </p></div>
-               
+              <div class="fw-bold">
+                <p> <strong>{{ Auth::user()->name ?? 'user' }} {{ Auth::user()->lastname ?? 'user'}}</strong></p></span>
+              </div>
+              <div class="text-muted" style="font-size: 0.9rem;">
+                <p><strong>{{ Auth::user()->email ?? 'user' }}</strong> </p>
+              </div>
+
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="{{ route("profile") }}"><i class="fas fa-user me-2"></i> View Profile</a></li>
+            <li><a class="dropdown-item" href="{{ route("profile") }}"><i class="fas fa-user me-2"></i> View Profile</a>
+            </li>
             <li><a class="dropdown-item" href="#"><i class="fas fa-question-circle me-2"></i> Help</a></li>
             <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i> Settings</a></li>
             <li>
@@ -803,24 +808,24 @@
         </div>
       </div>
       <a href="{{ route('cart.show') }}" class="cart-icon position-relative d-inline-block">
-    <i class="fas fa-shopping-cart fs-4" style="color: #5e2590;"></i>
+        <i class="fas fa-shopping-cart fs-4" style="color: #5e2590;"></i>
 
-    @php
-        $order = \App\Models\Order::where('user_id', auth()->id())
-                    ->where('status', 'pending')
-                    ->with('items')
-                    ->first();
+        @php
+      $order = \App\Models\Order::where('user_id', auth()->id())
+        ->where('status', 'pending')
+        ->with('items')
+        ->first();
 
-        $cartCount = $order ? $order->items->count() : 0;
+      $cartCount = $order ? $order->items->count() : 0;
     @endphp
 
-    @if($cartCount > 0)
-        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger text-white"
-              style="font-size: 0.7rem;">
-            {{ $cartCount }}
-        </span>
+        @if($cartCount > 0)
+      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger text-white"
+        style="font-size: 0.7rem;">
+        {{ $cartCount }}
+      </span>
     @endif
-</a>
+      </a>
 
 
 
@@ -832,7 +837,7 @@
   <div class="row g-0 mt-5">
     <div class="col-md-6 top-section d-flex flex-column justify-content-center">
       <h2>Visit & Experience Our Service In Your City</h2>
-     
+
     </div>
     <div class="col-md-6">
       <img src="https://d1f3aa6ifduais.cloudfront.net/assets/images/products/1621947382796_62.jpg" alt="Cake"
@@ -844,14 +849,16 @@
   <div class="footer">
     <div class="row text-center text-md-start">
       <div class="col-md-3 mb-3">
-        <div class="logo" style=" color: #6610f2;" >CREAMER</div>
+        <div class="logo" style=" color: #6610f2;">CREAMER</div>
         <div>Magic every time</div>
       </div>
 
       <div class="col-md-2 mb-3">
         <h5>Quick Links</h5>
-        <a href="#">About Us</a><br>
-        <a href="#">Menu</a>
+        <a href="{{ route("abuout") }}">About Us</a><br>
+        <a href="{{ route("team") }}">Meet out Team</a><br>
+        <a href="{{ Route("blog1") }}">Blog</a><br>
+        <a href="{{ route("registerForm") }}">Become Franchise</a><br>
       </div>
 
       <div class="col-md-3 mb-3">
@@ -865,8 +872,8 @@
 
       <div class="col-md-4 mb-3">
         <h5>Contact Us</h5>
-        <p><i class="fas fa-phone-alt"></i> 7838587043</p>
-        <p><i class="fas fa-phone-alt"></i> 8419992244</p>
+        <p><i class="fas fa-phone-alt"></i> 7250409965</p>
+        <p><i class="fas fa-phone-alt"></i> 8292057979</p>
         <p><i class="fas fa-envelope"></i> creamer@creamer.net</p>
         <p><i class="fas fa-envelope"></i> customercare@creamer.net</p>
       </div>
@@ -875,13 +882,12 @@
     <div class="footer-bottom mt-4">
       <div>Creamer © 2025. All Rights Reserved.</div>
       <div class="mt-2">
-        <a href="#">Contact Us</a> |
-        <a href="#">Privacy</a> |
-        <a href="#">Terms Of Use</a>
+        <a href="{{ route("abuout") }}">About Us</a> |
+        <a href="{{ route("team") }}">Terms Of Use</a>
       </div>
     </div>
   </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

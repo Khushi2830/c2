@@ -24,6 +24,7 @@ Route::match(['get', 'post'], '/register', [HomeController::class, 'register'])-
 Route::match(['get', 'post'], '/login', [HomeController::class, 'login'])->name('login');
 
 Route::get("/histroy", [HomeController::class, "histroy"])->name("histroy");
+Route::get("/team", [HomeController::class, "team"])->name("team");
 Route::get("/blog1", [HomeController::class, "blog1"])->name("blog1");
 Route::get("/storelocation", [HomeController::class, "store"])->name("storelocation");
 
@@ -51,14 +52,14 @@ Route::middleware("index:auth")->group(function () {
   Route::get("/profile", [HomeController::class, 'profile'])->name('profile');
   Route::put('/user/update/{user}', [HomeController::class, 'update'])->name('user.update');
   Route::get('/user/edit/{user}', [HomeController::class, 'edit'])->name('user.edit');
-  Route::get('/order/details',[HomeController::class, 'Details'])->name('order');
-  Route::get('/order/address',[HomeController::class, 'Address'])->name('address');
+  Route::get('/order/details', [HomeController::class, 'Details'])->name('order');
+  Route::get('/order/address', [HomeController::class, 'Address'])->name('address');
   Route::get('/razorpay/{orderId}', [RazorpayController::class, 'pay'])->name('razorpay.pay');
   Route::post('/razorpay/payment', [RazorpayController::class, 'handlePayment'])->name('razorpay.payment');
   // Route::get('/razorpay/success', [RazorpayController::class, 'success'])->name('razorpay.success');
   Route::get('/razorpay/failed', [RazorpayController::class, 'failed'])->name('razorpay.failed');
- Route::get('/cart', [HomeController::class, 'show'])->name('cart.show');
-     route::delete("/address/delete/{id}", [AddressController::class, "delete"])->name("delete");
+  Route::get('/cart', [HomeController::class, 'show'])->name('cart.show');
+  route::delete("/address/delete/{id}", [AddressController::class, "delete"])->name("delete");
 
 
 });
@@ -73,9 +74,9 @@ Route::middleware("admin:auth")->group(function () {
     Route::get("/user", [AdminController::class, "manageUser"])->name("manageUser");
     Route::get("/order", [AdminController::class, "manageOrder"])->name("manageOrder");
     Route::get("/Payment", [AdminController::class, "managePayment"])->name("managePayment");
-    Route::resource("/product", ProductController::class,);
-    Route::resource("/category", CategoryController::class,);
-    Route::resource("/blog", BlogController::class,);
+    Route::resource("/product", ProductController::class, );
+    Route::resource("/category", CategoryController::class, );
+    Route::resource("/blog", BlogController::class, );
     Route::get("/manageAddress", [AddressController::class, "index"])->name("manageAddress");
     route::delete("/address/delete/{id}", [AddressController::class, "destroy"])->name("address.delete");
     Route::delete("/employee/delete/{id}", [AdminController::class, "delete"])->name("application.delete");
@@ -113,12 +114,12 @@ Route::middleware(['auth:employee'])->group(function () {
   Route::get('/pos/category/{id?}', [PosController::class, 'index'])->name('filter');
   Route::get('/pos/search', [PosController::class, 'search'])->name('pos.search');
   Route::get('/cart/add/{product}', [CartController::class, 'add'])->name('add');
-Route::post('/increase/{item}', [CartController::class, 'increase'])->name('increase');
-Route::post('/decrease/{item}', [CartController::class, 'decrease'])->name('decrease');
-Route::post('/remove/{item}', [CartController::class, 'remove'])->name('remove');
-Route::post('checkout', [CartController::class, 'checkout'])->name('checkout');
-Route::get('/bill/print/{id}', [CartController::class, 'print'])->name('bill.print');
-Route::get('/pos/posorder', [CartController::class, 'show'])->name('posorder');
+  Route::post('/increase/{item}', [CartController::class, 'increase'])->name('increase');
+  Route::post('/decrease/{item}', [CartController::class, 'decrease'])->name('decrease');
+  Route::post('/remove/{item}', [CartController::class, 'remove'])->name('remove');
+  Route::post('checkout', [CartController::class, 'checkout'])->name('checkout');
+  Route::get('/bill/print/{id}', [CartController::class, 'print'])->name('bill.print');
+  Route::get('/pos/posorder', [CartController::class, 'show'])->name('posorder');
 
 
 });

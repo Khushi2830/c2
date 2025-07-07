@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>EloERP UI - With Add/Minus</title>
+  <title>Employe Home</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
@@ -73,7 +73,8 @@
       font-weight: bold;
       font-size: 16px;
     }
-     .header.tt {
+
+    .header.tt {
       position: fixed;
       top: 0;
       left: 0;
@@ -91,53 +92,56 @@
     }
   </style>
   <style>
-  body {
-    overflow: hidden; /* prevent full-page scroll */
-  }
+    body {
+      overflow: hidden;
+      /* prevent full-page scroll */
+    }
 
-  .sidebar,
-  .cart-section {
-    height: calc(100vh - 100px); /* adjust based on navbar height */
-    overflow: hidden;
-  }
+    .sidebar,
+    .cart-section {
+      height: calc(100vh - 100px);
+      /* adjust based on navbar height */
+      overflow: hidden;
+    }
 
-  .product-section {
-    height: calc(100vh - 180px); /* adjust as needed */
-    overflow-y: auto;
-    padding-right: 10px;
-  }
+    .product-section {
+      height: calc(100vh - 180px);
+      /* adjust as needed */
+      overflow-y: auto;
+      padding-right: 10px;
+    }
 
-  .product-card {
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 5px;
-  }
+    .product-card {
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 5px;
+    }
 
-  .product-card:hover {
-    background-color: #f3f3f3;
-  }
+    .product-card:hover {
+      background-color: #f3f3f3;
+    }
 
-  .product-img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-    margin-bottom: 10px;
-  }
+    .product-img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
 
-  .category {
-    padding: 10px;
-    background-color: #f1f1f1;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+    .category {
+      padding: 10px;
+      background-color: #f1f1f1;
+      margin-bottom: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-  .category.active {
-    background-color: #6f42c1;
-    color: white;
-    font-weight: bold;
-  }
-</style>
+    .category.active {
+      background-color: #6f42c1;
+      color: white;
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
@@ -165,8 +169,9 @@
       <a href="{{ route('login') }}" class="btn btn-outline-primary btn-sm">Login</a>
     @endguest
     </div>
-</div>
-   @section('content 4')
+  </div>
+  @section('content 4')
   @show
 </body>
+
 </html>

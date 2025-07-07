@@ -1,5 +1,5 @@
 @extends('homeparent')
-@section('title', 'ragister Page')
+@section('title', 'Ragister ')
 
 @section('content1')
     <div class="container-w ">

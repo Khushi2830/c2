@@ -1,5 +1,5 @@
 @extends('indexparent')
-@section('title', 'index Page')
+@section('title', 'Wedding')
 
 @section('content2')
   <section class="wedding-banner text-center text-md-start m-0 p-0>

@@ -55,17 +55,20 @@
                                     <td>
                                         <form action="{{ route('admin.approvecake', $wd->id) }}" method="POST" class="d-inline">
                                             @csrf
-                                            <button type="submit" class="btn btn-success btn-sm" style="background-color: #6f42c1"><i class="bi bi-check2-circle"></i></button>
+                                            <button type="submit" class="btn btn-success btn-sm"
+                                                style="background-color: #6f42c1"><i class="bi bi-check2-circle"></i></button>
                                         </form>
                                         <form action="{{route('wedding.delete', $wd->id)}}" method="POST" class="d-inline">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm" style="background-color: #6f42c1" ><i class="bi bi-trash"></i></button>
+                                            <button type="submit" class="btn btn-danger btn-sm"
+                                                style="background-color: #6f42c1"><i class="bi bi-trash"></i></button>
                                         </form>
-                                        <form action="{{route("view.cake" , $wd->id)}}" method="POST" class="d-inline">
+                                        <form action="{{route("view.cake", $wd->id)}}" method="POST" class="d-inline">
                                             @csrf
-                                           
-                                            <button type="submit" class="btn btn-danger btn-sm" style="background-color: #6f42c1"><i class="bi bi-eye"></i></button>
+
+                                            <button type="submit" class="btn btn-danger btn-sm"
+                                                style="background-color: #6f42c1"><i class="bi bi-eye"></i></button>
                                         </form>
                                     </td>
                                 </tr>

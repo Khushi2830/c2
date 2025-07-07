@@ -22,44 +22,44 @@
                 </div>
 
                 <div class="row g-3">
-    @php
-        $fields = [
-            'Name' => $employee->name,
-            'Last Name' => $employee->last_name,
-            'Email' => $employee->email,
-            'Phone' => $employee->phone,
-            'Pincode' => $employee->pincode,
-            'State' => $employee->state,
-            'City' => $employee->city,
-            'Address' => $employee->address,
-            'Position' => $employee->position ?? 'N/A',
-            'Description' => $employee->description,
-            'Property Type' => $employee->property_type,
-        ];
-    @endphp
+                    @php
+                        $fields = [
+                            'Name' => $employee->name,
+                            'Last Name' => $employee->last_name,
+                            'Email' => $employee->email,
+                            'Phone' => $employee->phone,
+                            'Pincode' => $employee->pincode,
+                            'State' => $employee->state,
+                            'City' => $employee->city,
+                            'Address' => $employee->address,
+                            'Position' => $employee->position ?? 'N/A',
+                            'Description' => $employee->description,
+                            'Property Type' => $employee->property_type,
+                        ];
+                    @endphp
 
-    @foreach ($fields as $label => $value)
-        <div class="col-md-4">
-            <div class="border rounded p-3 bg-light h-100">
-                <div class="fw-semibold text-muted small">{{ $label }}</div>
-                <div class="fw-semibold">{{ $value }}</div>
-            </div>
-        </div>
-    @endforeach
+                    @foreach ($fields as $label => $value)
+                        <div class="col-md-4">
+                            <div class="border rounded p-3 bg-light h-100">
+                                <div class="fw-semibold text-muted small">{{ $label }}</div>
+                                <div class="fw-semibold">{{ $value }}</div>
+                            </div>
+                        </div>
+                    @endforeach
 
-    <div class="col-md-4">
-        <div class="border rounded p-3 bg-light h-100">
-            <div class="fw-semibold text-muted small">Status</div>
-            <div class="fw-semibold">
-                @if ($employee->status)
-                    <span class="badge bg-success">Approved</span>
-                @else
-                    <span class="badge bg-warning text-dark">Pending</span>
-                @endif
-            </div>
-        </div>
-    </div>
-</div>
+                    <div class="col-md-4">
+                        <div class="border rounded p-3 bg-light h-100">
+                            <div class="fw-semibold text-muted small">Status</div>
+                            <div class="fw-semibold">
+                                @if ($employee->status)
+                                    <span class="badge bg-success">Approved</span>
+                                @else
+                                    <span class="badge bg-warning text-dark">Pending</span>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>

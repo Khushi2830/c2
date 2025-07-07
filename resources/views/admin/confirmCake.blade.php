@@ -38,7 +38,7 @@
                                 <th>date</th>
                                 <th>city</th>
                                 <th>notes</th>
-                                
+
                             </tr>
                         </thead>
 
@@ -52,7 +52,7 @@
                                     <td>{{ $wd->date }}</td>
                                     <td>{{ $wd->city }}</td>
                                     <td>{{ $wd->description }}</td>
-                                   
+
                                 </tr>
                             @endforeach
 

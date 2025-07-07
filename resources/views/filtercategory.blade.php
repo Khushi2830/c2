@@ -1,5 +1,5 @@
 @extends('x')
-@section('title', 'index Page')
+@section('title', 'filtercategory ')
 
 @section('content3')
 
@@ -22,37 +22,40 @@
     </div>
 
     <div class="content">
-       <div class="row g-4">
-           @foreach ($products as $product)
-           <div class="col-md-3">
-            <div class="card shadow-sm border-4 h-100 rounded-4 overflow-hidden">
-                <div class="position-relative">
-                    <img src="{{ asset("storage/" . $product->image) }}" class="card-img-top object-fit-cover" alt="Cake" style="height: 220px; object-fit: cover;">
-                    <span class="badge position-absolute top-0 end-0 m-2 px-2 py-1 rounded-pill fs-6" style="background-color:#5936a8;">{{$product->category->cat_title}}</span>
-                </div>
+        <div class="row g-4">
+            @foreach ($products as $product)
+                <div class="col-md-3">
+                    <div class="card shadow-sm border-4 h-100 rounded-4 overflow-hidden">
+                        <div class="position-relative">
+                            <img src="{{ asset("storage/" . $product->image) }}" class="card-img-top object-fit-cover"
+                                alt="Cake" style="height: 220px; object-fit: cover;">
+                            <span class="badge position-absolute top-0 end-0 m-2 px-2 py-1 rounded-pill fs-6"
+                                style="background-color:#5936a8;">{{$product->category->cat_title}}</span>
+                        </div>
 
-                <div class="card-body d-flex flex-column justify-content-between">
-                    <div>
-                        <h5 class="card-title fw-semibold mt-0">{{ $product->title }}</h5>
-                        <p class="text-muted small">{{ Str::limit($product->description, 50) }}</p>
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <div>
+                                <h5 class="card-title fw-semibold mt-0">{{ $product->title }}</h5>
+                                <p class="text-muted small">{{ Str::limit($product->description, 50) }}</p>
 
-                        <p class="d-flex align-items-center text-success mb-0">
-                             <img src="https://cdn-icons-png.flaticon.com/512/3480/3480301.png" class="veg-icon" style="width: 14px;" alt="">
-                            100% {{ $product->veg }}
-                        </p>
+                                <p class="d-flex align-items-center text-success mb-0">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/3480/3480301.png" class="veg-icon"
+                                        style="width: 14px;" alt="">
+                                    100% {{ $product->veg }}
+                                </p>
 
-                        <p class="mb-2">
-                            <span class="text-muted text-decoration-line-through">₹{{ $product->price }}</span>
-                            <span class="text-primary fw-bold">₹{{ $product->descount_price }}</span>
-                        </p>
+                                <p class="mb-2">
+                                    <span class="text-muted text-decoration-line-through">₹{{ $product->price }}</span>
+                                    <span class="text-primary fw-bold">₹{{ $product->descount_price }}</span>
+                                </p>
+                            </div>
+
+                            <a href="{{ route('view', $product->id) }}" class="btn btn-purple mt-3 w-100">Add</a>
+                        </div>
                     </div>
-
-                    <a href="{{ route('view', $product->id) }}" class="btn btn-purple mt-3 w-100">Add</a>
                 </div>
-            </div>
+            @endforeach
         </div>
-        @endforeach
-    </div>
 
         <div class="footer mt-2">
             <div class="row text-center text-md-start">
@@ -96,29 +99,29 @@
         </div>
     </div>
 
-<style>
-    .btn-purple {
-        background-color: #6f42c1;
-        color: #fff;
-        border: none;
-        transition: 0.3s ease;
-    }
+    <style>
+        .btn-purple {
+            background-color: #6f42c1;
+            color: #fff;
+            border: none;
+            transition: 0.3s ease;
+        }
 
-    .btn-purple:hover {
-        background-color: #5936a8;
-    }
+        .btn-purple:hover {
+            background-color: #5936a8;
+        }
 
-    .card-title {
-        font-size: 1.1rem;
-    }
+        .card-title {
+            font-size: 1.1rem;
+        }
 
-    .card-body {
-        padding: 1.2rem;
-    }
+        .card-body {
+            padding: 1.2rem;
+        }
 
-    .veg-icon {
-        width: 18px;
-        height: 18px;
-    }
-</style>
+        .veg-icon {
+            width: 18px;
+            height: 18px;
+        }
+    </style>
 @endsection

@@ -13,7 +13,7 @@
       class="blog-image">
     <div class="blog-description">
       {{$blog->content}}
-      <a href="#" class="btn" style="background-color: #5a32d2; color:white;">Read more</a>
+
     </div>
 
     </div>

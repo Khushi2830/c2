@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Invoice</title>
+  <title>Invoice bill</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -53,7 +54,8 @@
       margin-top: 25px;
     }
 
-    table th, table td {
+    table th,
+    table td {
       padding: 10px;
       border-bottom: 1px solid #ddd;
       text-align: left;
@@ -99,6 +101,7 @@
     }
   </style>
 </head>
+
 <body onload="window.print()">
   <div class="page-border">
     <!-- Logo and Shop Info -->
@@ -128,17 +131,18 @@
       </thead>
       <tbody>
         @foreach($cash->cart->items as $item)
-          <tr>
-            <td>{{ $item->product->title }}</td>
-            <td>{{ $item->quantity }}</td>
-            <td>₹{{ number_format($item->price, 2) }}</td>
-            <td>₹{{ number_format($item->price * $item->quantity, 2) }}</td>
-          </tr>
-        @endforeach
+      <tr>
+        <td>{{ $item->product->title }}</td>
+        <td>{{ $item->quantity }}</td>
+        <td>₹{{ number_format($item->price, 2) }}</td>
+        <td>₹{{ number_format($item->price * $item->quantity, 2) }}</td>
+      </tr>
+    @endforeach
       </tbody>
     </table>
 
     <p class="grand-total text-end">Grand Total: ₹{{ number_format($cash->amount, 2) }}</p>
   </div>
 </body>
+
 </html>

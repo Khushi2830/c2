@@ -30,6 +30,11 @@ class HomeController extends Controller
   {
     return view('aboutUs');
   }
+
+  public function team()
+  {
+    return view('team');
+  }
   public function blog1()
   {
     $blogs = blog::paginate(5);
@@ -77,31 +82,33 @@ class HomeController extends Controller
     return view("login")->with("msg", "Invalid email or password.");
   }
 
-     public function delete($id)
-    {
-           $user = User::findOrFail($id); 
-           $user->delete();               
-         return back()->with('msg', ' deleted successfully!');
-    }
+  public function delete($id)
+  {
+    $user = User::findOrFail($id);
+    $user->delete();
+    return back()->with('msg', ' deleted successfully!');
+  }
 
-  
- public function edit(User $user){
+
+  public function edit(User $user)
+  {
     $users = User::paginate(5);
-    return view('profile', compact('user','user'));
-}
+    return view('profile', compact('user', 'user'));
+  }
 
-public function update(Request $request, User $user){
+  public function update(Request $request, User $user)
+  {
     $data = $request->validate([
-        'name' => 'required|string',
-        'date' => 'required|date',
-        'email' => 'required|email|unique:users,email,' . $user->id,
-        'phone' => 'required|unique:users,phone,' . $user->id,
+      'name' => 'required|string',
+      'date' => 'required|date',
+      'email' => 'required|email|unique:users,email,' . $user->id,
+      'phone' => 'required|unique:users,phone,' . $user->id,
     ]);
 
     $user->update($data);
 
     return redirect()->route('user.edit', $user)->with('success', 'Profile updated successfully.');
-}
+  }
   public function index()
   {
     $categories = category::all();
@@ -205,39 +212,41 @@ public function update(Request $request, User $user){
 
     return redirect()->back()->with('msg', 'Item removed from cart.');
   }
-    public function profile(){
-      return view("profile");
-    }
+  public function profile()
+  {
+    return view("profile");
+  }
 
-    public function success(Request $request)
-{
+  public function success(Request $request)
+  {
     $orderId = $request->input('order_id'); // Or get from session if needed
     $order = Order::with('orderItems')->findOrFail($orderId);
 
     return view("success", compact('order'));
-}
-public function Details()
-{
+  }
+  public function Details()
+  {
     $user = Auth::user();
-    $order = Order::where('user_id', $user->id)->get(); 
+    $order = Order::where('user_id', $user->id)->get();
     return view("Orderdetail", compact("order"));
-}
+  }
 
-public function Address(){
+  public function Address()
+  {
     $user = Auth::user();
-    $order = Order::where('user_id', $user->id)->get(); 
+    $order = Order::where('user_id', $user->id)->get();
     return view("Address", compact("order"));
-}
-public function show()
-{
+  }
+  public function show()
+  {
     $order = Order::where('user_id', auth()->id())
-                  ->where('status', 'pending')
-                  ->with('items.product') // eager-load product data too
-                  ->first();
+      ->where('status', 'pending')
+      ->with('items.product') // eager-load product data too
+      ->first();
 
     $cartItems = $order ? $order->items : collect(); // prevent null error
-      $addresses = Address::where('user_id', auth()->id())->paginate(5);
+    $addresses = Address::where('user_id', auth()->id())->paginate(5);
 
-    return view('cart', compact('order', 'cartItems','addresses'));
-}
+    return view('cart', compact('order', 'cartItems', 'addresses'));
+  }
 }

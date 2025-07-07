@@ -1,5 +1,5 @@
 @extends('indexparent')
-@section('title', 'index Page')
+@section('title', 'Weddind')
 
 @section('content2')
 
