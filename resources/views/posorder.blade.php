@@ -43,16 +43,16 @@
                                 </tbody>
                             </table>
                             @php
-    $totalPrice = $cartitems->sum(function ($item) {
-        return $item->price * $item->quantity;
-    });
-@endphp
+                                $totalPrice = $cartitems->sum(function ($item) {
+                                    return $item->price * $item->quantity;
+                                });
+                            @endphp
 
-<div class="mt-4 text-end pe-2">
-    <h5 class="fw-bold">
-        Total Price: <span class="text-success">₹{{ number_format($totalPrice, 2) }}</span>
-    </h5>
-</div>
+                            <div class="mt-4 text-end pe-2">
+                                <h5 class="fw-bold">
+                                    Total Price: <span class="text-success">₹{{ number_format($totalPrice, 2) }}</span>
+                                </h5>
+                            </div>
                         </div>
 
                         <div class="d-flex justify-content-center mt-4">
