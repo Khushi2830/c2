@@ -33,4 +33,27 @@ class WeddingController extends Controller
 
         return redirect()->route('weddingform')->with('msg', 'Wait for employe approval.');
     }
+
+
+public function Customisedorder()
+  {
+     $wedding = wedding::where("status", false)->get();
+    return view("Customisedorder" , compact("wedding"));
+  }
+
+    public function Cake()
+    {
+        $weddings = wedding::where("status", true)->get();
+        return view('ConfirmCake', compact("weddings"));
+    }
+
+    public function Confirmcake(wedding $wedding)
+    {
+        if (!$wedding->status) {
+            $wedding->update(['status' => true]);
+            return back()->with('msg', ' order confirm.');
+        }
+        return back()->with('msg', 'Already confirmed.');
+    }
+
 }

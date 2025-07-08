@@ -60,7 +60,9 @@ Route::middleware("index:auth")->group(function () {
   Route::get('/razorpay/failed', [RazorpayController::class, 'failed'])->name('razorpay.failed');
   Route::get('/cart', [HomeController::class, 'show'])->name('cart.show');
   route::delete("/address/delete/{id}", [AddressController::class, "delete"])->name("delete");
-  
+  Route::get('/wedding/cakeorder', [WeddingController::class, 'Customisedorder'])->name('CakeOrder');
+  Route::get('/wedding/confirmcake', [WeddingController::class, 'Cake'])->name('cake');
+  Route::post('/wedding/cake/confirm/{wedding}', [weddingController::class, 'Confirmcake'])->name('Confirmcake');
 
 
 });
@@ -85,6 +87,7 @@ Route::middleware("admin:auth")->group(function () {
     Route::delete("/wedding/delete/{id}", [AdminController::class, "distroy"])->name("wedding.delete");
     Route::get("/application/view/{id}", [AdminController::class, "viewApplication"])->name("view.application");
     Route::get("/cakeorder/view/{id}", [AdminController::class, "viewCake"])->name("view.cake");
+    
   });
 });
 Route::get("/wedding", [WeddingController::class, "index"])->name("wedding");

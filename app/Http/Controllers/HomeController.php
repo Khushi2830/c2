@@ -249,4 +249,5 @@ class HomeController extends Controller
 
     return view('cart', compact('order', 'cartItems', 'addresses'));
   }
+
 }

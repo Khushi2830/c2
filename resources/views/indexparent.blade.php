@@ -8,6 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
@@ -768,41 +769,62 @@
     <div class="d-flex align-items-center gap-3 icon-group">
 
 
-       <a href="{{ route('wedding') }}"
-        class="custom-cake-link d-flex align-items-center gap-2 px-3 py-1 rounded-pill shadow-sm text-decoration-none">
-        <div class="icon-box d-flex align-items-center justify-content-center">
-          <i class="fas fa-birthday-cake fs-5" style="color: #6f42c1;"></i>
-        </div>
-        <span class="cake-text fw-semibold">Customised Cake</span>
+<div class="dropdown">
+  <button class="btn btn-light rounded-pill shadow-sm dropdown-toggle d-flex align-items-center gap-2 px-3 py-1"
+          type="button" id="customCakeDropdown" data-bs-toggle="dropdown" aria-expanded="false"
+          style="font-size: 0.85rem;">
+    <div class="icon-box d-flex align-items-center justify-content-center">
+      <i class="fas fa-birthday-cake fs-6" style="color: #6f42c1;"></i>
+    </div>
+    <span class="fw-semibold">Customised Cake</span>
+  </button>
+
+  <ul class="dropdown-menu" aria-labelledby="customCakeDropdown">
+    <li>
+      <a class="dropdown-item d-flex align-items-center gap-2" href="{{ route('wedding') }}">
+        <i class="fas fa-birthday-cake fs-6" style="color: #6f42c1;"></i>
+        <span>Customised Cake</span>
       </a>
-      <style>
-        .custom-cake-link {
-          background: linear-gradient(to right, #b47fe9, #792fc2);
-          color: white;
-          transition: all 0.3s ease;
-        }
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center gap-2" href="{{route('CakeOrder')}}">
+        <i class="fas fa-shopping-cart fs-6" style="color: #6f42c1;"></i>
+        <span>Customise Cake Order</span>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center gap-2" href="{{route('cake')}}">
+        <i class="fas fa-shopping-cart fs-6" style="color: #6f42c1;"></i>
+        <span>Confirm  Order</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
 
-        .custom-cake-link:hover {
-          background: linear-gradient(to right, #792fc2, #5e2590);
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-          text-decoration: none;
-        }
 
-        .custom-cake-link .icon-box {
-          background-color: white;
-          color: #792fc2;
-          width: 30px;
-          height: 30px;
-          border-radius: 50%;
-          font-size: 16px;
-        }
 
-        .custom-cake-link .cake-text {
-          font-size: 15px;
-        }
-      </style>
 
+
+<style>
+  .custom-cake-link {
+    font-size: 0.8rem;
+    padding: 2px 8px;
+
+    color: #6f42c1;
+}
+
+.custom-cake-link:hover {
+   
+    text-decoration: none;
+}
+
+.icon-box {
+    width: 20px;
+    height: 20px;
+}
+
+</style>
 
       <div class="">
 

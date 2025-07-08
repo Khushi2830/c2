@@ -9,6 +9,7 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     .search-box {
       max-width: 500px;
@@ -903,14 +904,53 @@
 
 
     <div class="d-flex align-items-center gap-3 icon-group">
-      <a href="{{ route('wedding') }}"
-        class="custom-cake-link d-flex align-items-center gap-2 px-3 py-1 rounded-pill shadow-sm text-decoration-none">
-        <div class="icon-box d-flex align-items-center justify-content-center">
-          <i class="fas fa-birthday-cake fs-5" style="color: #6f42c1;"></i>
-        </div>
-        <span class="cake-text fw-semibold">Customised Cake</span>
+      <div class="dropdown">
+  <button class="btn btn-light rounded-pill shadow-sm dropdown-toggle d-flex align-items-center gap-2 px-3 py-1"
+          type="button" id="customCakeDropdown" data-bs-toggle="dropdown" aria-expanded="false"
+          style="font-size: 0.85rem;">
+    <div class="icon-box d-flex align-items-center justify-content-center">
+      <i class="fas fa-birthday-cake fs-6" style="color: #6f42c1;"></i>
+    </div>
+    <span class="fw-semibold">Customised Cake</span>
+  </button>
+
+  <ul class="dropdown-menu" aria-labelledby="customCakeDropdown">
+    <li>
+      <a class="dropdown-item d-flex align-items-center gap-2" href="{{ route('wedding') }}">
+        <i class="fas fa-birthday-cake fs-6" style="color: #6f42c1;"></i>
+        <span>Customised Cake</span>
       </a>
-      <style>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center gap-2" href="#">
+        <i class="fas fa-shopping-cart fs-6" style="color: #6f42c1;"></i>
+        <span>Customise Cake Order</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+<style>
+  .custom-cake-link {
+    font-size: 0.8rem;
+    padding: 2px 8px;
+    background-color: #f8f6fc;
+    color: #6f42c1;
+}
+
+.custom-cake-link:hover {
+    background-color: #ece3fc;
+    text-decoration: none;
+}
+
+.icon-box {
+    width: 20px;
+    height: 20px;
+}
+
+</style>
+      {{-- <style>
         .custom-cake-link {
           background: linear-gradient(to right, #b47fe9, #792fc2);
           color: white;
@@ -936,7 +976,7 @@
         .custom-cake-link .cake-text {
           font-size: 15px;
         }
-      </style>
+      </style> --}}
       <div class="">
 
         <div class="dropdown">
