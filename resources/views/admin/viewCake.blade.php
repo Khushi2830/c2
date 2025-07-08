@@ -45,9 +45,33 @@
                                     </div>
                                 </div>
                             @endif
-
-                            
                         @endforeach
+
+                        <!-- Status and Approve Button -->
+                        <div class="col-md-6">
+                            <div class="border rounded p-3 bg-light h-100 d-flex flex-column justify-content-between">
+                                <div>
+                                    <div class="fw-semibold text-muted small">Status</div>
+                                    <div class="fw-semibold mb-3">
+                                        @if ($wedding->status)
+                                            <span class="badge bg-success">Approved</span>
+                                        @else
+                                            <span class="badge bg-warning text-dark">Pending</span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                @if (!$wedding->status)
+                                    <form action="{{ route('admin.approvecake', $wedding->id) }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn w-100 rounded-pill text-white shadow-sm"
+                                            style="background-color: #6f42c1;">
+                                            <i class="bi bi-check2-circle me-1"></i> Approve Order
+                                        </button>
+                                    </form>
+                                @endif
+                            </div>
+                        </div>
 
                     </div>
                 </div>
