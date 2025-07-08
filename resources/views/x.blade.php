@@ -913,16 +913,7 @@
     </div>
     <span class="fw-semibold">Customised Cake</span>
   </button>
-
-  <ul class="dropdown-menu" aria-labelledby="customCakeDropdown">
-    <li>
-      <a class="dropdown-item d-flex align-items-center gap-2" href="{{ route('wedding') }}">
-        <i class="fas fa-birthday-cake fs-6" style="color: #6f42c1;"></i>
-        <span>Customised Cake</span>
-      </a>
-    </li>
-    <li>
-      <a class="dropdown-item d-flex align-items-center gap-2" href="<ul class="dropdown-menu" aria-labelledby="customCakeDropdown">
+<ul class="dropdown-menu" aria-labelledby="customCakeDropdown">
     <li>
       <a class="dropdown-item d-flex align-items-center gap-2" href="{{ route('wedding') }}">
         <i class="fas fa-birthday-cake fs-6" style="color: #6f42c1;"></i>
@@ -942,19 +933,8 @@
       </a>
     </li>
     
-  </ul>">
-        <i class="fas fa-shopping-cart fs-6" style="color: #6f42c1;"></i>
-        <span>Customise Cake Order</span>
-      </a>
-    </li>
-    <li>
-      <a class="dropdown-item d-flex align-items-center gap-2" href="{{route('cake')}}">
-        <i class="fas fa-shopping-cart fs-6" style="color: #6f42c1;"></i>
-        <span>Confirm  Order</span>
-      </a>
-    </li>
-    
   </ul>
+ 
 </div>
 
 <style>
