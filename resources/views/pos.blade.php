@@ -64,9 +64,16 @@
     </div>
 
 @empty
-    <div class="col-12 text-center py-5">
-        <h5 class="text-muted">No products found in this category.</h5>
+   <div class="col-12 d-flex justify-content-center align-items-center py-5">
+    <div class="p-4 rounded-4 bg-light-purple border border-2 border-purple shadow-sm text-center animate-fade" style="max-width: 400px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/2748/2748558.png" 
+             alt="Empty Category" width="80" class="mb-3 opacity-75">
+        <h5 class="text-muted fw-bold">No products found in this category.</h5>
+        <p class="text-secondary">Try selecting a different category or explore all products.</p>
+        <a href="{{ route('filter') }}" class="btn btn-purple px-4 rounded-pill mt-2">View All Products</a>
     </div>
+</div>
+
 @endforelse
 
       </div>
@@ -159,6 +166,40 @@
   </div>
 
   <style>
+    .bg-light-purple {
+    background-color: #f3effd;
+}
+
+.border-purple {
+    border-color: #6f42c1 !important;
+}
+
+.btn-purple {
+    background-color: #6f42c1;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-purple:hover {
+    background-color: #5936a8;
+}
+
+.animate-fade {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
     .bg-purple {
     background-color: #6f42c1 !important;
     }
