@@ -37,7 +37,7 @@
                         <th scope="col">Date</th>
                         <th scope="col">City</th>
                         <th scope="col">Notes</th>
-                        <th scope="col">Action</th>
+                       
                     </tr>
                 </thead>
 
@@ -53,14 +53,7 @@
                         <td class="text-start" style="max-width: 200px; word-break: break-word;">
                             {{ $wd->description }}
                         </td>
-                        <td>
-                            <form action="{{ route('Confirmcake', $wd->id) }}" method="POST" class="d-inline">
-                                @csrf
-                                <button type="submit" class="btn btn-sm rounded-pill px-3" style="background-color: #6f42c1; color: white;" title="Confirm">
-                                    <i class="bi bi-check2-circle me-1"></i>Confirm
-                                </button>
-                            </form>
-                        </td>
+                        
                     </tr>
                     @endforeach
                 </tbody>

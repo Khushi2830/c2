@@ -763,9 +763,6 @@
 
     </div>
 
-
-
-
     <div class="d-flex align-items-center gap-3 icon-group">
 
 
@@ -787,11 +784,18 @@
       </a>
     </li>
     <li>
+      <a class="dropdown-item d-flex align-items-center gap-2" href="{{route('CakeOrder')}}">
+        <i class="fas fa-shopping-cart fs-6" style="color: #6f42c1;"></i>
+        <span>Customise Cake Order</span>
+      </a>
+    </li>
+    <li>
       <a class="dropdown-item d-flex align-items-center gap-2" href="{{route('cake')}}">
         <i class="fas fa-shopping-cart fs-6" style="color: #6f42c1;"></i>
         <span>Confirm  Order</span>
       </a>
     </li>
+    
   </ul>
 </div>
 
