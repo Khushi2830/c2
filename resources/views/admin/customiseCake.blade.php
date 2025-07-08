@@ -64,7 +64,7 @@
                                             <button type="submit" class="btn btn-danger btn-sm"
                                                 style="background-color: #6f42c1"><i class="bi bi-trash"></i></button>
                                         </form>
-                                        <form action="{{route("view.cake", $wd->id)}}" method="POST" class="d-inline">
+                                        <form action="{{route("view.cake", $wd->id)}}" method="get" class="d-inline">
                                             @csrf
 
                                             <button type="submit" class="btn btn-danger btn-sm"
