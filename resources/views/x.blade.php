@@ -922,12 +922,6 @@
       </a>
     </li>
     <li>
-      <a class="dropdown-item d-flex align-items-center gap-2" href="{{route('CakeOrder')}}">
-        <i class="fas fa-shopping-cart fs-6" style="color: #6f42c1;"></i>
-        <span>Customise Cake Order</span>
-      </a>
-    </li>
-    <li>
       <a class="dropdown-item d-flex align-items-center gap-2" href="{{route('cake')}}">
         <i class="fas fa-shopping-cart fs-6" style="color: #6f42c1;"></i>
         <span>Confirm  Order</span>
@@ -956,33 +950,7 @@
 }
 
 </style>
-      {{-- <style>
-        .custom-cake-link {
-          background: linear-gradient(to right, #b47fe9, #792fc2);
-          color: white;
-          transition: all 0.3s ease;
-        }
-
-        .custom-cake-link:hover {
-          background: linear-gradient(to right, #792fc2, #5e2590);
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-          text-decoration: none;
-        }
-
-        .custom-cake-link .icon-box {
-          background-color: white;
-          color: #792fc2;
-          width: 30px;
-          height: 30px;
-          border-radius: 50%;
-          font-size: 16px;
-        }
-
-        .custom-cake-link .cake-text {
-          font-size: 15px;
-        }
-      </style> --}}
+      
       <div class="">
 
         <div class="dropdown">
