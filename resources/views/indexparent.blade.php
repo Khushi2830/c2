@@ -768,7 +768,40 @@
     <div class="d-flex align-items-center gap-3 icon-group">
 
 
-      <a href="{{ route("wedding") }}"><i class="fas fa-birthday-cake fs-5" style="color: #6f42c1;"></i></a>
+       <a href="{{ route('wedding') }}"
+        class="custom-cake-link d-flex align-items-center gap-2 px-3 py-1 rounded-pill shadow-sm text-decoration-none">
+        <div class="icon-box d-flex align-items-center justify-content-center">
+          <i class="fas fa-birthday-cake fs-5" style="color: #6f42c1;"></i>
+        </div>
+        <span class="cake-text fw-semibold">Customised Cake</span>
+      </a>
+      <style>
+        .custom-cake-link {
+          background: linear-gradient(to right, #b47fe9, #792fc2);
+          color: white;
+          transition: all 0.3s ease;
+        }
+
+        .custom-cake-link:hover {
+          background: linear-gradient(to right, #792fc2, #5e2590);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          text-decoration: none;
+        }
+
+        .custom-cake-link .icon-box {
+          background-color: white;
+          color: #792fc2;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          font-size: 16px;
+        }
+
+        .custom-cake-link .cake-text {
+          font-size: 15px;
+        }
+      </style>
 
 
       <div class="">

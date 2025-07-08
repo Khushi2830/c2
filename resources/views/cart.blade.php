@@ -5,8 +5,7 @@
 @section('content3')
     <div class="container py-4">
         <h3 class="fw-bold mb-4" style="color: #782fc2;">🛒 My Cart</h3>
-           <!-- Modal -->
-      
+
 
 
 
@@ -14,10 +13,11 @@
             <!-- Left: Cart + Address -->
             <div class="col-lg-8">
                 <div class="card shadow p-4 mb-4">
-                    
+
                     @foreach($cartItems as $item)
-                    
+
                         @php
+
                             $product = $item->product;
                             $subtotal = $item->quantity * $item->price;
                         @endphp
@@ -47,53 +47,51 @@
                     @endforeach
 
                     <div class="text-end">
-                        <a href="{{ route("index") }}" class="btn text-white" style="background-color: #782fc2;">
+                        <a href="{{ route('index') }}" class="btn text-white" style="background-color: #782fc2;">
                             ➕ Add More Items
                         </a>
                     </div>
                 </div>
 
-                <!-- Address Form -->
-                <div class="card p-4">
-                    @if (session('msg'))
-                        <div class="alert alert-success">{{ session('msg') }}</div>
-                    @endif
+                <!-- Address Form (only if address not filled) -->
+                @if(Auth::check() && !Auth::user()->address)
+                    <div class="card p-4">
+                        @if (session('msg'))
+                            <div class="alert alert-success">{{ session('msg') }}</div>
+                        @endif
 
-                    <form action="{{ route('address.store') }}" method="POST">
-                        @csrf
-                        <h6 class="mb-3 fw-bold">Address</h6>
+                        <form action="{{ route('address.store') }}" method="POST">
+                            @csrf
+                            <h6 class="mb-3 fw-bold">Address</h6>
 
-                        <div class="mb-3">
-                            <label>Street Address</label>
-                            <input type="text" name="address" class="form-control" value="{{ old("address") }}"  >
-                            @error('address') <small class="text-danger">{{ $message }}</small> @enderror
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label>City</label>
-                                <input type="text" name="city" class="form-control"  value="{{ old("city") }}">
-                                @error('city') <small class="text-danger">{{ $message }}</small> @enderror
+                            <div class="mb-3">
+                                <label>Street Address</label>
+                                <input type="text" name="address" class="form-control" value="{{ old('address') }}">
+                                @error('address') <small class="text-danger">{{ $message }}</small> @enderror
                             </div>
-                            <div class="col-md-3 mb-3">
-                                <label>State</label>
-                                <input type="text" name="state" class="form-control" value="{{ old("state") }}"  >
-                                @error('state') <small class="text-danger">{{ $message }}</small> @enderror
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label>City</label>
+                                    <input type="text" name="city" class="form-control" value="{{ old('city') }}">
+                                    @error('city') <small class="text-danger">{{ $message }}</small> @enderror
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label>State</label>
+                                    <input type="text" name="state" class="form-control" value="{{ old('state') }}">
+                                    @error('state') <small class="text-danger">{{ $message }}</small> @enderror
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label>Pincode</label>
+                                    <input type="text" name="pincode" class="form-control" value="{{ old('pincode') }}">
+                                    @error('pincode') <small class="text-danger">{{ $message }}</small> @enderror
+                                </div>
                             </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Pincode</label>
-                                <input type="text" name="pincode" class="form-control"  value="{{ old("pincode") }}"  >
-                                @error('pincode') <small class="text-danger">{{ $message }}</small> @enderror
-                            </div>
-                        </div>
 
-                        <button class="btn text-white w-100 mt-3" style="background-color: #782fc2;">Save Address</button>
-                    </form>
-
-                     
-
-
-                </div>
+                            <button class="btn text-white w-100 mt-3" style="background-color: #782fc2;">Save Address</button>
+                        </form>
+                    </div>
+                @endif
             </div>
 
             <!-- Right: User + Summary -->
@@ -111,38 +109,36 @@
                 </div>
 
                 <!-- Address Summary -->
-        <div class="card shadow p-3 mb-3 position-relative">
-    <!-- Delete Button in Top-Right -->
-    @if (Auth::check() && Auth::user()->address)
-        <form action="{{ route('delete', Auth::user()->address->id) }}" method="post" class="position-absolute" style="top: 15px; right: 15px;">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-sm btn-outline-danger" title="Delete Address">
-                <i class="fas fa-trash-alt"></i>
-            </button>
-        </form>
-    @endif
+                <div class="card shadow p-3 mb-3 position-relative">
+                    @if (Auth::check() && Auth::user()->address)
+                        <form action="{{ route('delete', Auth::user()->address->id) }}" method="post" class="position-absolute"
+                            style="top: 15px; right: 15px;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-sm btn-outline-danger" title="Delete Address">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </form>
+                    @endif
 
-    <h5 class="mb-3">
-        <i class="fas fa-map-marker-alt me-1 text-danger"></i>
-        <strong>Shipping Address</strong>
-    </h5>
+                    <h5 class="mb-3">
+                        <i class="fas fa-map-marker-alt me-1 text-danger"></i>
+                        <strong>Shipping Address</strong>
+                    </h5>
 
-    @foreach ($addresses as $address)
-        @if(Auth::check() && Auth::user()->address)
-            <p><strong>Street:</strong> {{ $address->address }}</p>
-            <p><strong>City:</strong> {{ $address->city }}</p>
-            <p><strong>State:</strong> {{ $address->state }}</p>
-            <p><strong>Pincode:</strong> {{ $address->pincode }}</p>
-        @else
-            <p class="text-danger">Please fill your address before checkout.</p>
-        @endif
-    @endforeach
-</div>
+                    @foreach ($addresses as $address)
+                        @if(Auth::check() && Auth::user()->address)
+                            <p><strong>Street:</strong> {{ $address->address }}</p>
+                            <p><strong>City:</strong> {{ $address->city }}</p>
+                            <p><strong>State:</strong> {{ $address->state }}</p>
+                            <p><strong>Pincode:</strong> {{ $address->pincode }}</p>
+                        @else
+                            <p class="text-danger">Please fill your address before checkout.</p>
+                        @endif
+                    @endforeach
+                </div>
 
-
-
-
+                <!-- Summary -->
                 <div class="card shadow p-3 mb-3">
                     <h5 class="fw-bold mb-3">💰 Summary</h5>
                     @php
@@ -166,16 +162,21 @@
                         </li>
                     </ul>
 
+
+
+
                 </div>
 
 
+
+
+                <!-- Checkout Button -->
                 <div class="card shadow p-3 text-center">
                     @if ($order)
-    <a href="{{ route("razorpay.pay", $order->id) }}" class="btn btn-success w-100">Proceed to Checkout</a>
-@else
-    <p class="text-danger">No order found. Please add items to cart.</p>
-@endif
-
+                        <a href="{{ route('razorpay.pay', $order->id) }}" class="btn btn-success w-100">Proceed to Checkout</a>
+                    @else
+                        <p class="text-danger">No order found. Please add items to cart.</p>
+                    @endif
                 </div>
             </div>
         </div>
@@ -185,6 +186,7 @@
         .btn-pink {
             background-color: #782fc2;
         }
+
 
         .btn-pink:hover {
             background-color: #632aa8;

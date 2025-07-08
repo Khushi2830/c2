@@ -124,5 +124,9 @@
             height: 18px;
         }
     </style>
+<<<<<<< HEAD
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+=======
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+>>>>>>> fd02e98ae33b472b1adc7c60a66ca2727904f611
 @endsection
