@@ -60,7 +60,7 @@
         <img src="https://cdn-icons-png.flaticon.com/512/4076/4076549.png" alt="Empty" width="80" class="mb-3 opacity-75">
         <h4 class="text-muted fw-semibold">This category is empty.</h4>
         <p class="text-secondary mb-3">We're whipping up something sweet. Please check back later!</p>
-        <a href="{{ route('filter') }}" class="btn btn-purple px-4 rounded-pill">Browse Other Categories</a>
+       
     </div>
 </div>
 
