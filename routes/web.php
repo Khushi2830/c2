@@ -60,6 +60,7 @@ Route::middleware("index:auth")->group(function () {
   Route::get('/razorpay/failed', [RazorpayController::class, 'failed'])->name('razorpay.failed');
   Route::get('/cart', [HomeController::class, 'show'])->name('cart.show');
   route::delete("/address/delete/{id}", [AddressController::class, "delete"])->name("delete");
+  
 
 
 });

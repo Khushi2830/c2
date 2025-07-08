@@ -5,35 +5,41 @@
 @endsection
 
 @section('content')
-    <div class="container-fluid m-0 p-0">
-        <div class="row">
-            <div class="col-lg-3 col-md-4 sidebar-column">
-                @include("admin.sidebar")
-            </div>
-            <div class="col-lg-9 col-md-8 content-column mt-5 ">
-                <div class="dashboard-header d-flex justify-content-between align-items-center mb-4">
-                    <h2 class="page-title mb-0 fw-bold " style="color: #6f42c1;">Manage Category</h2>
-                    <div class="d-flex gap-3">
+<div class="container-fluid m-0 p-0">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-lg-3 col-md-4 sidebar-column">
+            @include("admin.sidebar")
+        </div>
 
-                        <a href="{{ Route('category.create') }}" class="btn  shadow-sm rounded-pill px-4"
-                            style="background-color: #6f42c1; color: white;">Add Category</a>
-                    </div>
+        <!-- Main Content -->
+        <div class="col-lg-9 col-md-8 mt-5">
+            <div class="px-4">
+                <!-- Header -->
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h2 class="fw-bold " style="color: #6f42c1;">Manage Category</h2>
+                    <a href="{{ route('category.create') }}" class="btn purple-btn px-4 rounded-pill shadow-sm">
+                        <i class="fas fa-plus-circle me-1"></i> Add Category
+                    </a>
                 </div>
-                @session('msg')
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong>Success!</strong> {{ session('msg') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                @endsession
-                @session('maseg')
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <strong>Delete!</strong> {{ session('msg') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                @endsession
 
-                <div class="table-responsive shadow rounded-4 bg-white p-3">
-                    <table class="table table-striped align-middle table-hover mb-0">
+                <!-- Session Alerts -->
+                @if(session('msg'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Success:</strong> {{ session('msg') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+                @if(session('maseg'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Deleted:</strong> {{ session('maseg') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+
+                <!-- Table -->
+                <div class="table-responsive rounded-4 shadow-lg bg-white p-4">
+                    <table class="table table-hover align-middle mb-0">
                         <thead class="table-primary text-center">
                             <tr>
                                 <th>ID</th>
@@ -41,67 +47,66 @@
                                 <th>Sub-Category</th>
                                 <th>Description</th>
                                 <th>Image</th>
-                                <th>Action</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
-
                         <tbody class="text-center">
                             @foreach ($categories as $category)
-
-
                                 <tr>
-                                    <td>{{$category->id}}</td>
-                                    <td>{{$category->cat_title}}</td>
-                                    <td>
-
-
-                                        {{ $category->subcategories ? $category->subcategories->cat_title : NULL}}
-                                    </td>
+                                    <td>{{ $category->id }}</td>
+                                    <td class="fw-semibold">{{ $category->cat_title }}</td>
+                                    <td>{{ $category->subcategories?->cat_title ?? '—' }}</td>
                                     <td>{{ Str::limit($category->cat_description, 50) }}</td>
                                     <td>
-                                        <img src="{{ asset("storage/" . $category->cover_image) }}"
-                                            alt="{{ $category->cat_title }}" class="category-cover_image" width="100px">
+                                        <img src="{{ asset('storage/' . $category->cover_image) }}"
+                                             alt="{{ $category->cat_title }}"
+                                             class="rounded shadow-sm"
+                                             width="80" height="60"
+                                             style="object-fit: cover;">
                                     </td>
-                                    <td class="">
-                                        <div class="action-buttons d-flex gap-2 ">
-                                            <form method="post" action="{{ route('category.destroy', $category) }}"
-                                                class="delete-form">
+                                    <td>
+                                        <div class="d-flex justify-content-center gap-2">
+                                            <!-- Delete Button -->
+                                            <form method="POST" action="{{ route('category.destroy', $category) }}">
                                                 @csrf
-                                                @method("delete")
-                                                <button type="submit" class="btn btn-sm"
-                                                    style="background-color: blueviolet; color: white;" title="Delete category">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                        stroke-linecap="round" stroke-linejoin="round">
-                                                        <polyline points="3 6 5 6 21 6"></polyline>
-                                                        <path
-                                                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
-                                                        </path>
-                                                        <line x1="10" y1="11" x2="10" y2="17"></line>
-                                                        <line x1="14" y1="11" x2="14" y2="17"></line>
-                                                    </svg>
-                                                    <span>Delete</span>
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-sm purple-btn px-3" onclick="return confirm('Are you sure to delete this category?')">
+                                                    <i class="fas fa-trash-alt me-1"></i> Delete
                                                 </button>
                                             </form>
-                                            <button type="" class="btn btn-sm"
-                                                style="background-color: blueviolet; color: white;" title="Edit category">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round">
-                                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                                                </svg>
-                                                <span><a href="{{ route("category.edit", $category) }}"
-                                                        style=" text-decoration: none; color: white;">Edit</a></span>
-                                            </button>
+
+                                            <!-- Edit Button -->
+                                            <a href="{{ route('category.edit', $category) }}" class="btn btn-sm purple-btn px-3 text-white">
+                                                <i class="fas fa-edit me-1"></i> Edit
+                                            </a>
                                         </div>
                                     </td>
+                                </tr>
                             @endforeach
-                                {{ $categories->links() }}
                         </tbody>
                     </table>
+
+                    <!-- Pagination -->
+                    <div class="mt-4 d-flex justify-content-center">
+                        {{ $categories->links() }}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+<style>
+    .purple-btn {
+        background-color: #6f42c1;
+        color: #fff;
+        border: none;
+        transition: all 0.3s ease;
+    }
+
+    .purple-btn:hover {
+        background-color: #5a36a0;
+        color: #fff;
+    }
+</style>
 @endsection

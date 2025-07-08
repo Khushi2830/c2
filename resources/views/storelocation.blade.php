@@ -5,7 +5,7 @@
 
     <div class="container py-4">
         <div class="row align-items-center">
-            <!-- Filter Form -->
+          
             <div class="col-md-6">
                 <h4 style="color: #782ec3;" class="fw-bold mb-3">Locate the nearest store(s)</h4>
                 <form class="border p-3 rounded-3 shadow-sm" style="background-color: #fdfbff;">
@@ -40,7 +40,7 @@
                 </form>
             </div>
 
-            <!-- Banner Image -->
+            
             <div class="col-md-6 ">
                 <img src="{{ asset('p.png') }}" width="600px" alt="Order Online" class="img-fluid rounded">
 
@@ -49,11 +49,10 @@
 
         <hr class="my-4">
 
-        <!-- Stores Heading -->
         <h3 class="text-center fw-bold mb-4" style="color: #9580ba;">CREAMER STORES</h3>
 
         <div class="row">
-            <!-- Store Cards -->
+           
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
                     <div class="card-header bg-light fw-bold text-dark">
@@ -95,22 +94,22 @@
                 </div>
             </div>
 
-            <!-- Another Store -->
-
-
-            <!-- You can continue looping here -->
+           
         </div>
 
-        <!-- Map Section -->
-        <div class="mt-4 mb-3">
-            <div class="ratio ratio-16x9 shadow rounded-4">
-                <iframe
-                    src="https://maps.google.com/maps?q=Connaught%20Place,%20New%20Delhi&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                    style="border:0;" allowfullscreen loading="lazy"></iframe>
-            </div>
-        </div>
+<div class="mt-4 mb-3">
+    <div class="ratio ratio-16x9 shadow rounded-4">
+        <iframe 
+            src="https://maps.google.com/maps?q=Purnea,%20Bihar&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+            style="border:0;" 
+            allowfullscreen 
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</div>
 
-        <!-- Pagination -->
+
         <div class="d-flex justify-content-center mt-4">
             <nav>
                 <ul class="pagination">

@@ -87,7 +87,6 @@
     </form>
 
     <form action="" method="POST" class=" btn w-50">
-      @csrf
       <button type="submit" class="btn w-100 btn-purple px-4 py-3"
       style="background-color: #350243; color:white;">PROCEED TO CHECKOUT</button>
     </form>
