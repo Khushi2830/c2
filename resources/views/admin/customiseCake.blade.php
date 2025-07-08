@@ -64,11 +64,11 @@
                                             <button type="submit" class="btn btn-danger btn-sm"
                                                 style="background-color: #6f42c1"><i class="bi bi-trash"></i></button>
                                         </form>
-<<<<<<< HEAD
+
                                         <form action="{{route("view.cake", $wd->id)}}" method="get" class="d-inline">
-=======
+
                                         <form action="{{route("view.cake", $wd->id)}}" method="GET" class="d-inline">
->>>>>>> fd02e98ae33b472b1adc7c60a66ca2727904f611
+
                                             @csrf
 
                                             <button type="submit" class="btn btn-danger btn-sm"

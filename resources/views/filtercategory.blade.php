@@ -23,38 +23,49 @@
 
     <div class="content">
         <div class="row g-4">
-            @foreach ($products as $product)
-                <div class="col-md-3">
-                    <div class="card shadow-sm border-4 h-100 rounded-4 overflow-hidden">
-                        <div class="position-relative">
-                            <img src="{{ asset("storage/" . $product->image) }}" class="card-img-top object-fit-cover"
-                                alt="Cake" style="height: 220px; object-fit: cover;">
-                            <span class="badge position-absolute top-0 end-0 m-2 px-2 py-1 rounded-pill fs-6"
-                                style="background-color:#5936a8;">{{$product->category->cat_title}}</span>
-                        </div>
+          @forelse ($products as $product)
+    <div class="col-md-3">
+        <div class="card shadow-sm border-4 h-100 rounded-4 overflow-hidden">
+            <div class="position-relative">
+                <img src="{{ asset("storage/" . $product->image) }}" class="card-img-top object-fit-cover"
+                    alt="Cake" style="height: 220px; object-fit: cover;">
+                <span class="badge position-absolute top-0 end-0 m-2 px-2 py-1 rounded-pill fs-6"
+                    style="background-color:#5936a8;">{{$product->category->cat_title}}</span>
+            </div>
 
-                        <div class="card-body d-flex flex-column justify-content-between">
-                            <div>
-                                <h5 class="card-title fw-semibold mt-0">{{ $product->title }}</h5>
-                                <p class="text-muted small">{{ Str::limit($product->description, 50) }}</p>
+            <div class="card-body d-flex flex-column justify-content-between">
+                <div>
+                    <h5 class="card-title fw-semibold mt-0">{{ $product->title }}</h5>
+                    <p class="text-muted small">{{ Str::limit($product->description, 50) }}</p>
 
-                                <p class="d-flex align-items-center text-success mb-0">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/3480/3480301.png" class="veg-icon"
-                                        style="width: 14px;" alt="">
-                                    100% {{ $product->veg }}
-                                </p>
+                    <p class="d-flex align-items-center text-success mb-0">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3480/3480301.png" class="veg-icon"
+                            style="width: 14px;" alt="">
+                        100% {{ $product->veg }}
+                    </p>
 
-                                <p class="mb-2">
-                                    <span class="text-muted text-decoration-line-through">₹{{ $product->price }}</span>
-                                    <span class="text-primary fw-bold">₹{{ $product->descount_price }}</span>
-                                </p>
-                            </div>
-
-                            <a href="{{ route('view', $product->id) }}" class="btn btn-purple mt-3 w-100">Add</a>
-                        </div>
-                    </div>
+                    <p class="mb-2">
+                        <span class="text-muted text-decoration-line-through">₹{{ $product->price }}</span>
+                        <span class="text-primary fw-bold">₹{{ $product->descount_price }}</span>
+                    </p>
                 </div>
-            @endforeach
+
+                <a href="{{ route('view', $product->id) }}" class="btn btn-purple mt-3 w-100">Add</a>
+            </div>
+        </div>
+    </div>
+@empty
+   <div class="col-12 text-center py-5">
+    <div class="p-4 border border-2 border-purple rounded-4 bg-light-purple shadow-sm d-inline-block">
+        <img src="https://cdn-icons-png.flaticon.com/512/4076/4076549.png" alt="Empty" width="80" class="mb-3 opacity-75">
+        <h4 class="text-muted fw-semibold">This category is empty.</h4>
+        <p class="text-secondary mb-3">We're whipping up something sweet. Please check back later!</p>
+        <a href="{{ route('filter') }}" class="btn btn-purple px-4 rounded-pill">Browse Other Categories</a>
+    </div>
+</div>
+
+@endforelse
+
         </div>
 
         <div class="footer mt-2">
@@ -103,6 +114,22 @@
         .btn-purple {
             background-color: #6f42c1;
             color: #fff;
+            transition: 0.3s ease;
+            border: none;
+       }
+       .btn-purple:hover {
+           background-color: #5936a8;
+        }
+        .bg-light-purple {
+          background-color: #f3effd;
+        }
+      .border-purple {
+          border-color: #6f42c1 !important;
+        }
+
+        .btn-purple {
+            background-color: #6f42c1;
+            color: #fff;
             border: none;
             transition: 0.3s ease;
         }
@@ -124,9 +151,5 @@
             height: 18px;
         }
     </style>
-<<<<<<< HEAD
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-=======
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
->>>>>>> fd02e98ae33b472b1adc7c60a66ca2727904f611
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 @endsection
