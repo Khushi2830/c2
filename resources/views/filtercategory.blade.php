@@ -122,6 +122,7 @@
         padding: 1.2rem;
     }
 
+<<<<<<< HEAD
     .veg-icon {
         width: 18px;
         height: 18px;
@@ -165,3 +166,12 @@
     }
 </style>
 @endsection
+=======
+        .veg-icon {
+            width: 18px;
+            height: 18px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+@endsection
+>>>>>>> aeae50c5a6203fcda41d66e3a096045d0de54728
