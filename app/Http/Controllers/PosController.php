@@ -14,19 +14,15 @@ class PosController extends Controller
 {
     public function index($id = 0)
     {
-        // Get the authenticated employee's ID
-        $employeeId = auth('employee')->id(); // If using the default auth guard
+        
+        $employeeId = auth('employee')->id(); 
 
 
-        // Or, if using a custom employee guard:
-// $employeeId = auth('employee')->id();
-
-        // Fetch the cart for the employee
+      
         $cart = Cart::with('items.product')
-            ->where('employee_id', $employeeId)
+            ->where( 'employee_id', $employeeId)
             ->first();
 
-        // Fetch categories and filter products
         $categories = Category::all();
         $products = $id == 0
             ? Product::paginate(5)
