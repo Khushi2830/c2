@@ -75,9 +75,9 @@ class CartController extends Controller
             $cash = Cash::create([
                 'employee_id' => $employeeId,
                 'cart_id' => $cart->id,
-                'method' => $request->method, // 'cash' or 'online'
+                'method' => $request->method, 
                 'amount' => $totalAmount,
-                'payment_id' => $request->payment_id ?? null, // Optional
+                'payment_id' => $request->payment_id ?? null,
             ]);
 
             DB::commit();
